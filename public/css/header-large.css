@@ -1,0 +1,358 @@
+header, nav, header a, header img, header li, .btn, .form-control {
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+
+#logo {
+  background-image: url('../images/logo1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  transition: all 0.7s;
+  height: 44px;
+  width: 174px;
+}
+
+#slider {
+  background-color: #FFF;
+  margin-top: 100px;
+}
+
+.navbar-default {
+  background-color: #E10B0B;
+  color: #FFF;
+}
+
+.navbar-fixed-top {
+  border-width: 0 !important;
+}
+
+.navbar {
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  padding: 27px 16px;
+  height: 100px  ;
+}
+
+.navbar-nav > li > a {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.navbar-toggle {
+  margin-top: 33px;
+  margin-bottom: 33px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #FFF;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #F2F2F2;
+  background-color: #D50000;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .open > a:hover {
+  color: #FFF;
+  background-color: #D50000;
+}
+
+.navbar-header {
+  color: #FFF;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #FFF;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  color: #FFF;
+  background-color: #D50000;
+}
+
+.navbar-fixed-bottom .navbar-collapse,
+.navbar-fixed-top .navbar-collapse {
+  max-height: 500px;
+}
+
+.input-group {
+  display: inline-flex;
+}
+
+.active-home {
+  background-color: #D50000;
+}
+
+.uppercase-bold {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#welcome {
+  margin: 8px 0;
+}
+
+#welcome > h5 {
+  color: #FFF;
+  font-size: 14px;
+  transform: scaleY(1);
+  transition: all 0.5s;
+}
+/* MEGA MENU STYLE
+********************************/ 
+.menu {
+  margin-top: 44px;
+  float: right;
+}
+
+.icon-home {
+  background-image: url('../images/home_blue_large.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 4px !important;
+  height: 56px;
+  width: 56px;
+}
+
+.menu-large {
+  position: static !important;
+}
+
+.megamenu {
+  padding: 20px 0px;
+  width: 100%;
+  background-color: #D50000;
+}
+
+.item-menu {
+  background-color: #D50000;
+}
+
+.dropdown-menu > li > a {
+  color: #CCC;
+  padding: 10px 20px;
+  margin: 1px 0;
+}
+
+.dropdown-menu .dropdown-header {
+  color: #FFF !important;
+  font-size: 15px;
+}
+
+.dropdown-menu > li > a:hover {
+  color: #FFF;
+  background: rgba(255, 0, 11, 0.4);
+}
+
+.dropdown-menu {
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.about-us {
+  width: 214px;
+  transition: all 0.5s;
+}
+
+.students {
+  width: 214px;
+  transition: all 0.5s;
+}
+
+.megamenu > li > ul {
+  padding: 0;
+  margin: 0;
+}
+
+.megamenu > li > ul > li {
+  list-style: none;
+}
+
+.megamenu > li > ul > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.428571429;
+  color: #CCC;
+  white-space: normal;
+}
+
+.megamenu > li ul > li > a:hover,
+.megamenu > li ul > li > a:focus {
+  text-decoration: none;
+  color: #FFF;
+  background-color: rgba(255, 0, 11, 0.4);
+}
+
+.megamenu.disabled > a,
+.megamenu.disabled > a:hover,
+.megamenu.disabled > a:focus {
+  color: #999999;
+}
+
+.megamenu.disabled > a:hover,
+.megamenu.disabled > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  background-image: none;
+  cursor: not-allowed;
+}
+
+.megamenu.dropdown-header {
+  color: #428bca;
+  font-size: 18px;
+}
+
+/* SEARCH BOX
+********************************/ 
+#search {
+  position: absolute;
+  top: 0;
+  right: 80px;
+  float: right;
+  display: inline-flex;
+}
+
+#search .form-control {
+  background-color: transparent;
+  border-radius: 0;
+  color: #FFF;
+  transform: scaleY(1);
+  transition: all 0.5s;
+}
+
+#search .form-control:focus {
+  box-shadow: none;
+  border-color: #FFF;
+}
+
+#search .btn {
+  transform: scaleY(1);
+  transition: all 0.7s;
+  border-radius: 0;
+}
+
+#search i {
+  transform: scale(1);
+  transition: all 0.7s;
+}
+
+#search .btn-default {
+  color: #FFF;
+  background-color: transparent;
+}
+
+#search .btn-default:hover {
+  border-color: #CCC;
+  color: #CCC;
+}
+
+#search *::-webkit-input-placeholder {
+  color: #FFF;
+}
+
+/* Reponsive
+********************************/ 
+@media only screen and (max-width: 1200px) {
+  #logo {
+    transform: scale(0.9);
+    height: 40px;
+    width: 157px;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #search {
+    top: 5px;
+  }
+
+  .navbar-default .navbar-nav > li > a {
+    margin: auto 0;
+    font-size: 12px;
+  }
+
+  .menu {
+    margin-top: 0;
+  }
+
+  .navbar-brand {
+    padding: 10px 16px;
+    height: 60px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-brand {
+    padding: 27px 16px;
+    height: 100px;
+  }
+
+  .menu {
+    float: none;
+  }
+
+  .megamenu {
+    position: relative;
+  }
+
+  .about-us, .students {
+    width: 100%;
+    position: relative;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #CCC;
+    padding: 10px 20px;
+    margin: 1px 0;
+  }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
+    color: #FFF;
+    background: rgba(255, 0, 11, 0.4);
+  }
+
+  #search {
+    position: relative; 
+    top: 0; 
+    right: 0; 
+    float: none; 
+    display: inline-flex;
+    text-align: center;
+    width: 100%;
+  }
+
+  #search #welcome {
+    display: none;
+  }
+
+  #search .navbar-form {
+    border-color: transparent;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  #search .input-group {
+    width: 100%;
+  }
+}
