@@ -1,0 +1,35 @@
+{
+  "name": "bk_language",
+  "description": "trung tâm ngoại ngữ Bách Khoa",
+  "main": "server.js",
+  "authors": [
+    "Bk language"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "http://www.utflc.edu.vn/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "public/libs"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.5.0",
+    "angular": "~1.5.0",
+    "angular-route": "~1.5.0",
+    "angular-md5": "~0.1.10",
+    "ng-file-upload": "~12.0.1",
+    "ng-table": "~0.8.3",
+    "angular-cookies": "~1.5.0",
+    "ngmap": "~1.16.7",
+    "ng-tags-input": "~3.0.0",
+    "angular-ckeditor": "~1.0.3",
+    "angular-sanitize": "~1.5.0",
+    "angular-bootstrap": "~1.2.1",
+    "ckeditor": "~4.5.7"
+  }
+}
