@@ -224,7 +224,7 @@ header, nav, header a, header img, header li, .btn, .form-control {
 ********************************/ 
 #search {
   position: absolute;
-  top: 0;
+  top: 30px;
   right: 80px;
   float: right;
   display: inline-flex;

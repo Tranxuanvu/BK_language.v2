@@ -1,0 +1,15 @@
+#navbar-top{
+	background-color: #0DB61D;
+}
+#navbar-top .hotline{
+
+}
+
+#navbar-top ul > li {
+	list-style: none;
+}
+
+#navbar-top .icon{
+	display: inline-flex;
+	float: right;
+}

@@ -222,7 +222,7 @@ header, nav, header a, header img, header li, .btn, .form-control {
 ********************************/ 
 #search {
   position: absolute;
-  top: 0;
+  top: 30px;
   right: 80px;
   float: right;
   display: inline-flex;
@@ -284,7 +284,7 @@ header, nav, header a, header img, header li, .btn, .form-control {
 
 @media only screen and (max-width: 991px) {
   #search {
-    top: 5px;
+    top: 35px;
   }
 
   .navbar-default .navbar-nav > li > a {
