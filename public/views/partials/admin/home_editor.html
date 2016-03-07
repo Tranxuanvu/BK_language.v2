@@ -1,0 +1,271 @@
+﻿<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+    <h3 class="orange-text">
+        <i class="fa fa-pencil-square"></i>
+        Chỉnh Sửa Trang Chủ
+    </h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div>
+                <h4 class="orange-text">
+                    Đoạn 1
+                </h4>
+                <div class="form-group">
+                    <label for="title1">Tiêu đề</label>
+                    <div class="input-group">
+                        <input id="title1" class="form-control" ng-model="homeConfig.p[0].title" />
+                        <div class="input-group-addon" style="cursor:pointer" data-toggle="modal" data-target="#editInputContent" ng-click="editItemContent(homeConfig.p[0], 'title')"><span class="fa fa-pencil"></span> </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bg1">Hình nền</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">{{base_url}}</div>
+                        <input id="bg1" class="form-control" ng-model="homeConfig.p[0].bg_uri" />
+                        <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(homeConfig.p[0], 'bg_uri')">
+                            <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Items</label>
+                    <button class="btn btn-primary" ng-click="homeConfig.p[0].items.push({title: '', uri: '/', image_uri: '/' })"><span class="fa fa-plus"></span></button>
+                </div>
+                <div class="col-md-offset-1 form-group">
+                    <div class="form-group well col-md-12" ng-repeat="(idx, item) in homeConfig.p[0].items">
+                        <div class="col-md-3">
+                            <input class="form-control" ng-model="item.title" />
+                        </div>
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <div class="input-group-addon">{{base_url}}</div>
+                                <input class="form-control" ng-model="item.uri" />
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="input-group">
+                                <input class="form-control" ng-model="item.image_uri" />
+                                <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(item, 'image_uri')">
+                                    <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-danger" ng-click="homeConfig.p[0].items.splice(idx, 1)"><span class="fa fa-trash"></span></button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 class="orange-text">
+                    Đoạn 2
+                </h4>
+                <div class="form-group">
+                    <label for="title2">Tiêu đề</label>
+                    <div class="input-group">
+                        <input id="title2" class="form-control" ng-model="homeConfig.p[1].title" />
+                        <div class="input-group-addon" style="cursor:pointer" data-toggle="modal" data-target="#editInputContent" ng-click="editItemContent(homeConfig.p[1], 'title')"><span class="fa fa-pencil"></span> </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bg2">Hình nền</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">{{base_url}}</div>
+                        <input id="bg2" class="form-control" ng-model="homeConfig.p[1].bg_uri" />
+                        <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(homeConfig.p[1], 'bg_uri')">
+                            <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description2">Mô Tả</label>
+                    <textarea id="description2" class="form-control" ng-model="homeConfig.p[1].description" style="height: 100px; resize: vertical"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Items</label>
+                    <button class="btn btn-primary" ng-click="homeConfig.p[1].items.push({title: '', uri: '/', image_uri: '/', description: '' })"><span class="fa fa-plus"></span></button>
+                </div>
+                <div class="col-md-offset-1 form-group">
+                    <div class="form-group well" ng-repeat="(idx, item) in homeConfig.p[1].items">
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <input class="form-control" ng-model="item.title" />
+                            </div>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <div class="input-group-addon">{{base_url}}</div>
+                                    <input class="form-control" ng-model="item.uri" />
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="input-group">
+                                    <input class="form-control" ng-model="item.image_uri" />
+                                    <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(item, 'image_uri')">
+                                        <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn btn-danger" ng-click="homeConfig.p[1].items.splice(idx, 1)"><span class="fa fa-trash"></span></button>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-11">
+                                <input class="form-control" ng-model="item.description" />
+                            </div>
+                            <div class="col-md-1">
+                                <span class="btn btn-info" data-toggle="modal" data-target="#editInputContent" ng-click="editItemContent(item, 'description')"><span class="fa fa-pencil"></span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 class="orange-text">
+                    Đoạn 3
+                </h4>
+                <div class="form-group">
+                    <label for="title3">Tiêu đề</label>
+                    <div class="input-group">
+                        <input id="title3" class="form-control" ng-model="homeConfig.p[2].title" />
+                        <div class="input-group-addon" style="cursor:pointer" data-toggle="modal" data-target="#editInputContent" ng-click="editItemContent(homeConfig.p[2], 'title')"><span class="fa fa-pencil"></span> </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bg3">Hình nền</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">{{base_url}}</div>
+                        <input id="bg3" class="form-control" ng-model="homeConfig.p[2].bg_uri" />
+                        <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(homeConfig.p[2], 'bg_uri')">
+                            <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Logo</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">{{base_url}}</div>
+                        <input class="form-control" ng-model="homeConfig.p[2].image_uri" />
+                        <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(homeConfig.p[2], 'image_uri')">
+                            <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="video_uri">Video embed code</label>
+                    <input id="video_uri" class="form-control" ng-model="homeConfig.p[2].video_embed" />
+                </div>
+
+
+                <h4 class="orange-text">
+                    Đoạn 4
+                </h4>
+                <div class="form-group">
+                    <label for="title4">Tiêu đề</label>
+                    <div class="input-group">
+                        <input id="title4" class="form-control" ng-model="homeConfig.p[3].title" />
+                        <div class="input-group-addon" style="cursor:pointer"  data-toggle="modal" data-target="#editInputContent" ng-click="editItemContent(homeConfig.p[3], 'title')"><span class="fa fa-pencil"></span> </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="bg4">Hình nền</label>
+                    <div class="input-group">
+                        <div class="input-group-addon">{{base_url}}</div>
+                        <input id="bg4" class="form-control" ng-model="homeConfig.p[3].bg_uri" />
+                        <div class="input-group-addon" style="cursor: pointer"  ng-click="clickOnUpload(homeConfig.p[3], 'bg_uri')">
+                            <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Items</label>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span></button>
+                </div>
+                <div class="col-md-offset-1 form-group">
+                    <div class="form-group well" ng-repeat="(idx, item) in homeConfig.p[3].items">
+                        <div class="form-group row">
+                            <div class="col-md-3">
+                                <input class="form-control" ng-model="item.title" />
+                            </div>
+                            <div class="col-md-3">
+                                <input class="form-control" ng-model="item.reviewer" />
+                            </div>
+                            <div class="col-md-5">
+                                <div class="input-group">
+                                    <div class="input-group-addon">{{base_url}}</div>
+                                    <input class="form-control" ng-model="item.uri" />
+                                </div>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn btn-danger" ng-click="homeConfig.p[3].items.splice(idx, 1)"><span class="fa fa-trash"></span></button>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-11">
+                                <textarea class="form-control" ng-model="item.description" style="height: 100px; resize: vertical"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary" ng-click="save()">Save</button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="myModalLabel">- Chọn bài viết liên quan</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                            </div>
+                        </div>
+                    </div>
+                    <table ng-table="tableParams" show-filter="true" class="table table-striped table-condensed table-bordered">
+                        <tr ng-repeat="row in $data track by row.id">
+                            <td width="35%" data-title="'Tên bài viết'" filter="{title: 'text'}">
+                                {{row.title}}
+                            </td>
+                            <td width="20%" data-title="'Loại bài viết'" filter="{catalog: 'select'}" filter-data="dcatalogs">{{row.catalog}}</td>
+                            <td width="20%" data-title="'Người viết'" filter="{'author': 'select'}" filter-data="dauthors">{{row.author}}</td>
+                            <td width="20%" data-title="'Ngày viết'" sortable="'dateInit'">{{row.dateInit | date: 'dd/MM/yyyy HH:mm'}}</td>
+                            <td width="5%" data-title="'Add'"><button class="btn btn-primary" ng-click="addReview(row.id)"><span class="fa fa-plus"></span></button> </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal CK editor -->
+    <div class="modal fade" id="editInputContent" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <div ckeditor="options" ng-model="htmlEditor" ready=""></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-app-sm" data-dismiss="modal" ng-click="saveInput()">
+                        <i class="fa fa-clipboard"></i> OK
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Select input-->
+    <input type="file" ng-model="file" ngf-select="uploadImage(currentUploadItem, currentUploadField)" accept="image/*" id="upload" style="display: none"/>
+</div>

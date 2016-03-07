@@ -1,0 +1,138 @@
+<section id="menu-tab-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-0 col-xs-0">
+                <div class="vertical-menu" id="cssmenu">
+                    <div class="menu-title">
+                        <span>{{verticalMenu.name}}</span>
+                    </div>
+                    <script type="text/ng-template" id="menu_vertical_item_render.html">
+                        <ul class="vertical-sub-inner">
+                            <li ng-repeat="data in data.submenus" ng-include="'submenu_vertical_item_render.html'" ng-class="{'has-sub': data.submenus.length > 0}"></li>
+                        </ul>
+                        <a href='{{data.uri}}'><i class="fa fa-circle"></i>{{data.name}}</a>
+                    </script>
+
+                    <script type="text/ng-template" id="submenu_vertical_item_render.html">
+                        <ul class="vertical-sub-inner">
+                            <li ng-repeat="data in data.submenus" ng-include="'submenu_vertical_item_render.html'" ng-class="{'has-sub': data.submenus.length > 0}"></li>
+                        </ul>
+                        <a href='{{data.uri}}' ng-click="scrollTo('#post_detail')">{{data.name}}</a>
+                    </script>
+
+                    <ul>
+                        <li ng-repeat="data in verticalMenu.submenus" ng-include="'menu_vertical_item_render.html'" ng-class="{'has-sub': data.submenus.length > 0}"></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-9 col-md-9 col-sm-0 col-xs-0 desktop-scale-super-large" compile="mainMenu.submenus[menu].content">
+            </div>
+
+            <div class="col-lg-0 col-md-0 col-sm-12 col-xs-12 mobile-scale-super-small">
+                <div class="row" style="margin-bottom: 10px;">
+                    <div class="col-sm-3 col-xs-3 mobile-tabs active" id="one" style="padding: 0;">
+                        <div class="img-tab phuong-phap-nieng-rang"></div>
+                        <div class="tabs-heading-des">Phương Pháp</div>
+                        <div class="tabs-down-arrow"></div>
+                    </div>
+                    <div class="col-sm-3 col-xs-3 mobile-tabs" id="two" style="padding: 0;">
+                        <div class="img-tab video-nieng-rang"></div>
+                        <div class="tabs-heading-des">Video Niềng Răng</div>
+                        <div class="tabs-down-arrow"></div>
+                    </div>
+                    <div class="col-sm-3 col-xs-3 mobile-tabs" id="three" style="padding: 0;">
+                        <div class="img-tab ket-qua-dieu-tri"></div>
+                        <div class="tabs-heading-des">Kết Quả Điều Trị</div>
+                        <div class="tabs-down-arrow"></div>
+                    </div>
+                    <div class="col-sm-3 col-xs-3 mobile-tabs" id="four" style="padding: 0;">
+                        <div class="img-tab bang-gia-nieng-rang-chinh-nha"></div>
+                        <div class="tabs-heading-des">Bảng Giá Niềng Răng-Chỉnh Nha</div>
+                        <div class="tabs-down-arrow"></div>
+                    </div>
+                </div>
+
+                <div class="row home-tabs-content show" id="one">
+                    <div class="col-sm-12 col-xs-12">
+                        
+                        <div class="row">
+                            <div class="mobile-tabs-article" style="background: url('../img/temp/article_img.png') center no-repeat;">
+                                <div class="black-overlay">
+                                    <h3>Độ Tuổi Niềng Răng 1</h3>    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mobile-tabs-article" style="background: url('../img/temp/article_img.png') center no-repeat;">
+                                <div class="black-overlay">
+                                    <h3>Độ Tuổi Niềng Răng 2</h3>    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="mobile-tabs-article" style="background: url('../img/temp/article_img.png') center no-repeat;">
+                                <div class="black-overlay">
+                                    <h3>Độ Tuổi Niềng Răng 3</h3>    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mobile-tabs-article" style="background: url('../img/temp/article_img.png') center no-repeat;">
+                                <div class="black-overlay">
+                                    <h3>Độ Tuổi Niềng Răng 4</h3>    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row home-tabs-content" id="two">
+                    <div class="col-sm-12 col-xs-12">
+                        <h4>Content B</h4>
+                    </div>
+                </div>
+
+                <div class="row home-tabs-content" id="three">
+                    <div class="col-sm-12 col-xs-12">
+                        <h4>Content C</h4>
+                    </div>
+                </div>
+
+                <div class="row home-tabs-content" id="four">
+                    <div class="col-sm-12 col-xs-12">
+                        <h4>Content D</h4>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $(function() {
+                        $('.mobile-tabs').on('click', function(){
+                            $('.mobile-tabs').removeClass('active');
+                            $(this).addClass('active');
+                            $('.home-tabs-content').removeClass('show');
+                            $('.home-tabs-content#'+$(this).attr('id')).addClass('show');
+                        });
+                    });
+                </script>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding: 10px 0;">
+    <div class="container" ng-controller="PostController">
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                <div ng-include="'views/partials/post/post_detail.html'"></div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div ng-include="'views/partials/post/post_right_relative.html'"></div>
+            </div>
+        </div>
+    </div>
+</section>

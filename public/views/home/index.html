@@ -1,571 +1,362 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>UFLC</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../libs/jquery/dist/jquery.min.js"></script>
-
-    <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.min.css">
-    <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="../css/owl.carousel.css">
-    <link rel="stylesheet" href="../css/owl.theme.css">
-    <script src="../js/owl.carousel.js"></script>
-
-    <link rel="stylesheet" href="../fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="../fancybox/jquery.fancybox.pack.js"></script>
-
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" type="text/css" href="../css/home.css">
-
-    <link rel="stylesheet" type="text/css" href="../css/animate.css" />
-    
-  </head>
-  <body>
-    <header class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button data-target=".navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"> </span><span class="icon-bar"></span></button>
-          <div class="navbar-brand"><a href="/" style="color: #FFF;" id="logo">
-              <div id="logo"></div></a></div>
+<div class='bg-body'>
+  <wrap-owlcarousel class='owl-carousel owl-theme' id='slider' data-options="{autoPlay: 5000, singleItem : true, responsive: true}">
+    <div class='item'>
+      <img src="images/slide-01.jpg" alt="Slide 01" />
+      <div class='container'>
+        <div class='caption-first-slide common'>
+          Innovation at
+          <br>
+          the Speed of Life
+          <br>
+          <p>
+            <a class='btn btn-lg btn-danger' href='#' role='button'>view portfolio</a>
+          </p>
         </div>
-        <div class="navbar-collapse collapse menu">
-          <div id="search">
-            <div id="welcome">
-              <h5>Welcome ...!</h5>
-            </div>
-            <form role="search" class="navbar-form">
-              <div class="input-group">
-                <input type="text" placeholder="Search" name="q" class="form-control"/>
-                <div class="input-group-btn">
-                  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <ul class="nav navbar-nav">
-            <li class="dropdown"><a data-toggle="dropdown" href="#" class="dropdown-toggle">Về chúng tôi<b class="caret"></b></a>
-              <ul class="dropdown-menu item-menu about-us">
-                <li><a href="#">Giới thiệu</a></li>
-                <li><a href="#">Đội ngũ giảng viên</a></li>
-                <li><a href="#">Lý do chọn NNBK</a></li>
-                <li><a href="#">Cảm nhận học viên</a></li>
-              </ul>
-            </li>
-            <li class="dropdown menu-large"><a data-toggle="dropdown" href="#" class="dropdown-toggle">Chương trình học<b class="caret"></b></a>
-              <ul class="dropdown-menu megamenu row">
-                <li class="col-sm-3">
-                  <ul>
-                    <li>LỚP CHÍNH QUY</li>
-                    <li><a href="#">Anh văn đầu vào</a></li>
-                    <li><a href="#">Qui chế</a></li>
-                    <li><a href="#">Thông báo</a></li>
-                    <li class="divider"></li>
-                  </ul>
-                </li>
-                <li class="col-sm-3">
-                  <ul>
-                    <li class="dropdown-header">TOEIC</li>
-                    <li><a href="#">Toeic Total 550</a></li>
-                    <li><a href="#">Pre Toeic 450</a></li>
-                    <li><a href="#">Luyện thi TOEIC</a></li>
-                    <li class="divider"></li>
-                  </ul>
-                </li>
-                <li class="col-sm-3">
-                  <ul>
-                    <li class="dropdown-header">IELTS</li>
-                    <li><a href="#">IELTS 6.0 Plus</a></li>
-                    <li><a href="#">Pre IELTS</a></li>
-                    <li><a href="#"> Lorem ipsum</a></li>
-                    <li class="divider"></li>
-                  </ul>
-                </li>
-                <li class="col-sm-3">
-                  <ul>
-                    <li class="dropdown-header">TOEFL iBT, IPT</li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem</a></li>
-                    <li class="divider"></li>
-                  </ul>
-                </li>
-                <li class="col-sm-3">
-                  <ul>
-                    <li class="dropdown-header">ANH VĂN GIAO TIẾP</li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem</a></li>
-                    <li class="divider"></li>
-                  </ul>
-                </li>
-                <li class="col-sm-3">
-                  <ul>
-                    <li class="dropdown-header">NHẬT NGỮ</li>
-                    <li><a href="#">JLPT</a></li>
-                    <li><a href="#">N3 Tokkyu</a></li>
-                    <li><a href="#">Lorem</a></li>
-                    <li class="divider"></li>
-                  </ul>
-                </li>
-                <li class="col-sm-3">
-                  <ul>
-                    <li class="dropdown-header">DÀNH CHO DOANH NGHIỆP</li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">Lorem</a></li>
-                    <li class="divider"></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#">free tests</a></li>
-            <li class="dropdown"><a data-toggle="dropdown" href="#" class="dropdown-toggle">học viên<b class="caret"></b></a>
-              <ul class="dropdown-menu item-menu students">
-                <li><a href="#">Câu lạc bộ UTEC</a></li>
-                <li><a href="#">Kết quả thi cuối khóa</a></li>
-                <li><a href="#">Tài liệu</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Thi quốc tế</a></li>
-            <li><a href="#">Sự kiện</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
+        <div class='image-caption-first'>
+          <img src="images/ipad.png" alt="Ipad" />
         </div>
       </div>
-    </header>
-    <div class='bg-body'>
-      <div class='owl-carousel owl-theme' id='slider'>
-        <div class='item'>
-          <img src="images/slide-01.jpg" alt="Slide 01" />
-          <div class='container'>
-            <div class='caption-first-slide common'>
-              Innovation at
-              <br>
-              the Speed of Life
-              <br>
-              <p>
-                <a class='btn btn-lg btn-danger' href='#' role='button'>view portfolio</a>
-              </p>
-            </div>
-            <div class='image-caption-first'>
-              <img src="images/ipad.png" alt="Ipad" />
-            </div>
-          </div>
-        </div>
-        <div class='item'>
-          <img src="images/slide-02.jpg" alt="Slide 02" />
-          <div class='container'>
-            <div class='caption-second-slide common'>
-              Where Creativity
-              <br>
-              Meets Technology
-            </div>
-          </div>
-        </div>
-        <div class='item'>
-          <img src="images/slide-03.jpg" alt="Slide 03 " />
-          <div class='container'>
-            <div class='caption-third-slide common'>
-              Open Up Your
-              <br>
-              Business to
-              <br>
-              New Possibilities
-              <br>
-              <p>
-                <a class='btn btn-lg btn-danger' href='#' role='button'>view portfolio</a>
-              </p>
-            </div>
-            <div class='image-caption-third'>
-              <img src="images/iphone.png" alt="Iphone" />
-            </div>
-          </div>
+    </div>
+    <div class='item'>
+      <img src="images/slide-02.jpg" alt="Slide 02" />
+      <div class='container'>
+        <div class='caption-second-slide common'>
+          Where Creativity
+          <br>
+          Meets Technology
         </div>
       </div>
-      <!-- Language course -->
-      <div class='section' id='course'>
-        <div class='container'>
+    </div>
+    <div class='item'>
+      <img src="images/slide-03.jpg" alt="Slide 03 " />
+      <div class='container'>
+        <div class='caption-third-slide common'>
+          Open Up Your
+          <br>
+          Business to
+          <br>
+          New Possibilities
+          <br>
+          <p>
+            <a class='btn btn-lg btn-danger' href='#' role='button'>view portfolio</a>
+          </p>
+        </div>
+        <div class='image-caption-third'>
+          <img src="images/iphone.png" alt="Iphone" />
+        </div>
+      </div>
+    </div>
+  </wrap-owlcarousel>
+  <!-- Language course -->
+  <div class='section' id='course'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-8 col-md-offset-2 caption ani-course'>
+          <span>About Language Course</span>
+          <p>Today the school is a leader in the market of educational services and is the largest language school.</p>
+        </div>
+        <div class='col-md-6 course-left-item'>
           <div class='row'>
-            <div class='col-md-8 col-md-offset-2 caption ani-course'>
-              <span>About Language Course</span>
-              <p>Today the school is a leader in the market of educational services and is the largest language school.</p>
+            <div class='col-md-9' style='text-align: right;'>
+              <h2>
+                <a class='uppercase-bold' style='font-size: 20px'>comfortable learning environment</a>
+              </h2>
+              <span>Training individually and in groups. The group consist of not more than 8 people, that allows to make learning as effective as possible. Teaching in nine specialized classes.</span>
             </div>
-            <div class='col-md-6 course-left-item'>
-              <div class='row'>
-                <div class='col-md-9' style='text-align: right;'>
-                  <h2>
-                    <a class='uppercase-bold' style='font-size: 20px'>comfortable learning environment</a>
-                  </h2>
-                  <span>Training individually and in groups. The group consist of not more than 8 people, that allows to make learning as effective as possible. Teaching in nine specialized classes.</span>
-                </div>
-                <div class='col-md-2 icon-image'>
-                  <img src="images/page_icon01.png" alt="Page icon01" />
-                </div>
-              </div>
-            </div>
-            <div class='col-md-6 course-right-item'>
-              <div class='row'>
-                <div class='col-md-2 icon-image'>
-                  <img src="images/page_icon02.png" alt="Page icon02" />
-                </div>
-                <div class='col-md-9'>
-                  <h2>
-                    <a class='uppercase-bold' style='font-size: 20px'>innovative online system</a>
-                  </h2>
-                  <span>Regardless of whether you're on a lesson or not by going to our website, you can learn the theme of the last sessions, view and download all the necessary materials, as well as get homework.</span>
-                </div>
-              </div>
-            </div>
-            <div class='col-md-6 course-left-item'>
-              <div class='row'>
-                <div class='col-md-9' style='text-align: right;'>
-                  <h2>
-                    <a class='uppercase-bold' style='font-size: 20px'>Qualitative educational process</a>
-                  </h2>
-                  <span>You are taught by professional teachers, constantly improving their skills. Based on the communicative approach, we combine the most effective trends in world practice.</span>
-                </div>
-                <div class='col-md-2 icon-image'>
-                  <img src="images/page_icon03.png" alt="Page icon03" />
-                </div>
-              </div>
-            </div>
-            <div class='col-md-6 course-right-item'>
-              <div class='row'>
-                <div class='col-md-2 icon-image'>
-                  <img src="images/page_icon04.png" alt="Page icon04" />
-                </div>
-                <div class='col-md-9'>
-                  <h2>
-                    <a class='uppercase-bold' style='font-size: 20px'>A wide selection of course</a>
-                  </h2>
-                  <span>Curricula and methods are suitable for children (from 10 years) and adults. From general and express any level courses to preparing for international exams.</span>
-                </div>
-              </div>
+            <div class='col-md-2 icon-image'>
+              <img src="images/page_icon01.png" alt="Page icon01" />
             </div>
           </div>
         </div>
-      </div>
-      <div class='section' id='our-team'>
-        <div class='container'>
+        <div class='col-md-6 course-right-item'>
           <div class='row'>
-            <div class='col-md-8 col-md-offset-2 caption ani-our-team'>
-              <span>Our Team</span>
-              <p>Continuous improvement of curricula and provision of a wide spectrum of quality language services.</p>
+            <div class='col-md-2 icon-image'>
+              <img src="images/page_icon02.png" alt="Page icon02" />
             </div>
-            <div class="">
-              <div class='col-md-3 our-team-box-model'>
-                <div class='box-model'>
-                  <a href='#'>
-                    <div class='box-img'></div>
-                    <img height="207" width="262" src="images/page_img01-bg.jpg" alt="Page img01 bg" />
-                  </a>
-                  <div class='content'>
-                    <h4>
-                      <a href='#'>Robert Smith</a>
-                    </h4>
-                    <span>Founder, Director, teacher of 3 languages</span>
-                  </div>
-                </div>
-              </div>
-              <div class='col-md-3 our-team-box-model'>
-                <div class='box-model'>
-                  <a href='#'>
-                    <div class='box-img'></div>
-                    <img height="207" width="263" src="images/page_img02-bg.jpg" alt="Page img02 bg" />
-                  </a>
-                  <div class='content'>
-                    <h4>
-                      <a href='#'>Albert Frost</a>
-                    </h4>
-                    <span style='padding: 14px; font-size: 15px;'>Deputy Director on developments</span>
-                  </div>
-                </div>
-              </div>
-              <div class='col-md-3 our-team-box-model'>
-                <div class='box-model'>
-                  <a href='#'>
-                    <div class='box-img'></div>
-                    <img height="207" width="262" src="images/page_img03-bg.jpg" alt="Page img03 bg " />
-                  </a>
-                  <div class='content'>
-                    <h4>
-                      <a href='#'>Angela White</a>
-                    </h4>
-                    <span>Teacher of Russian, Spanish and French</span>
-                  </div>
-                </div>
-              </div>
-              <div class='col-md-3 our-team-box-model'>
-                <div class='box-model'>
-                  <a href='#'>
-                    <div class='box-img'></div>
-                    <img height="207" width="263" src="images/page_img04-bg.jpg" alt="Page img04 bg" />
-                  </a>
-                  <div class='content'>
-                    <h4>
-                      <a href='#'>Hugo Star</a>
-                    </h4>
-                    <span>Teacher of Italian, Chinese and German</span>
-                  </div>
-                </div>
-              </div>
+            <div class='col-md-9'>
+              <h2>
+                <a class='uppercase-bold' style='font-size: 20px'>innovative online system</a>
+              </h2>
+              <span>Regardless of whether you're on a lesson or not by going to our website, you can learn the theme of the last sessions, view and download all the necessary materials, as well as get homework.</span>
             </div>
           </div>
         </div>
-      </div>
-      <div class='section' id='field'>
-        <div class='container ani-field'>
-          <h1>What We Do</h1>
+        <div class='col-md-6 course-left-item'>
           <div class='row'>
-            <div class='col-md-3'>
-              <img src="images/page_icon05.png" alt="Page icon05" />
-              <h3>
-                <a class='uppercase-bold' href='#'>Teaching</a>
-              </h3>
-              <p>of different language and cultures</p>
+            <div class='col-md-9' style='text-align: right;'>
+              <h2>
+                <a class='uppercase-bold' style='font-size: 20px'>Qualitative educational process</a>
+              </h2>
+              <span>You are taught by professional teachers, constantly improving their skills. Based on the communicative approach, we combine the most effective trends in world practice.</span>
             </div>
-            <div class='col-md-3'>
-              <img src="images/page_icon06.png" alt="Page icon06" />
-              <h3>
-                <a class='uppercase-bold' href='#'>Preparation</a>
-              </h3>
-              <p>for international exams</p>
-            </div>
-            <div class='col-md-3'>
-              <img src="images/page_icon07.png" alt="Page icon07" />
-              <h3>
-                <a class='uppercase-bold' href='#'>Organization</a>
-              </h3>
-              <p>of international language camps</p>
-            </div>
-            <div class='col-md-3'>
-              <img src="images/page_icon08.png" alt="Page icon08" />
-              <h3>
-                <a class='uppercase-bold' href='#'>Sales</a>
-              </h3>
-              <p>of methodical linguistic literature</p>
+            <div class='col-md-2 icon-image'>
+              <img src="images/page_icon03.png" alt="Page icon03" />
             </div>
           </div>
         </div>
-      </div>
-      <div class='section' id='services'>
-        <div class='container'>
+        <div class='col-md-6 course-right-item'>
           <div class='row'>
-            <div class='col-md-8 col-md-offset-2 caption ani-services'>
-              <span>Our Services</span>
-              <p>Today the school is a leader in the market of educational services and is the largest language school.</p>
+            <div class='col-md-2 icon-image'>
+              <img src="images/page_icon04.png" alt="Page icon04" />
             </div>
-            <div class='col-md-3 services-item'>
-              <div class='border-box'>
-                <div class='witget-09'>
-                  <div class='icon-witget-09'></div>
-                  <h3 class='uppercase-bold'>
-                    <a href='#'>Summer languges program</a>
-                  </h3>
-                </div>
-                <div class='content-services'>
-                  <p>Launched in Summer our Summer Languages Program is a range of short, but sweet Arabic, French, German, Italian, Mandarin, Portuguese, Russian and Spanish courses.</p>
-                </div>
-              </div>
-            </div>
-            <div class='col-md-3 services-item'>
-              <div class='border-box'>
-                <div class='witget-10'>
-                  <div class='icon-witget-10'></div>
-                  <h3 class='uppercase-bold'>
-                    <a href='#'>Cirtificate course program</a>
-                  </h3>
-                </div>
-                <div class='content-services'>
-                  <p>Our Modern Foreign Language Certificate Course Program offers you the option of taking an extra curricular language course whilst at LSE.</p>
-                </div>
-              </div>
-            </div>
-            <div class='col-md-3 services-item'>
-              <div class='border-box'>
-                <div class='witget-11'>
-                  <div class='icon-witget-11'></div>
-                  <h3 class='uppercase-bold'>
-                    <a href='#'>Language degree course</a>
-                  </h3>
-                </div>
-                <div class='content-services'>
-                  <p>If you are an Undergraduate student you can study a language as a fully assessed part of your degree programme by taking one of our Modern Foreign Language Degree Courses.</p>
-                </div>
-              </div>
-            </div>
-            <div class='col-md-3 services-item'>
-              <div class='border-box'>
-                <div class='witget-12'>
-                  <div class='icon-witget-12'></div>
-                  <h3 class='uppercase-bold'>
-                    <a href='#'>Online system-maintenance</a>
-                  </h3>
-                </div>
-                <div class='content-services'>
-                  <p>Regardless of whether you're on a lesson or not by going to our website, you can learn the theme of the last sessions, view and download all the necessary materials.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='section' id='gallery'>
-        <div class='container-fluid'>
-          <div class='row'>
-            <div class='col-md-8 col-md-offset-2 caption'>
-              <span>Gallery</span>
-              <p>Continuous improvement of curricula and provision of a wide spectrum of quality language services.</p>
-            </div>
-            <div class='col-md-4'>
-              <a href="images/gallery_img01-bg.jpg" class="fancybox" rel="group">
-                <div class='gallery-img-hover'></div>
-                <img height="283" width="434" src="images/gallery_img01.jpg" alt="Gallery img01" />
-              </a>
-              
-            </div>
-            <div class='col-md-4'>
-              <a href="images/gallery_img02-bg.jpg" class="fancybox" rel="group">
-                <div class='gallery-img-hover'></div>
-                <img height="283" width="434" src="images/gallery_img02.jpg" alt="Gallery img02" />
-              </a>
-            </div>
-            <div class='col-md-4'>
-              <a href="images/gallery_img03-bg.jpg" class="fancybox" rel="group">
-                <div class='gallery-img-hover'></div>
-                <img height="283" width="434" src="images/gallery_img03.jpg" alt="Gallery img03" />
-              </a>
-            </div>
-            <div class='col-md-4'>
-              <a href="images/gallery_img04-bg.jpg" class="fancybox" rel="group">
-                <div class='gallery-img-hover'></div>
-                <img height="283" width="434" src="images/gallery_img04.jpg" alt="Gallery img04" />
-              </a>
-            </div>
-            <div class='col-md-4'>
-              <a href="images/gallery_img05-bg.jpg" class="fancybox" rel="group">
-                <div class='gallery-img-hover'></div>
-                <img height="283" width="434" src="images/gallery_img05.jpg" alt="Gallery img05" />
-              </a>
-            </div>
-            <div class='col-md-4'>
-              <a href="images/gallery_img06-bg.jpg" class="fancybox" rel="group">
-                <div class='gallery-img-hover'></div>
-                <img height="283" width="434" src="images/gallery_img06.jpg" alt="Gallery img06" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class='section' id='contact'>
-        <div class='container'>
-          <h3 class='uppercase-bold'>Get started</h3>
-          <div class='row'>
-            <div class='col-md-5'>
-              <span>Your opinion about our work is very important to us. If you have any questions, send them to us and our team will help you instantly.</span>
-              <hr>
-              <h4>velit vel ipsum auctor pulvinar</h4>
-              <br>
-              <p>8901 Marmora Road</p>
-              <p>Glasgow, DO4 89GR.</p>
-              <p>Freephone: +1 800 559 6580</p>
-              <p>Telephone: +1 959 603 6035</p>
-              <p>FAX: +1 504 889 9898</p>
-              <br>
-              <p>E-mail: mail@demolink.org</p>
-            </div>
-            <div class='col-md-7' id='form-input'>
-              <form role='form' style='float: right;'>
-                <div class='form-group'>
-                  <input class='form-control' id='name' placeholder='Name:*' type='text'>
-                </div>
-                <div class='form-group'>
-                  <input class='form-control' id='email' placeholder='Email:*' type='email'>
-                </div>
-                <div class='form-group'>
-                  <input class='form-control' id='pwd' placeholder='Phone:' type='text'>
-                </div>
-                <div class='form-group'>
-                  <textarea cols='68' id='textarea' name='textarea' rows='11'></textarea>
-                </div>
-                <a class='btn btn-default' style='float: right;' type='submit'>Send</a>
-              </form>
+            <div class='col-md-9'>
+              <h2>
+                <a class='uppercase-bold' style='font-size: 20px'>A wide selection of course</a>
+              </h2>
+              <span>Curricula and methods are suitable for children (from 10 years) and adults. From general and express any level courses to preparing for international exams.</span>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <footer id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6"></div>
-          <div class="col-md-6">
-            <p>language course &copy; 2016.</p>
+  </div>
+  <div class='section' id='our-team'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-8 col-md-offset-2 caption ani-our-team'>
+          <span>Our Team</span>
+          <p>Continuous improvement of curricula and provision of a wide spectrum of quality language services.</p>
+        </div>
+        <div class="">
+          <div class='col-md-3 our-team-box-model'>
+            <div class='box-model'>
+              <a href='#'>
+                <div class='box-img'></div>
+                <img height="207" width="262" src="images/page_img01-bg.jpg" alt="Page img01 bg" />
+              </a>
+              <div class='content'>
+                <h4>
+                  <a href='#'>Robert Smith</a>
+                </h4>
+                <span>Founder, Director, teacher of 3 languages</span>
+              </div>
+            </div>
+          </div>
+          <div class='col-md-3 our-team-box-model'>
+            <div class='box-model'>
+              <a href='#'>
+                <div class='box-img'></div>
+                <img height="207" width="263" src="images/page_img02-bg.jpg" alt="Page img02 bg" />
+              </a>
+              <div class='content'>
+                <h4>
+                  <a href='#'>Albert Frost</a>
+                </h4>
+                <span style='padding: 14px; font-size: 15px;'>Deputy Director on developments</span>
+              </div>
+            </div>
+          </div>
+          <div class='col-md-3 our-team-box-model'>
+            <div class='box-model'>
+              <a href='#'>
+                <div class='box-img'></div>
+                <img height="207" width="262" src="images/page_img03-bg.jpg" alt="Page img03 bg " />
+              </a>
+              <div class='content'>
+                <h4>
+                  <a href='#'>Angela White</a>
+                </h4>
+                <span>Teacher of Russian, Spanish and French</span>
+              </div>
+            </div>
+          </div>
+          <div class='col-md-3 our-team-box-model'>
+            <div class='box-model'>
+              <a href='#'>
+                <div class='box-img'></div>
+                <img height="207" width="263" src="images/page_img04-bg.jpg" alt="Page img04 bg" />
+              </a>
+              <div class='content'>
+                <h4>
+                  <a href='#'>Hugo Star</a>
+                </h4>
+                <span>Teacher of Italian, Chinese and German</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
-    <div class="section" id="map">
-      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-      <script>
-        function init_map(){
-          var options = {
-            zoom: 16,
-            center:new google.maps.LatLng(10.7751507, 106.66039939999996),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          };
-        
-          map = new google.maps.Map(document.getElementById('map'), options);
-        
-          marker = new google.maps.Marker({
-            map: map,position: new google.maps.LatLng(10.7751507, 106.66039939999996)
-          });
-        
-          infowindow = new google.maps.InfoWindow({content:'<strong>Trung tâm ngoại ngữ Bách Khoa</strong><br>268 Lý Thường Kiệt, Phường 14, Quận 10,<br> TP.HCM'});
-          google.maps.event.addListener(marker, 'click', function(){
-            infowindow.open(map,marker);
-          });
-        
-          infowindow.open(map,marker);
-        }
-        google.maps.event.addDomListener(window, 'load', init_map);
-      </script>
     </div>
-
-    <script src="../js/viewportchecker.js"></script>
-    <script src="../js/animate.js"></script>
-    <script>
-      $("#slider").owlCarousel({
-        autoPlay: 3000,
-        singleItem: true
-      });
-      
-      $(".dropdown").hover(
-        function() {
-          $(this).addClass("active-home");
-          $('.dropdown-menu', this).stop().fadeIn("fast");
-      },
-        function() { 
-          $(this).removeClass("active-home");
-          $('.dropdown-menu', this).stop().fadeOut("fast");
-      });
-
-      $(document).ready(function() {
-        $(".fancybox").fancybox();
-      });
-
-      $("head").append('<link rel="stylesheet" href="../css/header-large.css" type="text/css"/>');
-
-      $(document).on("scroll",function(){
-        if($(document).scrollTop()>100){
-          $("head").append('<link rel="stylesheet" href="../css/header-small.css" type="text/css"/>');
-        } else {
-          $("head").append('<link rel="stylesheet" href="../css/header-large.css" type="text/css"/>');          
-        }
-      });
-    </script>
-  </body>
-</html>
+  </div>
+  <div class='section' id='field'>
+    <div class='container ani-field'>
+      <h1>What We Do</h1>
+      <div class='row'>
+        <div class='col-md-3'>
+          <img src="images/page_icon05.png" alt="Page icon05" />
+          <h3>
+            <a class='uppercase-bold' href='#'>Teaching</a>
+          </h3>
+          <p>of different language and cultures</p>
+        </div>
+        <div class='col-md-3'>
+          <img src="images/page_icon06.png" alt="Page icon06" />
+          <h3>
+            <a class='uppercase-bold' href='#'>Preparation</a>
+          </h3>
+          <p>for international exams</p>
+        </div>
+        <div class='col-md-3'>
+          <img src="images/page_icon07.png" alt="Page icon07" />
+          <h3>
+            <a class='uppercase-bold' href='#'>Organization</a>
+          </h3>
+          <p>of international language camps</p>
+        </div>
+        <div class='col-md-3'>
+          <img src="images/page_icon08.png" alt="Page icon08" />
+          <h3>
+            <a class='uppercase-bold' href='#'>Sales</a>
+          </h3>
+          <p>of methodical linguistic literature</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='section' id='services'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-md-8 col-md-offset-2 caption ani-services'>
+          <span>Our Services</span>
+          <p>Today the school is a leader in the market of educational services and is the largest language school.</p>
+        </div>
+        <div class='col-md-3 services-item'>
+          <div class='border-box'>
+            <div class='witget-09'>
+              <div class='icon-witget-09'></div>
+              <h3 class='uppercase-bold'>
+                <a href='#'>Summer languges program</a>
+              </h3>
+            </div>
+            <div class='content-services'>
+              <p>Launched in Summer our Summer Languages Program is a range of short, but sweet Arabic, French, German, Italian, Mandarin, Portuguese, Russian and Spanish courses.</p>
+            </div>
+          </div>
+        </div>
+        <div class='col-md-3 services-item'>
+          <div class='border-box'>
+            <div class='witget-10'>
+              <div class='icon-witget-10'></div>
+              <h3 class='uppercase-bold'>
+                <a href='#'>Cirtificate course program</a>
+              </h3>
+            </div>
+            <div class='content-services'>
+              <p>Our Modern Foreign Language Certificate Course Program offers you the option of taking an extra curricular language course whilst at LSE.</p>
+            </div>
+          </div>
+        </div>
+        <div class='col-md-3 services-item'>
+          <div class='border-box'>
+            <div class='witget-11'>
+              <div class='icon-witget-11'></div>
+              <h3 class='uppercase-bold'>
+                <a href='#'>Language degree course</a>
+              </h3>
+            </div>
+            <div class='content-services'>
+              <p>If you are an Undergraduate student you can study a language as a fully assessed part of your degree programme by taking one of our Modern Foreign Language Degree Courses.</p>
+            </div>
+          </div>
+        </div>
+        <div class='col-md-3 services-item'>
+          <div class='border-box'>
+            <div class='witget-12'>
+              <div class='icon-witget-12'></div>
+              <h3 class='uppercase-bold'>
+                <a href='#'>Online system-maintenance</a>
+              </h3>
+            </div>
+            <div class='content-services'>
+              <p>Regardless of whether you're on a lesson or not by going to our website, you can learn the theme of the last sessions, view and download all the necessary materials.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='section' id='gallery'>
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class='col-md-8 col-md-offset-2 caption'>
+          <span>Gallery</span>
+          <p>Continuous improvement of curricula and provision of a wide spectrum of quality language services.</p>
+        </div>
+        <div class='col-md-4'>
+          <a href="images/gallery_img01-bg.jpg" class="fancybox" rel="group">
+            <div class='gallery-img-hover'></div>
+            <img height="283" width="434" src="images/gallery_img01.jpg" alt="Gallery img01" />
+          </a>
+          
+        </div>
+        <div class='col-md-4'>
+          <a href="images/gallery_img02-bg.jpg" class="fancybox" rel="group">
+            <div class='gallery-img-hover'></div>
+            <img height="283" width="434" src="images/gallery_img02.jpg" alt="Gallery img02" />
+          </a>
+        </div>
+        <div class='col-md-4'>
+          <a href="images/gallery_img03-bg.jpg" class="fancybox" rel="group">
+            <div class='gallery-img-hover'></div>
+            <img height="283" width="434" src="images/gallery_img03.jpg" alt="Gallery img03" />
+          </a>
+        </div>
+        <div class='col-md-4'>
+          <a href="images/gallery_img04-bg.jpg" class="fancybox" rel="group">
+            <div class='gallery-img-hover'></div>
+            <img height="283" width="434" src="images/gallery_img04.jpg" alt="Gallery img04" />
+          </a>
+        </div>
+        <div class='col-md-4'>
+          <a href="images/gallery_img05-bg.jpg" class="fancybox" rel="group">
+            <div class='gallery-img-hover'></div>
+            <img height="283" width="434" src="images/gallery_img05.jpg" alt="Gallery img05" />
+          </a>
+        </div>
+        <div class='col-md-4'>
+          <a href="images/gallery_img06-bg.jpg" class="fancybox" rel="group">
+            <div class='gallery-img-hover'></div>
+            <img height="283" width="434" src="images/gallery_img06.jpg" alt="Gallery img06" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='section' id='contact'>
+    <div class='container'>
+      <h3 class='uppercase-bold'>Get started</h3>
+      <div class='row'>
+        <div class='col-md-5'>
+          <span>Your opinion about our work is very important to us. If you have any questions, send them to us and our team will help you instantly.</span>
+          <hr>
+          <h4>velit vel ipsum auctor pulvinar</h4>
+          <br>
+          <p>8901 Marmora Road</p>
+          <p>Glasgow, DO4 89GR.</p>
+          <p>Freephone: +1 800 559 6580</p>
+          <p>Telephone: +1 959 603 6035</p>
+          <p>FAX: +1 504 889 9898</p>
+          <br>
+          <p>E-mail: mail@demolink.org</p>
+        </div>
+        <div class='col-md-7' id='form-input'>
+          <form role='form' style='float: right;'>
+            <div class='form-group'>
+              <input class='form-control' id='name' placeholder='Name:*' type='text'>
+            </div>
+            <div class='form-group'>
+              <input class='form-control' id='email' placeholder='Email:*' type='email'>
+            </div>
+            <div class='form-group'>
+              <input class='form-control' id='pwd' placeholder='Phone:' type='text'>
+            </div>
+            <div class='form-group'>
+              <textarea cols='68' id='textarea' name='textarea' rows='11'></textarea>
+            </div>
+            <a class='btn btn-default' style='float: right;' type='submit'>Send</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
