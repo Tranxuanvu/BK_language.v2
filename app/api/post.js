@@ -57,6 +57,7 @@ module.exports = function (app) {
                 return;
             } else {
                 connection.query('SELECT sub_category.name, sub_category.slug FROM category, sub_category WHERE category.slug = ? AND sub_category.category_id = category.id', req.body.category, function (err, rows) {
+                    console.log(rows);
                     res.json(rows);
                     connection.destroy();
                     pool.end();

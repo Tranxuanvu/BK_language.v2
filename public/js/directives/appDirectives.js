@@ -54,4 +54,44 @@ angular.module('appDirectives', []).directive('ckEditor', [function () {
                 $(element).owlCarousel(options);  
             }  
         };  
+    }).directive("onToggleHover", function(){
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs){
+                element.bind('mouseenter', function() {
+                    element.children(0).addClass("active-home");
+                    element.children(1).addClass("display-block");
+                });
+
+                element.bind('mouseleave', function() {
+                    element.children(0).removeClass("active-home");
+                    element.children(1).removeClass("display-block");
+                });
+
+                element.children().bind('click', function() {
+                    // element.addClass("active-home");
+                    element.children(1).removeClass("display-block");
+                });
+            }
+        }
+    }).directive('fancybox', function(){
+        return {
+            restrict: 'A',
+
+            link: function(scope, element, attrs){
+              $(element).fancybox({  
+                type        :'iframe',
+                scrolling   : 'no',
+                maxWidth    : 800,
+                maxHeight   : 400,
+                fitToView   : true,
+                width       : '70%',
+                height      : '70%',
+                autoSize    : false,
+                closeClick  : true,
+                openEffect  : 'none',
+                closeEffect : 'none'
+              });
+            }
+        }
     });
