@@ -548,6 +548,10 @@
                 position: new google.maps.LatLng(10.7751507, 106.66039939999996)
             });
 
+            $(window).resize(function() {
+                google.maps.event.trigger(map, "resize");
+            });
+
             infowindow = new google.maps.InfoWindow({
                 content: '<strong>Trung tâm ngoại ngữ Bách Khoa</strong><br>268 Lý Thường Kiệt, Phường 14, Quận 10,<br> TP.HCM'
             });
