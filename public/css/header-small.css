@@ -1,8 +1,8 @@
-header, nav, header a, header img, header li, .btn, .form-control {
-  transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
+header, nav, header a, header img, header li {
+  transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
 }
 
 #logo {
@@ -10,9 +10,13 @@ header, nav, header a, header img, header li, .btn, .form-control {
   background-size: cover;
   background-repeat: no-repeat;
   transform: scale(0.8);
-  transition: all 0.7s;
+  transition: all 0.4s;
   height: 44px;
   width: 174px;
+}
+
+#navbar-top{
+  display: none;
 }
 
 #slider {
@@ -109,7 +113,7 @@ header, nav, header a, header img, header li, .btn, .form-control {
 #welcome > h5 {
   color: #FFF;
   transform: scaleY(0.85);
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 
 /* MEGA MENU STYLE
@@ -228,13 +232,16 @@ header, nav, header a, header img, header li, .btn, .form-control {
   display: inline-flex;
 }
 
+#search #welcome{
+  display: block;
+}
+
 #search .form-control {
   background-color: transparent;
   border-color: #FFF;
   border-radius: 0;
   color: #FFF;
-  transform: scaleY(0.85);
-  transition: all 0.5s;
+  /*transition: all 0.5s;*/
 }
 
 #search .form-control:focus {
@@ -243,14 +250,13 @@ header, nav, header a, header img, header li, .btn, .form-control {
 }
 
 #search .btn {
-  transform: scaleY(0.85);
-  transition: all 0.5s;
+  /*transition: all 0.5s;*/
   border-radius: 0;
 }
 
 #search i {
-  transform: scale(0.85);
-  transition: all 0.5s;
+  /*transform: scale(0.85);*/
+  /*transition: all 0.5s;*/
 }
 
 #search .btn-default {
@@ -284,7 +290,7 @@ header, nav, header a, header img, header li, .btn, .form-control {
 
 @media only screen and (max-width: 991px) {
   #search {
-    top: 5px;
+    top: 35px;
   }
 
   .navbar-default .navbar-nav > li > a {

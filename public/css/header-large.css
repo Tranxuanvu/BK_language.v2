@@ -1,8 +1,8 @@
-header, nav, header a, header img, header li, .btn, .form-control {
-  transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
+header, nav, header a, header img, header li {
+  transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
 }
 
 #logo {
@@ -10,10 +10,15 @@ header, nav, header a, header img, header li, .btn, .form-control {
   background-size: cover;
   background-repeat: no-repeat;
   transform: scale(1);
-  transition: all 0.7s;
+  transition: all 0.4s;
   height: 44px;
   width: 174px;
 }
+
+#navbar-top{
+  display: block;
+}
+
 
 #slider {
   background-color: #FFF;
@@ -111,7 +116,7 @@ header, nav, header a, header img, header li, .btn, .form-control {
   color: #FFF;
   font-size: 14px;
   transform: scaleY(1);
-  transition: all 0.5s;
+  transition: all 0.4s;
 }
 /* MEGA MENU STYLE
 ********************************/ 
@@ -225,47 +230,60 @@ header, nav, header a, header img, header li, .btn, .form-control {
 #search {
   position: absolute;
   top: 0;
-  right: 80px;
+  right: 240px;
   float: right;
   display: inline-flex;
 }
 
+#search #welcome{
+  display: none;
+}
+
 #search .form-control {
   background-color: transparent;
-  border-radius: 0;
-  color: #FFF;
-  transform: scaleY(1);
-  transition: all 0.5s;
+  border-radius: 15px 0 0 15px;
+  color: #9E9E9E;
+  height: 30px;
+  border: 1px solid #A4A4A1;
+  /*transform: scaleY(1);*/
+  /*transition: all 0.5s;*/
+}
+
+#search .navbar-form{
+  /*transform: scaleY(0.78);*/
+  margin: 4px 0;
 }
 
 #search .form-control:focus {
   box-shadow: none;
-  border-color: #FFF;
+  border-color: #A4A1A1;
 }
 
 #search .btn {
-  transform: scaleY(1);
-  transition: all 0.7s;
-  border-radius: 0;
+  /*transform: scaleY(1);*/
+  /*transition: all 0.7s;*/
+  border-radius: 0 15px 15px 0;
+  padding: 4px 10px;
+  border: 1px solid #A4A4A1;
 }
 
 #search i {
-  transform: scale(1);
-  transition: all 0.7s;
+  /*transform: scale(1);*/
+  /*transition: all 0.7s;*/
 }
 
 #search .btn-default {
-  color: #FFF;
+  color: #A4A1A1;
   background-color: transparent;
 }
 
 #search .btn-default:hover {
-  border-color: #CCC;
-  color: #CCC;
+  border-color: #A4A1A1;
+  color: #A4A1A1;
 }
 
 #search *::-webkit-input-placeholder {
-  color: #FFF;
+  color: #A4A1A1;
 }
 
 /* Reponsive
