@@ -5,6 +5,20 @@ header, nav, header a, header img, header li {
   -o-transition: all 0.4s;
 }
 
+.header {
+  background-color: #FEDE55;
+  color: #A4A1A1;
+  padding: 5px 2px;
+}
+
+.header #hotline {
+  text-align: center;
+}
+
+.header #icon {
+  /*margin: 2px;*/
+}
+
 #logo {
   background-image: url('../images/logo1.png');
   background-size: cover;
@@ -146,22 +160,42 @@ header, nav, header a, header img, header li {
 
 .item-menu {
   background-color: #D50000;
+  width: 214px;
+  transition: all 0.5s;
 }
 
-.dropdown-menu > li > a {
+.item-menu > li > a {
   color: #CCC;
   padding: 10px 20px;
   margin: 1px 0;
 }
 
-.dropdown-menu .dropdown-header {
-  color: #FFF !important;
-  font-size: 15px;
-}
-
-.dropdown-menu > li > a:hover {
+.item-menu > li > a:hover {
   color: #FFF;
   background: rgba(255, 0, 11, 0.4);
+}
+
+.megamenu > li {
+  display: inline-block;
+  float: left;
+  padding: 3px 20px;
+  width: 25%;
+}
+
+.megamenu > li > a {
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+.megamenu > li > a:hover {
+  color: #FFF;
+  background-color: transparent;
+  cursor: text;
+}
+
+.megamenu .dropdown-header {
+  color: #FFF !important;
+  font-size: 15px;
 }
 
 .dropdown-menu {
@@ -170,19 +204,11 @@ header, nav, header a, header img, header li {
   box-shadow: none;
 }
 
-.about-us {
-  width: 214px;
-  transition: all 0.5s;
-}
-
-.students {
-  width: 214px;
-  transition: all 0.5s;
-}
-
 .megamenu > li > ul {
   padding: 0;
   margin: 0;
+  height: 124px;
+  border-bottom: 1px solid #FFF;
 }
 
 .megamenu > li > ul > li {
@@ -245,12 +271,9 @@ header, nav, header a, header img, header li {
   color: #9E9E9E;
   height: 30px;
   border: 1px solid #A4A4A1;
-  /*transform: scaleY(1);*/
-  /*transition: all 0.5s;*/
 }
 
 #search .navbar-form{
-  /*transform: scaleY(0.78);*/
   margin: 4px 0;
 }
 
@@ -260,16 +283,9 @@ header, nav, header a, header img, header li {
 }
 
 #search .btn {
-  /*transform: scaleY(1);*/
-  /*transition: all 0.7s;*/
   border-radius: 0 15px 15px 0;
   padding: 4px 10px;
   border: 1px solid #A4A4A1;
-}
-
-#search i {
-  /*transform: scale(1);*/
-  /*transition: all 0.7s;*/
 }
 
 #search .btn-default {

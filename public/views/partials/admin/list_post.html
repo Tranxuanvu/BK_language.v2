@@ -1,0 +1,14 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+  <h3 class="orange-text" ng-bind-html="title | unsafe"> </h3>
+
+  <table ng-table="tableParams" show-filter="true" class="table table-striped">
+    <tr ng-repeat="row in $data track by row.id">
+      <td width="2%" data-title="'#'">{{row.id}}</td>
+      <td width="40%" data-title="'Tên bài viết'" filter="{title: 'text'}"><a href="/admin/edits/{{row.id}}" title="{{row.title}}">{{row.title}}</a>
+      </td>
+      <td width="20%" data-title="'Loại bài viết'" filter="{catalog: 'select'}" filter-data="catalogs">{{row.catalog}}</td>
+      <td width="10%" data-title="'Người viết'" filter="{'full_name': 'select'}" filter-data="authors">{{row.full_name}}</td>
+      <td width="10%" data-title="'Ngày viết'" sortable="'date_init'">{{row.date_init | date: 'dd/MM/yyyy HH:mm'}}</td>
+    </tr>
+  </table>
+</div>

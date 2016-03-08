@@ -1,0 +1,38 @@
+<div class="post-right-relative">
+	<div class="interesting">
+		<div class="title">
+			Có Thể Bạn Quan Tâm
+		</div>
+		<div class="post-relative">
+            <div class="row post-with-left-img" ng-repeat="article in article_links">
+				<div class="col-md-5">
+					<div class="cover-img">
+						<a href="{{'/' + article.category_slug + '/' + article.sub_category_slug + '/' + article.slug}}"><img src="{{article.image_url}}"></a>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<a href="{{'/' + article.category_slug + '/' + article.sub_category_slug + '/' + article.slug}}" class="relative-title">{{article.title}}</a>
+					<ul class="list-unstyled post-info">
+						<li><span class="comment-icon"></span>2</li>
+						<li><span class="view-icon"></span>36</li>
+						<li><span class="love-icon"></span>258</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="qas">
+		<div class="title">
+			Hỏi đáp cùng bác sĩ
+		</div>
+		<div class="qa" ng-repeat="consultPost in consultPosts">
+			<a href="{{'/' + consultPost.category_slug + '/' + consultPost.sub_category_slug + '/' + consultPost.slug}}"><i class="fa fa-chevron-right"></i><span>{{consultPost.title}}</span></a>
+			<ul class="list-unstyled post-info">
+				<li><span class="comment-icon"></span>2</li>
+				<li><span class="view-icon"></span>36</li>
+				<li><span class="love-icon"></span>258</li>
+			</ul>
+		</div>
+	</div>
+</div>

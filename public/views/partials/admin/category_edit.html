@@ -1,0 +1,49 @@
+﻿<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+    <h3 class="orange-text">
+        <i class="fa fa-list"></i>
+        Chỉnh sửa category
+    </h3>
+    <div class="row col-md-6">
+        <div class="form-group">
+            <label for="note" class="label-ctrl"> Chọn menu:</label>
+            <select class="form-control" ng-options="idx as category.name for (idx, category) in categories track by idx" ng-model="selectedCategory" ng-change="menu = [menus[selectedCategory]]"></select>
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="menu_item_renderer.html">
+        <div class="form-group">
+            <div class="col-md-1" ng-switch="data.collapse">
+                <span ng-switch-when="true" class="fa fa-plus-circle" ng-click="data.collapse = false"></span>
+                <span ng-switch-when="false" class="fa fa-minus-circle" ng-click="data.collapse = true"></span>
+            </div>
+
+            <div class="col-md-3">
+                <input class="form-control" type="text" ng-model="data.name" placeholder="Tên Menu" />
+            </div>
+            <div class="col-md-5">
+                <div class="input-group">
+                    <div class="input-group-addon">{{base_url}}</div>
+                    <input type="text" class="form-control" ng-model="data.uri" placeholder="Link">
+                </div>
+            </div>
+
+            <button class="btn btn-info" ng-click="add(data)"><span class="fa fa-plus"></span></button>
+            <button class="btn btn-danger" ng-click="delete(data,parent.submenus)" ng-show="data.parent_id != null"><span class="fa fa-trash"></span></button>
+        </div>
+
+        <ul ng-show="!data.collapse">
+            <li ng-repeat="data in data.submenus" ng-include="'menu_item_renderer.html'" ng-init="parent=$parent.data"></li>
+        </ul>
+    </script>
+
+    <div class="col-md-12 menu-container panel panel-default">
+        <div class="panel-body">
+            <ul>
+                <li ng-repeat="data in menu" ng-include="'menu_item_renderer.html'"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row col-md-12">
+        <button class="btn btn-primary" name="btn_save" ng-click="save()" ng-disabled="menu.length <= 0">Save</button>
+    </div>
+</div>

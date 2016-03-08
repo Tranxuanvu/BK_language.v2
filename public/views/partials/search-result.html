@@ -1,0 +1,88 @@
+﻿<section id="menu-tab-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="vertical-menu" id="cssmenu">
+                    <div class="menu-title">
+                        <span>{{verticalMenu.name}}</span>
+                    </div>
+                    <script type="text/ng-template" id="menu_vertical_item_render.html">
+                        <ul class="vertical-sub-inner">
+                            <li ng-repeat="data in data.submenus" ng-include="'submenu_vertical_item_render.html'" ng-class="{'has-sub': data.submenus.length > 0}"></li>
+                        </ul>
+                        <a href='{{data.uri}}'><i class="fa fa-circle"></i>{{data.name}}</a>
+                    </script>
+
+                    <script type="text/ng-template" id="submenu_vertical_item_render.html">
+                        <ul class="vertical-sub-inner">
+                            <li ng-repeat="data in data.submenus" ng-include="'submenu_vertical_item_render.html'" ng-class="{'has-sub': data.submenus.length > 0}"></li>
+                        </ul>
+                        <a href='{{data.uri}}' ng-click="scrollTo('#post_detail')">{{data.name}}</a>
+                    </script>
+
+                    <ul>
+                        <li ng-repeat="data in verticalMenu.submenus" ng-include="'menu_vertical_item_render.html'" ng-class="{'has-sub': data.submenus.length > 0}"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9" id="search-section">
+                <div class="row">
+                    
+                    <div class="col-md-8" id="result-list">
+                        <h1>Kết Quả Tìm Kiếm</h1>
+                        <p><span id="result-number">{{searchResults.length}}</span> Kết quả cho từ khóa <span id="search-keyword">"{{searchPatten}}"</span> trên trang</p>
+
+                        <div class="result-item" ng-repeat="result in searchResults">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <a href="{{'/' + result.category_slug + '/' + result.sub_category_slug + '/' + result.slug}}"><img src="{{result.image_url}}" width="160" height="100"></a>
+                                </div>
+                                <div class="col-md-8 result-des">
+                                    <a href="{{'/' + result.category_slug + '/' + result.sub_category_slug + '/' + result.slug}}"><h2>{{result.title}}</h2></a>
+
+                                    <div class="item-footer">
+                                        <div class="row">
+                                            <div class="list-unstyled date-time col-md-6">
+                                                {{result.date_init | date: 'dd/MM/yyyy HH:mm'}}
+                                            </div>
+                                            <ul class="list-unstyled post-info col-md-6">
+                                                <li><span class="comment-icon"></span>2</li>
+                                                <li><span class="view-icon"></span>36</li>
+                                                <li><span class="love-icon"></span>258</li>
+                                            </ul>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="post-right-relative">
+                            <div class="interesting">
+                                <h1>Có Thể Bạn Quan Tâm</h1>
+                                <div class="post-relative">
+                                    <div class="row post-with-left-img" ng-repeat="article in article_links">
+                                        <div class="col-md-5">
+                                            <div class="cover-img">
+                                                <a href="{{'/' + article.category_slug + '/' + article.sub_category_slug + '/' + article.slug}}"><img src="{{article.image_url}}"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <a href="{{'/' + article.category_slug + '/' + article.sub_category_slug + '/' + article.slug}}" class="relative-title">{{article.title}}</a>
+                                            <ul class="list-unstyled post-info">
+                                                <li><span class="comment-icon"></span>2</li>
+                                                <li><span class="view-icon"></span>36</li>
+                                                <li><span class="love-icon"></span>258</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

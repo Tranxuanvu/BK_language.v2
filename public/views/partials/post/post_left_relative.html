@@ -1,0 +1,10 @@
+<div class="post-left-relative">
+	<div class="category" ng-repeat="subCategory in subCategories">
+		<div class="category-title">
+			{{subCategory.name}}
+		</div>
+		<ul class="list-unstyled post-list-title" ng-repeat="post in subCategory.posts">
+			<li><a href="{{'/' + categorySlug + '/' + subCategory.slug + '/' + post.slug}}">{{post.title}}</a></li>
+		</ul>
+	</div>
+</div>

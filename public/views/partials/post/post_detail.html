@@ -1,0 +1,47 @@
+<article class="post-detail" id="post_detail" img-title-center>
+	<header>
+		<h1 class="post-title">{{post.title}}</h1>
+		<div class="row">
+			<div class="col-md-6 col-sm-6 col-xs-6 post-created">{{post.date_init | date: 'dd/MM/yyyy HH:mm'}}</div>
+			<div class="col-md-6 col-sm-6 col-xs-6">
+				<ul class="list-unstyled post-info">
+					<li><span class="comment-icon"></span>{{fb.comment_count}}</li>
+					<li><span class="view-icon"></span>{{fb.view_count}}</li>
+					<li><span class="love-icon"></span>{{fb.like_count}}</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class="post-summary" ng-bind="post.discription | to_trusted"></div>
+	<div class="post-content" ng-bind-html="post.content | to_trusted"></div>
+
+	<script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=1032682070129898";
+            fjs.parentNode.insertBefore(js, fjs);
+        } (document, 'script', 'facebook-jssdk'));
+	</script>
+	    
+	<!-- <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true" data-href="{{window.localtion.href}}"></div>
+	<div class="fb-comments" data-href="{{window.localtion.href}}" data-numposts="5" data-order-by="reverse_time" data-width="600"></div> -->
+</article>
+
+<div class="post-relative">
+	<h2 class="title">Cùng Chuyên Mục</h2>
+	<div class="row">
+		<div class="col-md-4" ng-repeat="relativePost in relativePosts">
+			<div class="cover-img">
+				<a href="{{'/' + relativePost.category_slug + '/' + relativePost.sub_category_slug + '/' + relativePost.slug}}"><img src="{{relativePost.image_url}}" class="img-responsive"></a>
+			</div>
+			<a href="{{'/' + relativePost.category_slug + '/' + relativePost.sub_category_slug + '/' + relativePost.slug}}" class="relative-title" ng-bind-html="relativePost.title | to_trusted"></a>
+			<ul class="list-unstyled post-info">
+				<li><span class="comment-icon"></span>2</li>
+				<li><span class="view-icon"></span>36</li>
+				<li><span class="love-icon"></span>258</li>
+			</ul>
+		</div>
+	</div>
+</div>

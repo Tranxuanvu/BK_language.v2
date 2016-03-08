@@ -1,0 +1,151 @@
+﻿<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+    <form class="form-horizontal register-form" name="formInfo" novalidate>
+        <h3 class="orange-text">
+            <i class="fa fa-cog"></i>
+            Cài đặt website
+        </h3>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="time_open">Giờ mở cửa</label>
+                <input type="text" class="form-control" id="time_open" ng-model="config.clinic.time_open" required placeholder="Giờ mở cửa">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" ng-model="config.clinic.email" required placeholder="Email">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="phone">Điện Thoại</label>
+                <input type="text" class="form-control" id="phone" ng-model="config.clinic.phone" required placeholder="Điện Thoại">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="hotline">HotLine</label>
+                <input type="text" class="form-control" id="hotline" ng-model="config.clinic.hotline" required placeholder="HotLine">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 ">
+                <label for="address">Địa Chỉ</label>
+                <input type="text" class="form-control" id="address" ng-model="config.clinic.address" required placeholder="Địa Chỉ">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 ">
+                <label for="location">Tọa Độ</label>
+                <input type="text" class="form-control" id="location" ng-model="config.clinic.location" required placeholder="Tọa Độ">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 ">
+                <label for="twitter_url">Link Twitter</label>
+                <input type="text" class="form-control" id="twitter_url" ng-model="config.website.twitter_url" required placeholder="Link Twitter">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 ">
+                <label for="facebook_url">Link Facebook</label>
+                <input type="text" class="form-control" id="facebook_url" ng-model="config.website.facebook_url" required placeholder="Link Facebook">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 ">
+                <label for="googleplus_url">Link Google+</label>
+                <input type="text" class="form-control" id="googleplus_url" ng-model="config.website.googleplus_url" required placeholder="Link Google+">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 ">
+                <label for="youtube_url">Link Youtube</label>
+                <input type="text" class="form-control" id="youtube_url" ng-model="config.website.youtube_url" required placeholder="Link Youtube">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 ">
+                <label for="operating_licence">Giấy phép hoạt động</label>
+                <input type="text" class="form-control" id="operating_licence" ng-model="config.law.operating_licence" required placeholder="Giấy phép hoạt động">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 ">
+                <label for="practicing_certificate">Chứng chỉ hành nghề</label>
+                <input type="text" class="form-control" id="practicing_certificate" ng-model="config.law.practicing_certificate" required placeholder="Chứng chỉ hành nghề">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-6 ">
+                <label>Tư Vấn</label>
+                <button class="btn btn-primary" ng-click="config.consults.push({name: '', consults: [], collapse: false})"><span class="fa fa-plus"></span></button>
+            </div>
+        </div>
+
+        <ul style="list-style-type: none">
+            <li ng-repeat="consult_type in config.consults">
+                <div class="row form-group">
+                    <div class="col-md-1" ng-switch="consult_type.collapse">
+                        <span ng-switch-when="true" class="fa fa-plus-circle" ng-click="consult_type.collapse = false"></span>
+                        <span ng-switch-when="false" class="fa fa-minus-circle" ng-click="consult_type.collapse = true"></span>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="consult" ng-model="consult_type.name" required placeholder="Tên loại tư vấn">
+                    </div>
+
+                    <button class="btn btn-primary" ng-click="consult_type.consults.push({name: '', contact: '', url: ''})"><span class="fa fa-plus"></span></button>
+                    <button class="btn btn-danger" ng-click="delete(consult_type,config.consults)"><span class="fa fa-trash"></span></button>
+                </div>
+                <div class="form-group">
+                    <ul style="list-style-type: none" ng-show="!consult_type.collapse">
+                        <li ng-repeat="consult in consult_type.consults">
+                            <div class="form-group">
+                                <div class="col-md-3 col-md-offset-1">
+                                    <input class="form-control" type="text" ng-model="consult.name" placeholder="Tên" />
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" ng-model="consult.contact" placeholder="Contact">
+                                </div>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" ng-model="consult.url" placeholder="Link">
+                                </div>
+                                <button class="btn btn-danger" ng-click="delete(consult,consult_type.consults)"><span class="fa fa-trash"></span></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+
+        <div class="row form-group">
+            <div class="col-md-12 ">
+                <label>Dịch vụ</label>
+                <button class="btn btn-primary" ng-click="config.services.push({name: '', uri: ''})"><span class="fa fa-plus"></span></button>
+            </div>
+        </div>
+
+        <ul style="list-style-type: none">
+            <li ng-repeat="service in config.services">
+                <div class="row form-group">
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" id="consult" ng-model="service.name" required placeholder="Tên dịch vụ">
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <div class="input-group-addon">{{base_url}}</div>
+                            <input class="form-control" ng-model="service.uri">
+                        </div>
+                    </div>
+                    <button class="btn btn-danger" ng-click="delete(service,config.services)"><span class="fa fa-trash"></span></button>
+                </div>
+            </li>
+        </ul>
+
+        <div class="form-group">
+            <div class="col-md-12">
+                <button ng-disabled="formInfo.$invalid" type="submit" class="btn btn-primary" ng-click="saveConfig()">Lưu</button>
+            </div>
+        </div>
+    </form>
+</div>

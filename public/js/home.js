@@ -1,25 +1,9 @@
-// Dropdown Menu Fade    
-$(document).ready(function(){
+$("head").append('<link rel="stylesheet" href="../css/header-large.css" type="text/css"/>');
 
-  $(".dropdown").hover(
-    function() { $('.dropdown-menu', this).stop().fadeIn("fast");
-  },
-    function() { $('.dropdown-menu', this).stop().fadeOut("fast");
-  });
-
-});
-
-$(document).ready(function() {
-
-  $("#owl-carousel").owlCarousel({
-
-    autoPlay: 3000, //Set AutoPlay to 3 seconds
-
-    singleItem: true,
-    // items: 2,
-    itemsDesktop: [1199,3],
-    itemsDesktopSmall: [979,3]
-
-  });
-
+$(document).on("scroll",function(){
+  if($(document).scrollTop()>100){
+    $("head").append('<link rel="stylesheet" href="../css/header-small.css" type="text/css"/>');
+  } else {
+    $("head").append('<link rel="stylesheet" href="../css/header-large.css" type="text/css"/>');          
+  }
 });

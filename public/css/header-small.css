@@ -144,22 +144,42 @@ header, nav, header a, header img, header li {
 
 .item-menu {
   background-color: #D50000;
+  width: 211px;
+  transition: all 0.5s;
 }
 
-.dropdown-menu > li > a {
+.item-menu > li > a {
   color: #CCC;
   padding: 10px 20px;
   margin: 1px 0;
 }
 
-.dropdown-menu .dropdown-header {
-  color: #FFF !important;
-  font-size: 15px;
-}
-
-.dropdown-menu > li > a:hover {
+.item-menu > li > a:hover {
   color: #FFF;
   background: rgba(255, 0, 11, 0.4);
+}
+
+.megamenu > li {
+  display: inline-block;
+  float: left;
+  padding: 3px 20px;
+  width: 25%;
+}
+
+.megamenu > li > a {
+  color: #FFF;
+  text-transform: uppercase;
+}
+
+.megamenu > li > a:hover {
+  color: #FFF;
+  background-color: transparent;
+  cursor: text;
+}
+
+.megamenu .dropdown-header {
+  color: #FFF !important;
+  font-size: 15px;
 }
 
 .dropdown-menu {
@@ -167,19 +187,11 @@ header, nav, header a, header img, header li {
   border: none;
 }
 
-.about-us {
-  width: 211px;
-  transition: all 0.5s;
-}
-
-.students {
-  width: 211px;
-  transition: all 0.5s;
-}
-
 .megamenu > li > ul {
   padding: 0;
   margin: 0;
+  height: 124px;
+  border-bottom: 1px solid #FFF;
 }
 
 .megamenu > li > ul > li {
@@ -196,8 +208,8 @@ header, nav, header a, header img, header li {
   white-space: normal;
 }
 
-.megamenu > li ul > li > a:hover,
-.megamenu > li ul > li > a:focus {
+.megamenu > li > ul > li > a:hover,
+.megamenu > li > ul > li > a:focus {
   text-decoration: none;
   color: #FFF;
   background-color: rgba(255, 0, 11, 0.4);
@@ -241,7 +253,6 @@ header, nav, header a, header img, header li {
   border-color: #FFF;
   border-radius: 0;
   color: #FFF;
-  /*transition: all 0.5s;*/
 }
 
 #search .form-control:focus {
@@ -250,13 +261,7 @@ header, nav, header a, header img, header li {
 }
 
 #search .btn {
-  /*transition: all 0.5s;*/
   border-radius: 0;
-}
-
-#search i {
-  /*transform: scale(0.85);*/
-  /*transition: all 0.5s;*/
 }
 
 #search .btn-default {

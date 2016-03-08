@@ -27,6 +27,10 @@ a:hover {
   opacity: 1;
 }
 
+.display-block {
+  display: block;
+}
+
 #navbar-top{
   background-color: #FBED55;
 }
