@@ -16,6 +16,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link rel="stylesheet" type="text/css" href="../css/modal.css">
 
     <link rel="stylesheet" type="text/css" href="../css/animate.css" />
 
@@ -95,39 +96,62 @@
         </div>
       </nav>
     </header>
+
+<!-- Modal -->
+    <div id="sidebar">
+      <ul>
+        <li><button class="md-trigger" data-modal="modal-15">btn</button></li>
+        <li><button class="md-trigger" data-modal="modal-11">btn</button></li>
+        <li><button class="md-trigger" data-modal="modal-10">btn</button></li>
+      </ul>
+      <div class="md-modal md-effect-15" id="modal-15">
+        <div class="md-content">
+          <h3>Modal Dialog</h3>
+          <div>
+            <p>This is a modal window. You can do the following things with it:</p>
+            <ul>
+              <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+              <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+              <li><strong>Close:</strong> click on the button below to close the modal.</li>
+            </ul>
+            <button class="md-close">Close me!</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="md-modal md-effect-11" id="modal-11">
+        <div class="md-content">
+          <h3>Modal Dialog</h3>
+          <div>
+            <p>This is a modal window. You can do the following things with it:</p>
+            <ul>
+              <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+              <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+              <li><strong>Close:</strong> click on the button below to close the modal.</li>
+            </ul>
+            <button class="md-close">Close me!</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="md-modal md-effect-10" id="modal-10">
+        <div class="md-content">
+          <h3>Modal Dialog</h3>
+          <div>
+            <p>This is a modal window. You can do the following things with it:</p>
+            <ul>
+              <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+              <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+              <li><strong>Close:</strong> click on the button below to close the modal.</li>
+            </ul>
+            <button class="md-close">Close me!</button>
+          </div>
+        </div>
+      </div>
+      <div class="md-overlay"></div>
+    </div>
     
     <div ng-view></div>
-
-    <div class="section" id="map">
-      <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-      <script>
-        function init_map(){
-          var options = {
-            zoom: 16,
-            center:new google.maps.LatLng(10.7751507, 106.66039939999996),
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          };
-        
-          map = new google.maps.Map(document.getElementById('map'), options);
-        
-          marker = new google.maps.Marker({
-            map: map,position: new google.maps.LatLng(10.7751507, 106.66039939999996)
-          });
-
-          $(window).resize(function() {
-            google.maps.event.trigger(map, "resize");
-          });
-        
-          infowindow = new google.maps.InfoWindow({content:'<strong>Trung tâm ngoại ngữ Bách Khoa</strong><br>268 Lý Thường Kiệt, Phường 14, Quận 10,<br> TP.HCM'});
-          google.maps.event.addListener(marker, 'click', function(){
-            infowindow.open(map,marker);
-          });
-        
-          infowindow.open(map,marker);
-        }
-        google.maps.event.addDomListener(window, 'load', init_map);
-      </script>
-    </div>
 
     <footer id="footer">
       <div class="container">
@@ -144,11 +168,14 @@
     <!-- Library import -->
     <script src="/libs/jquery/dist/jquery.min.js"></script>
     <script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/libs/velocity/velocity.min.js"></script>
+    <script src="/libs/velocity/velocity.ui.min.js"></script>
     <script src="/libs/angular/angular.min.js"></script>
     <script src="/libs/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="/libs/angular-sanitize/angular-sanitize.min.js"></script>
     <script src="/libs/angular-route/angular-route.min.js"></script>
     <script src="/libs/ngmap/build/scripts/ng-map.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 
     <!-- Controller import -->
     <script src="/js/controllers/menuController.js"></script>
@@ -195,5 +222,6 @@
     <script src="/js/owl.carousel.js"></script>
 
     <script src="/js/home.js"></script>
+    <script src="/js/md-classie.js"></script>
   </body>
 </html>

@@ -21,5 +21,6 @@
   },
   "_source": "git://github.com/allenhwkim/angularjs-google-maps.git",
   "_target": "~1.16.7",
-  "_originalSource": "ngmap"
+  "_originalSource": "ngmap",
+  "_direct": true
 }
