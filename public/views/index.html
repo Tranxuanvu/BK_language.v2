@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" type="text/css" href="../css/home.css">
     <link rel="stylesheet" type="text/css" href="../css/modal.css">
+    <link rel="stylesheet" type="text/css" href="../css/login-register-form.css">
 
     <link rel="stylesheet" type="text/css" href="../css/animate.css" />
 
@@ -30,8 +31,98 @@
               <div class="col-md-6 hotline">
               <span><i class="fa fa-phone fa-lg"></i>(08).7158687</span>
             </div>
-            <div class="col-md-6 login">
-              <a class='btn btn-default' href='#' role='button'>login</a>
+            <div class="col-md-6 login-register">
+              <ul>
+                <li><a class="md-trigger btn btn-default" data-modal="modal-login-register">Login/Register</a></li>
+              </ul>
+
+              <div class="md-modal md-effect-19" id="modal-login-register">
+                <div class="md-content">
+                  <!-- <h3>Liên hệ </h3> -->
+                  <!-- <div>
+                    <form role="form">
+                      <div class="form-group">
+                        <input class="form-control" id="name" placeholder="Tên:*" type="text">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control" id="email" placeholder="Email:*" type="email">
+                      </div>
+                      <div class="form-group">
+                        <input class="form-control" id="phone" placeholder="Số điện thoại:*" type="text">
+                      </div>
+                      <textarea placeholder="Nội dung" id="textarea" name="textarea" rows="5"></textarea>
+                      <button style="float: right;" type="submit">Send</button>
+                    </form>
+                    <button class="md-close">Close!</button>
+                  </div> -->
+                  <ul class="tab-group">
+                    <li class="tab active"><a href="#signup">Đăng ký</a></li>
+                    <li class="tab"><a href="#login">Đăng nhập</a></li>
+                  </ul>
+                  
+                  <div class="tab-content">
+                    <div id="signup">   
+                      <h1>Đăng ký tài khoản miễn phí </h1>
+                      
+                      <form action="#" method="post">
+                      
+                        <div class="field-wrap">
+                          <input placeholder="Email:*" type="email" required autocomplete="off" />
+                        </div>
+
+                        <div class="top-row">
+                          <div class="field-wrap">
+                            <input placeholder="SĐT:*" type="text" required autocomplete="off" />
+                          </div>
+                          
+                          <div class="field-wrap">
+                            <input placeholder="Họ tên:" type="text" autocomplete="off" />
+                          </div>
+                        </div>
+
+                        <div class="field-wrap">
+                          <input placeholder="Nhập mật khẩu:*" type="password" required autocomplete="off" />
+                        </div>
+                        
+                        <div class="field-wrap">
+                          <input placeholder="Nhập lại mật khẩu:*" type="password" required autocomplete="off"/>
+                        </div>
+                        
+                        <div class="field-wrap">
+                          <input placeholder="Trường hoặc Công ty:" type="text" autocomplete="off"/>
+                        </div>
+                        
+                        <button type="submit" class="button button-block"/>Đăng ký</button>
+                      
+                      </form>
+
+                    </div>
+                    
+                    <div id="login">
+                      <h1>Chào mừng bạn quay trở lại!</h1>
+                      
+                      <form action="#" method="post">
+                      
+                        <div class="field-wrap">
+                          <input placeholder="Email:*" type="email"required autocomplete="off"/>
+                        </div>
+                        
+                        <div class="field-wrap">
+                          <input placeholder="Password:*"type="password" required autocomplete="off"/>
+                        </div>
+                        
+                        <p class="forgot"><a href="#">Quên mật khẩu?</a></p>
+                        
+                        <button class="button button-block"/>Đăng nhập</button>
+                      
+                      </form>
+                    </div>
+                  </div> <!---/tab-contends -->
+                  <button class="md-close">Đóng!</button>
+                </div>
+              </div>
+
+              <div class="md-overlay"></div>
             </div>
           </div>
         </div>
@@ -100,21 +191,28 @@
 <!-- Modal -->
     <div id="sidebar">
       <ul>
-        <li><button class="md-trigger" data-modal="modal-15">btn</button></li>
-        <li><button class="md-trigger" data-modal="modal-11">btn</button></li>
-        <li><button class="md-trigger" data-modal="modal-10">btn</button></li>
+        <li><a class="md-trigger" data-modal="modal-15"><img src="images/icon_contacts.png"></a></li>
+        <li><a class="md-trigger" data-modal="modal-11"><img src="images/icon_calendar.png"></a></li>
+        <li><a class="md-trigger" data-modal="modal-10"><img src="images/icon_hot.png"></a></li>
       </ul>
       <div class="md-modal md-effect-15" id="modal-15">
         <div class="md-content">
-          <h3>Modal Dialog</h3>
+          <h3>Liên hệ </h3>
           <div>
-            <p>This is a modal window. You can do the following things with it:</p>
-            <ul>
-              <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
-              <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
-              <li><strong>Close:</strong> click on the button below to close the modal.</li>
-            </ul>
-            <button class="md-close">Close me!</button>
+            <form role="form">
+              <div class="form-group">
+                <input class="form-control" id="name" placeholder="Tên:" type="text">
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="email" placeholder="Email:*" type="email" required>
+              </div>
+              <div class="form-group">
+                <input class="form-control" id="phone" placeholder="Số điện thoại:*" type="text" required>
+              </div>
+              <textarea placeholder="Nội dung" id="textarea" name="textarea" rows="5"></textarea>
+              <button style="float: right;" type="submit">Send</button>
+            </form>
+            <button class="md-close">Đóng!</button>
           </div>
         </div>
       </div>
@@ -129,7 +227,7 @@
               <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
               <li><strong>Close:</strong> click on the button below to close the modal.</li>
             </ul>
-            <button class="md-close">Close me!</button>
+            <button class="md-close">Đóng!</button>
           </div>
         </div>
       </div>
@@ -144,7 +242,7 @@
               <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
               <li><strong>Close:</strong> click on the button below to close the modal.</li>
             </ul>
-            <button class="md-close">Close me!</button>
+            <button class="md-close">Đóng!</button>
           </div>
         </div>
       </div>
