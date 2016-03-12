@@ -72,7 +72,7 @@ ul {
 }
 
 #sidebar .popover {
-  width: 600px;
+  width: 700px;
 }
 
 #sidebar ul {
@@ -81,6 +81,24 @@ ul {
 
 #sidebar ul > li {
   margin: 5px 5px 5px 0;
+}
+
+#sidebar button {
+  border: none;
+  padding: 0.6em 1.2em;
+  background: #c0392b;
+  color: #fff;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+#sidebar button:hover {
+  background: #A5281B;
 }
 
 /* OWL CAROUSEL  STYLE
@@ -197,6 +215,60 @@ ul {
 
 #course .col-md-6 {
   padding: 0;
+}
+
+#our-team {
+  background-color: #F0F0F0;
+  padding-top: 30px;
+  padding-bottom: 100px;
+  text-align: center;
+}
+
+#our-team .box-img {
+  background: transparent;
+  background-color: rgba(225,11,11,0.7);
+  background-image: url('../images/button_icon.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  width: 262px;
+  height: 207px;
+  opacity: 0;
+  transition: all 0.7s ease;
+}
+
+#our-team .box-img:hover {
+  opacity: 1;
+}
+
+#our-team .content {
+  text-align: center;
+  background-color: rgba(225,11,11,0.88);
+  padding: 10px;
+}
+
+#our-team img {
+  border: 1px solid rgba(225,11,11,0.88);
+}
+
+#our-team .content > h4 {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#our-team .content > h4 > a {
+  font-weight: bold;
+  color: #FEDE55;
+}
+
+#our-team .content > h4 > a:hover {
+  color: #FFE678;
+}
+
+#our-team .content > span {
+  padding: 10px;
+  color: #FFF;
 }
 
 #gallery {
@@ -343,60 +415,7 @@ ul {
   padding: 0;
 }
 
-/*#our-team {
-  background-color: #F0F0F0;
-  padding-top: 30px;
-  padding-bottom: 100px;
-}
-
-#our-team .box-img {
-  background: transparent;
-  background-color: rgba(225,11,11,0.7);
-  background-image: url('../images/button_icon.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: absolute;
-  width: 262px;
-  height: 207px;
-  opacity: 0;
-  transition: all 0.7s ease;
-}
-
-#our-team .box-img:hover {
-  opacity: 1;
-}
-
-#our-team .content {
-  text-align: center;
-  background-color: rgba(225,11,11,0.88);
-  padding: 10px;
-}
-
-#our-team img {
-  border: 1px solid rgba(225,11,11,0.88);
-}
-
-#our-team .content > h4 {
-  margin: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-#our-team .content > h4 > a {
-  font-weight: bold;
-  color: #FEDE55;
-}
-
-#our-team .content > h4 > a:hover {
-  color: #FFE678;
-}
-
-#our-team .content > span {
-  padding: 10px;
-  color: #FFF;
-}
-
-#field {
+/*#field {
   background-image: url('../images/parallax.jpg');
   background-size: cover;
   background-repeat: no-repeat;
