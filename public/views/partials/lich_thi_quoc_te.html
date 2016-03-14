@@ -1,7 +1,7 @@
 <div class="bg-body">
-  <wrap-owlcarousel class="owl-carousel owl-theme" id="slider" data-options="{autoPlay: 5000, singleItem : true, responsive: true}">
-    <div owl-carousel-item="" class="item">
-      <img src="images/slide-01.jpg" alt="Slide 01" />
+  <wrap-owlcarousel class="owl-carousel owl-theme" id="slider" data-options="{autoPlay: 5000, singleItem : true, responsive: true}" ng-controller="MainController">
+    <div owl-carousel-item="" ng-repeat="item in homeConfig.p[0].items" class="item">
+      <div style="background-image: url('{{item.image_uri}}'); background-size: cover; height: 100%; width: 100%;"> </div>
       <div class="container">
         <div class="caption-first-slide common">
           Innovation at
@@ -14,35 +14,6 @@
         </div>
         <div class="image-caption-first">
           <img src="images/ipad.png" alt="Ipad" />
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <img src="images/slide-02.jpg" alt="Slide 02" />
-      <div class="container">
-        <div class="caption-second-slide common">
-          Where Creativity
-          <br>
-          Meets Technology
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <img src="images/slide-03.jpg" alt="Slide 03 " />
-      <div class="container">
-        <div class="caption-third-slide common">
-          Open Up Your
-          <br>
-          Business to
-          <br>
-          New Possibilities
-          <br>
-          <p>
-            <a class="btn btn-lg btn-danger" href="#" role="button">view portfolio</a>
-          </p>
-        </div>
-        <div class="image-caption-third">
-          <img src="images/iphone.png" alt="Iphone" />
         </div>
       </div>
     </div>

@@ -7,41 +7,24 @@
         <div class="panel-body">
             <div>
                 <h4 class="orange-text">
-                    Đoạn 1
+                    Slider
                 </h4>
                 <div class="form-group">
-                    <label for="title1">Tiêu đề</label>
-                    <div class="input-group">
-                        <input id="title1" class="form-control" ng-model="homeConfig.p[0].title" />
-                        <div class="input-group-addon" style="cursor:pointer" data-toggle="modal" data-target="#editInputContent" ng-click="editItemContent(homeConfig.p[0], 'title')"><span class="fa fa-pencil"></span> </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="bg1">Hình nền</label>
-                    <div class="input-group">
-                        <div class="input-group-addon">{{base_url}}</div>
-                        <input id="bg1" class="form-control" ng-model="homeConfig.p[0].bg_uri" />
-                        <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(homeConfig.p[0], 'bg_uri')">
-                            <span class="fa fa-cloud-upload"></span><!--UploadImage-->
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Items</label>
+                    <label>Image</label>
                     <button class="btn btn-primary" ng-click="homeConfig.p[0].items.push({title: '', uri: '/', image_uri: '/' })"><span class="fa fa-plus"></span></button>
                 </div>
                 <div class="col-md-offset-1 form-group">
                     <div class="form-group well col-md-12" ng-repeat="(idx, item) in homeConfig.p[0].items">
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <input class="form-control" ng-model="item.title" />
                         </div>
-                        <div class="col-md-5">
+                        <!-- <div class="col-md-5">
                             <div class="input-group">
                                 <div class="input-group-addon">{{base_url}}</div>
                                 <input class="form-control" ng-model="item.uri" />
                             </div>
-                        </div>
-                        <div class="col-md-3">
+                        </div> -->
+                        <div class="col-md-5">
                             <div class="input-group">
                                 <input class="form-control" ng-model="item.image_uri" />
                                 <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(item, 'image_uri')">
