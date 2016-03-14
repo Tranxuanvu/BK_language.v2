@@ -1,8 +1,8 @@
 header, nav, header a, header img, header li {
-  transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 #logo {

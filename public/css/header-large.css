@@ -1,8 +1,8 @@
 header, nav, header a, header img, header li {
-  transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
 }
 
 .header {
@@ -33,7 +33,6 @@ header, nav, header a, header img, header li {
   display: block;
 }
 
-
 #slider {
   background-color: #FFF;
   margin-top: 100px;
@@ -53,13 +52,13 @@ header, nav, header a, header img, header li {
 }
 
 .navbar-brand {
-  padding: 27px 16px;
-  height: 100px  ;
+  padding: 18px 16px;
+  height: 80px;
 }
 
 .navbar-nav > li > a {
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   margin-left: 1px;
   margin-right: 1px;
 }
@@ -72,7 +71,7 @@ header, nav, header a, header img, header li {
 .navbar-default .navbar-nav > li > a {
   color: #FFF;
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
@@ -135,7 +134,7 @@ header, nav, header a, header img, header li {
 /* MEGA MENU STYLE
 ********************************/ 
 .menu {
-  margin-top: 44px;
+  margin-top: 0;
   float: right;
 }
 

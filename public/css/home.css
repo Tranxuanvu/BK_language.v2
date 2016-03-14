@@ -1,5 +1,5 @@
 body {
-  background-image: url('../images/parallax01.jpg');
+  /*background-image: url('../images/parallax01.jpg');*/
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -45,12 +45,11 @@ ul {
   color: #A4A1A1;
 }
 
-#navbar-top .login{
-  padding-right: 50px;
+#navbar-top .login-register{
   text-align: right;
 }
 
-#navbar-top .login .btn {
+#navbar-top .login-register .btn {
   margin: 4px 0;
   border-radius: 15px;
   background: none;
@@ -58,8 +57,45 @@ ul {
   color: #A4A1A1;
 }
 
+#navbar-top .login-register > ul {
+  margin: 0;
+}
+
 #navbar-top .btn-default {
   border-color: #A4A1A1;
+}
+
+#navbar-top button {
+  border: none;
+  padding: 0.6em 1.2em;
+  background: #c0392b;
+  color: #fff;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  font-size: 1em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+#navbar-top .bg-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  background: rgba(143,27,15,0.8);
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#sidebar button:hover {
+  background: #A5281B;
 }
 
 /*Sidebar*/
@@ -69,10 +105,7 @@ ul {
   top: 300px;
   z-index: 2;
   padding: 10px 10px 10px 0;
-}
-
-#sidebar .popover {
-  width: 700px;
+  /*z-index: 1031;*/
 }
 
 #sidebar ul {
@@ -99,6 +132,57 @@ ul {
 
 #sidebar button:hover {
   background: #A5281B;
+}
+
+#sidebar #form-input {
+  padding: 0 30px;
+}
+
+#sidebar .form {
+  padding: 0 20px;
+}
+
+#sidebar .form-control {
+  border-radius: 0;
+  background-color: transparent;
+  color: #FFF;
+  padding: 20px 12px
+}
+
+#sidebar .form-control:focus {
+  border-color: inherit;
+  box-shadow: none;
+}
+
+#sidebar textarea {
+  background-color: transparent;
+  padding: 5px 12px;
+  border-color: #CCC;
+  width: 100%;
+  resize: none;
+}
+
+#sidebar textarea:focus {
+  outline: none !important;
+  border: 1px solid #F5F0F0;
+}
+
+#sidebar ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #FFF !important;
+}
+
+#sidebar :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #FFF !important;
+  opacity: 1;
+}
+
+#sidebar ::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #FFF !important;
+  opacity: 1;
+}
+
+#sidebar :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #FFF !important;
 }
 
 /* OWL CAROUSEL  STYLE
@@ -545,57 +629,6 @@ ul {
 
 #services .border-box .witget-12:hover .icon-witget-12 {
   background: url('../images/page_icon12-hover.png') no-repeat center center;
-}
-
-#contact1 {
-  color: #FFF;
-  padding-top: 50px;
-  padding-bottom: 100px;
-}
-
-#contact1 span {
-  font-size: 16px;
-}
-
-#contact1 h4 {
-  text-transform: uppercase;
-  color: #8CC040;
-}
-
-#contact1 p {
-  margin: 0;
-}
-
-#contact1 #form-input {
-  padding: 0 30px;
-}
-
-#contact1 .form {
-  padding: 0 20px;
-}
-
-#contact1 .form-control {
-  border-radius: 0;
-  background-color: transparent;
-  color: #FFF;
-  padding: 20px 12px
-}
-
-#contact1 .form-control:focus {
-  border-color: #CCC;
-  box-shadow: none;
-}
-
-#contact1 textarea {
-  background-color: transparent;
-  padding: 5px 12px;
-  border-color: #CCC;
-}
-
-#contact1 .btn {
-  border-radius: 0;
-  padding: 15px 55px;
-  text-transform: uppercase;
 }*/
 
 #contact {
@@ -631,7 +664,7 @@ ul {
 }
 
 #footer {
-  background-color: #E10B0B;
+  background-color: #FEDE55;
   color: #FFF;
   padding-top: 50px;
   padding-bottom: 50px;

@@ -18,7 +18,7 @@
 
 .md-modal {
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   width: 50%;
   max-width: 630px;
@@ -55,6 +55,11 @@
 }
 
 .md-show ~ .md-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.md-show ~ .bg-overlay {
   opacity: 1;
   visibility: visible;
 }
