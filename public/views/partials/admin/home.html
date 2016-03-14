@@ -8,7 +8,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label for="title" class="label-ctrl">{{isReview ? '- Tên Người Review (*): ': '- Tiêu đề bài viết (*):'}}</label>
+                        <!-- <label for="title" class="label-ctrl">{{isReview ? '- Tên Người Review (*): ': '- Tiêu đề bài viết 
+                        (*):'}}</label> -->
+                        <label for="title" class="label-ctrl">{{'- Tiêu đề bài viết (*):'}}</label>
                         <input type="text" id="title" ng-model="post.title" ng-change="nbspReplaceInTitle(post.title)" class="form-control" autocomplete="off" required>
                     </div>
                     <div class="form-group">
@@ -89,10 +91,11 @@
                         <input type="checkbox" ng-model="post.on_page" ng-init="post.on_page = false">
                     </div>
                     <div class="form-group">
-                        <label for="desc" class="label-ctrl">- Tóm tắt {{isReview ? 'người review': 'bài viết'}}:</label>
+                        <!-- <label for="desc" class="label-ctrl">- Tóm tắt {{isReview ? 'người review': 'bài viết'}}:</label> -->
+                        <label for="desc" class="label-ctrl">- Tóm tắt:</label>
                         <textarea class="form-control" ng-model="post.discription" ng-change="nbspReplaceInDesc(post.discription)" rows="4" id="desc"></textarea>
                     </div>
-                    <div class="form-group" ng-show="isReview">
+                    <!-- <div class="form-group" ng-show="isReview">
                         <label for="cure" class="label-ctrl">- Chức vụ người review:</label>
                         <input type="text" class="form-control" ng-model="post.cure" id="cure"/>
                     </div>
@@ -103,7 +106,7 @@
                     <div class="form-group" ng-show="isReview">
                         <label for="googleplus_url" class="label-ctrl">- Link google+:</label>
                         <input type="text" class="form-control" ng-model="post.googleplus_url" id="googleplus_url"/>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="title" class="label-ctrl">- Tags:</label>
                         <tags-input ng-model="post.tags"></tags-input>

@@ -12,6 +12,39 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       categorySlug: "ve-chung-toi",
       menu: 0
     })
+    .when('/thi-quoc-te/:sub_category_slug?/:post_slug?', {
+      templateUrl: function (params) {
+        if (params.sub_category_slug == "lich-thi-quoc-te") {
+          return 'views/partials/lich_thi_quoc_te.html';  
+        /*} else if (params.sub_category_slug == "cau-lac-bo-UTEC" || params.sub_category_slug == "cau-lac-bo-BKDEC") {
+          return ;
+        } else {
+          return ;*/
+        };
+
+      },
+      controller: 'PostController',
+      title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa',
+      categorySlug: "thi-quoc-te",
+      menu: 3
+    })
+    .when('/hot-news/:sub_category_slug?/:post_slug?', {
+      // templateUrl: 'views/partials/thong_bao_hot_news.html',
+      templateUrl: function (params) {
+        if (params.sub_category_slug == "thong-bao-hot-news") {
+          return 'views/partials/thong_bao_hot_news.html';  
+        /*} else if (params.sub_category_slug == "cau-lac-bo-UTEC" || params.sub_category_slug == "cau-lac-bo-BKDEC") {
+          return ;
+        } else {
+          return ;*/
+        };
+
+      },
+      controller: 'PostController',
+      title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa',
+      categorySlug: "hot-news",
+      menu: 4
+    })
     .otherwise({
       redirectTo: '/'
     });

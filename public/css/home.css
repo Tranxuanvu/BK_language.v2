@@ -1,5 +1,5 @@
 body {
-  background-image: url('../images/parallax01.jpg');
+  /*background-image: url('../images/parallax01.jpg');*/
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -664,7 +664,7 @@ ul {
 }
 
 #footer {
-  background-color: #E10B0B;
+  background-color: #FEDE55;
   color: #FFF;
   padding-top: 50px;
   padding-bottom: 50px;

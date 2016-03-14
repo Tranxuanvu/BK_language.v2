@@ -191,7 +191,6 @@ module.exports = function (app) {
                 console.log({ "code" : err.code, "status" : err.message });
                 return;
             } else {
-                console.log(req.body);
                 connection.query('SELECT id, full_name, role FROM user WHERE username = ? AND password = ?', [req.body.username, req.body.passwd], function (err, rows) {
                     connection.destroy();
                     pool.end();

@@ -23,17 +23,17 @@ var tabChange = function () {
 var tabCycle = setInterval(tabChange, 6000);
 
 // Tab click event handler
-$('a').on('click', function (e) {
-  e.preventDefault();
-  // Stop the cycle
-  clearInterval(tabCycle);
-  // Show the clicked tabs associated tab-pane
-  $(this).tab('show');
-  // Start the cycle again in a predefined amount of time
-  setTimeout(function () {
-    // tabCycle = setInterval(tabChange, 5000);
-  }, 36000);
-});
+// $('a').on('click', function (e) {
+//   e.preventDefault();
+//   // Stop the cycle
+//   clearInterval(tabCycle);
+//   // Show the clicked tabs associated tab-pane
+//   $(this).tab('show');
+//   // Start the cycle again in a predefined amount of time
+//   setTimeout(function () {
+//     // tabCycle = setInterval(tabChange, 5000);
+//   }, 36000);
+// });
 
 $('a[rel=popover]').popover().click(function(e) {
   e.preventDefault();        
