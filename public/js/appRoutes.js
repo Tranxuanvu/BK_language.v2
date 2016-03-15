@@ -32,11 +32,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       // templateUrl: 'views/partials/thong_bao_hot_news.html',
       templateUrl: function (params) {
         if (params.sub_category_slug == "thong-bao-hot-news") {
-          return 'views/partials/thong_bao_hot_news.html';  
-        /*} else if (params.sub_category_slug == "cau-lac-bo-UTEC" || params.sub_category_slug == "cau-lac-bo-BKDEC") {
-          return ;
+          return 'views/partials/post/hot_news/thong_bao_hot_news.html'
+        } else if (params.sub_category_slug == "cau-lac-bo-UTEC" || params.sub_category_slug == "cau-lac-bo-BKDEC") {
+          return 'views/partials/post/hot_news/club.html'
         } else {
-          return ;*/
+          return ;
         };
 
       },
