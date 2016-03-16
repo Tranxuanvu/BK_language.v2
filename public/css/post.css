@@ -6,6 +6,34 @@
   margin-bottom: 20px;
 }
 
+.block-rhs {
+  background-color: #FEDE55;
+  /*height: 400px;*/
+  /*color: #FFF;*/
+  padding: 10px;
+  margin: 30px 30px 0 30px;
+}
+
+.block-rhs > h2 {
+  margin: 0;
+  color: #212121;
+  text-align: center;
+}
+
+.block-rhs > h3 {
+  text-transform: uppercase;
+  text-align: center;
+  color: #E10B0B;
+}
+
+.block-rhs a {
+  color: #212121;
+}
+
+.block-rhs a:hover{
+  color: #000;
+}
+
 /*Thi quoc te*/
 .content-international > h4 {
   text-align: center;
@@ -16,36 +44,20 @@
   margin-bottom: 30px;
 }
 
-.hot-news-r {
+.btn-procedures {
   background-color: #FEDE55;
-  height: 400px;
-  /*color: #FFF;*/
-  padding: 10px;
-  margin: 30px;
-}
-
-.hot-news-r > h1 {
-  margin: 0;
-}
-
-.hot-news-r ul > li > a{
-  font-size: 16px;
-}
-
-.hot-news-under {
-  background-color: #FEDE55;
-  height: 200px;
+  /*height: 200px;*/
   text-align: center;
-  margin: 30px;
+  margin: 0 30px 30px 30px;
 }
 
-.hot-news-under a {
+.btn-procedures a {
   text-transform: uppercase;
   width: 100%;
-  margin-top: 170px;
+  /*margin-top: 170px;*/
 }
 
-.hot-news-under .btn {
+.btn-procedures .btn {
   border-radius: 0;
 }
 
@@ -154,26 +166,23 @@
   /*height: 150px;*/
 }
 
-#hot-news-club .hot-news-contact{
-  background-color: #FEDE55;
-  height: 200px;
-  text-align: center;
-  margin: 30px;
+#hot-news-club .btn-contact{
+  /*background-color: #FEDE55;*/
+  /*height: 200px;*/
+  /*text-align: center;*/
+  margin: 30px 30px 0 30px;
 }
 
-#hot-news-club .hot-news-contact a {
+#hot-news-club .btn-contact a {
   text-transform: uppercase;
   font-size: 20px;
   width: 100%;
 }
 
-#hot-news-club .hot-news-contact .btn {
+#hot-news-club .btn-contact .btn {
   border-radius: 0;
 }
 
 #hot-news-club .banner {
-  background-color: #FEDE55;
-  height: 200px;
-  text-align: center;
   margin: 30px; 
 }
