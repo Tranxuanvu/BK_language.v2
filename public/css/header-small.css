@@ -234,6 +234,20 @@ header, nav, header a, header img, header li {
   font-size: 18px;
 }
 
+/* btn login/register
+********************************/ 
+.login-register .btn {
+  margin: 4px 0;
+  border-radius: 15px;
+  background: none;
+  padding: 4px 30px;
+  color: #FFF;
+}
+
+.login-register .btn-default {
+  border-color: #FFF;
+}
+
 /* SEARCH BOX
 ********************************/ 
 #search {

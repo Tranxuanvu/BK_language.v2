@@ -11,184 +11,188 @@ $(document).on("scroll",function(){
 /******************************************/
 /***************Dynamic tab***************/
 /****************************************/
+$(document).ready(function () {
+  var tabChange = function () {
+    var tabs = $('.nav-tabs > li');
+    var active = tabs.filter('.active');
+    var next = active.next('li').length ? active.next('li').find('a') : tabs.filter(':first-child').find('a');
+    // Use the Bootsrap tab show method
+    next.tab('show');
+  };
+  // Tab Cycle function
+  var tabCycle = setInterval(tabChange, 6000);
 
-var tabChange = function () {
-  var tabs = $('.nav-tabs > li');
-  var active = tabs.filter('.active');
-  var next = active.next('li').length ? active.next('li').find('a') : tabs.filter(':first-child').find('a');
-  // Use the Bootsrap tab show method
-  next.tab('show');
-};
-// Tab Cycle function
-var tabCycle = setInterval(tabChange, 6000);
+  // Tab click event handler
+  // $('a').on('click', function (e) {
+  //   e.preventDefault();
+  //   // Stop the cycle
+  //   clearInterval(tabCycle);
+  //   // Show the clicked tabs associated tab-pane
+  //   $(this).tab('show');
+  //   // Start the cycle again in a predefined amount of time
+  //   setTimeout(function () {
+  //     // tabCycle = setInterval(tabChange, 5000);
+  //   }, 36000);
+  // });
+});
 
-// Tab click event handler
-// $('a').on('click', function (e) {
-//   e.preventDefault();
-//   // Stop the cycle
-//   clearInterval(tabCycle);
-//   // Show the clicked tabs associated tab-pane
-//   $(this).tab('show');
-//   // Start the cycle again in a predefined amount of time
-//   setTimeout(function () {
-//     // tabCycle = setInterval(tabChange, 5000);
-//   }, 36000);
-// });
-
-$('a[rel=popover]').popover().click(function(e) {
-  e.preventDefault();        
-  var open = $(this).attr('data-easein');
-  if(open == 'shake') {
-    $(this).next().velocity('callout.' + open);
-  } else if(open == 'pulse') {
-    $(this).next().velocity('callout.' + open);
-  } else if(open == 'tada') {
-    $(this).next().velocity('callout.' + open);
-  } else if(open == 'flash') {
-    $(this).next().velocity('callout.' + open);
-  }  else if(open == 'bounce') {
-   $(this).next().velocity('callout.' + open);
-  } else if(open == 'swing') {
-   $(this).next().velocity('callout.' + open);
-  }else {
-   $(this).next().velocity('transition.' + open); 
-  }          
+$(document).ready(function () {
+  $('a[rel=popover]').popover().click(function(e) {
+    e.preventDefault();        
+    var open = $(this).attr('data-easein');
+    if(open == 'shake') {
+      $(this).next().velocity('callout.' + open);
+    } else if(open == 'pulse') {
+      $(this).next().velocity('callout.' + open);
+    } else if(open == 'tada') {
+      $(this).next().velocity('callout.' + open);
+    } else if(open == 'flash') {
+      $(this).next().velocity('callout.' + open);
+    }  else if(open == 'bounce') {
+     $(this).next().velocity('callout.' + open);
+    } else if(open == 'swing') {
+     $(this).next().velocity('callout.' + open);
+    }else {
+     $(this).next().velocity('transition.' + open); 
+    }          
+  });
 });
 
 /******************************************/
 /***************Popup Modal***************/
 /****************************************/
-var ModalEffects = (function() {
+$(document).ready(function () {
+  var ModalEffects = (function() {
 
-  function init() {
+    function init() {
 
-    /*----------------login----------------*/
-    var overlayLoginRes = document.querySelector( '.login-register .md-overlay' );
+      /*----------------login----------------*/
+      var overlayLoginRes = document.querySelector( '.login-register .md-overlay' );
 
-    [].slice.call( document.querySelectorAll( '.login-register .md-trigger' ) ).forEach( function( el, i ) {
+      [].slice.call( document.querySelectorAll( '.login-register .md-trigger' ) ).forEach( function( el, i ) {
 
-      var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
-        closeLoginRes = modal.querySelector( '.login-register .md-close' );
+        var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) )
 
-      function removeModal( hasPerspective ) {
-        classie.remove( modal, 'md-show' );
+        function removeModal( hasPerspective ) {
+          classie.remove( modal, 'md-show' );
 
-        if( hasPerspective ) {
-          classie.remove( document.documentElement, 'md-perspective' );
+          if( hasPerspective ) {
+            classie.remove( document.documentElement, 'md-perspective' );
+          }
         }
-      }
 
-      function removeModalHandler() {
-        removeModal( classie.has( el, 'md-setperspective' ) ); 
-      }
-
-      el.addEventListener( 'click', function( ev ) {
-        classie.add( modal, 'md-show' );
-        overlayLoginRes.removeEventListener( 'click', removeModalHandler );
-        overlayLoginRes.addEventListener( 'click', removeModalHandler );
-
-        if( classie.has( el, 'md-setperspective' ) ) {
-          setTimeout( function() {
-            classie.add( document.documentElement, 'md-perspective' );
-          }, 25 );
+        function removeModalHandler() {
+          removeModal( classie.has( el, 'md-setperspective' ) ); 
         }
-      });
 
-      closeLoginRes.addEventListener( 'click', function( ev ) {
-        ev.stopPropagation();
-        removeModalHandler();
-      });
+        el.addEventListener( 'click', function( ev ) {
+          classie.add( modal, 'md-show' );
+          overlayLoginRes.removeEventListener( 'click', removeModalHandler );
+          overlayLoginRes.addEventListener( 'click', removeModalHandler );
 
-    } );
+          if( classie.has( el, 'md-setperspective' ) ) {
+            setTimeout( function() {
+              classie.add( document.documentElement, 'md-perspective' );
+            }, 25 );
+          }
+        });
 
-    /*----------------sidebar----------------*/
-    var overlay = document.querySelector( '#sidebar .md-overlay' );
+      } );
 
-    [].slice.call( document.querySelectorAll( '#sidebar .md-trigger' ) ).forEach( function( el, i ) {
+      /*----------------sidebar----------------*/
+      var overlay = document.querySelector( '#sidebar .md-overlay' );
 
-      var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
-        close = modal.querySelector( '#sidebar .md-close' );
+      [].slice.call( document.querySelectorAll( '#sidebar .md-trigger' ) ).forEach( function( el, i ) {
 
-      function removeModal( hasPerspective ) {
-        classie.remove( modal, 'md-show' );
+        var modal = document.querySelector( '#' + el.getAttribute( 'data-modal' ) ),
+          close = modal.querySelector( '#sidebar .md-close' );
 
-        if( hasPerspective ) {
-          classie.remove( document.documentElement, 'md-perspective' );
+        function removeModal( hasPerspective ) {
+          classie.remove( modal, 'md-show' );
+
+          if( hasPerspective ) {
+            classie.remove( document.documentElement, 'md-perspective' );
+          }
         }
-      }
 
-      function removeModalHandler() {
-        removeModal( classie.has( el, 'md-setperspective' ) ); 
-      }
-
-      el.addEventListener( 'click', function( ev ) {
-        classie.add( modal, 'md-show' );
-        overlay.removeEventListener( 'click', removeModalHandler );
-        overlay.addEventListener( 'click', removeModalHandler );
-
-        if( classie.has( el, 'md-setperspective' ) ) {
-          setTimeout( function() {
-            classie.add( document.documentElement, 'md-perspective' );
-          }, 25 );
+        function removeModalHandler() {
+          removeModal( classie.has( el, 'md-setperspective' ) ); 
         }
-      });
 
-      close.addEventListener( 'click', function( ev ) {
-        ev.stopPropagation();
-        removeModalHandler();
-      });
+        el.addEventListener( 'click', function( ev ) {
+          classie.add( modal, 'md-show' );
+          overlay.removeEventListener( 'click', removeModalHandler );
+          overlay.addEventListener( 'click', removeModalHandler );
 
-    } );
+          if( classie.has( el, 'md-setperspective' ) ) {
+            setTimeout( function() {
+              classie.add( document.documentElement, 'md-perspective' );
+            }, 25 );
+          }
+        });
 
-  }
+        close.addEventListener( 'click', function( ev ) {
+          ev.stopPropagation();
+          removeModalHandler();
+        });
 
-  init();
+      } );
 
-})();
+    }
+
+    init();
+
+  })();
+});
+
 
 /******************************************/
 /***************Form login/register*******/
 /****************************************/
-$('#navbar-top .md-content').find('input, textarea').on('keyup blur focus', function (e) {
+$(document).ready(function () {
+  $('#navbar-top .md-content').find('input, textarea').on('keyup blur focus', function (e) {
   
-  var $this = $(this),
-      label = $this.prev('label');
+    var $this = $(this),
+        label = $this.prev('label');
 
-    if (e.type === 'keyup') {
-      if ($this.val() === '') {
-          label.removeClass('active highlight');
+      if (e.type === 'keyup') {
+        if ($this.val() === '') {
+            label.removeClass('active highlight');
+          } else {
+            label.addClass('active highlight');
+          }
+      } else if (e.type === 'blur') {
+        if( $this.val() === '' ) {
+          label.removeClass('active highlight'); 
         } else {
-          label.addClass('active highlight');
+          label.removeClass('highlight');   
+        }   
+      } else if (e.type === 'focus') {
+        
+        if( $this.val() === '' ) {
+          label.removeClass('highlight'); 
+        } 
+        else if( $this.val() !== '' ) {
+          label.addClass('highlight');
         }
-    } else if (e.type === 'blur') {
-      if( $this.val() === '' ) {
-        label.removeClass('active highlight'); 
-      } else {
-        label.removeClass('highlight');   
-      }   
-    } else if (e.type === 'focus') {
-      
-      if( $this.val() === '' ) {
-        label.removeClass('highlight'); 
-      } 
-      else if( $this.val() !== '' ) {
-        label.addClass('highlight');
       }
-    }
 
+  });
 });
 
-$('.tab a').on('click', function (e) {
+$(document).ready(function () {
+  $('.tab a').on('click', function (e) {
   
-  e.preventDefault();
-  
-  $(this).parent().addClass('active');
-  $(this).parent().siblings().removeClass('active');
-  
-  target = $(this).attr('href');
+    e.preventDefault();
+    
+    $(this).parent().addClass('active');
+    $(this).parent().siblings().removeClass('active');
+    
+    target = $(this).attr('href');
 
-  $('.tab-content > div').not(target).hide();
-  
-  $(target).fadeIn(600);
-  
+    $('.tab-content > div').not(target).hide();
+    
+    $(target).fadeIn(600);
+    
+  });
 });

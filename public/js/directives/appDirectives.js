@@ -116,4 +116,74 @@ angular.module('appDirectives', []).directive('ckEditor', [function () {
               });
             }
         }
+    }).directive('viewportChecker', function() {
+        return {
+            link: function(scope, element, attr) {
+
+                $(window).load(function() {
+                    switch (attr.id) {
+                        case "ani-reason" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated bounceInDown',
+                            offset: 130
+                        })
+                        case "ani-block-lt" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated fadeInLeftBig',
+                            offset: 150
+                        })
+                        case "ani-block-ct" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated fadeInDownBig',
+                            offset: 150
+                        })
+                        case "ani-block-rt" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated fadeInRightBig',
+                            offset: 150
+                        })
+                        case "ani-block-lb" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated fadeInLeftBig',
+                            offset: 180
+                        })
+                        case "ani-block-cb" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated fadeInUpBig',
+                            offset: 180
+                        })
+                        case "ani-block-rb" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated fadeInRightBig',
+                            offset: 180
+                        })
+                        case "ani-teacher" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated bounceInDown',
+                            offset: 190
+                        })
+                        case "teacher-box-model" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated flipInY',
+                            offset: 300
+                        })
+                        case "ani-blog-lt" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated rotateIn',
+                            offset: 310
+                        })
+                        case "ani-blog-ct" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated rotateIn',
+                            offset: 310
+                        })
+                        case "ani-blog-rt" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated rotateIn',
+                            offset: 310
+                        })
+                        case "ani-blog-lb" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated rotateIn',
+                            offset: 310
+                        })
+                        case "ani-blog-cb" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated rotateIn',
+                            offset: 310
+                        })
+                        case "ani-blog-rb" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated rotateIn',
+                            offset: 310
+                        })
+                    };
+                });
+            }
+        };
     });

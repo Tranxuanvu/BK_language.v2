@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Exo);
+
 body {
   /*background-image: url('../images/parallax01.jpg');*/
   background-size: cover;
@@ -5,8 +7,10 @@ body {
   background-attachment: fixed;
   background-position: top right;
   color: #384046;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Exo', sans-serif;
   overflow-x: hidden;
+  height: 100% !important;
+  max-width: 100%;
 }
 
 a {
@@ -45,24 +49,16 @@ ul {
   color: #A4A1A1;
 }
 
-#navbar-top .login-register{
+.login-register{
   text-align: right;
+  position: absolute;
+  right: 5%;
+  top: 0;
 }
 
-#navbar-top .login-register .btn {
-  margin: 4px 0;
-  border-radius: 15px;
-  background: none;
-  padding: 4px 30px;
-  color: #A4A1A1;
-}
-
-#navbar-top .login-register > ul {
+.login-register > ul {
   margin: 0;
-}
-
-#navbar-top .btn-default {
-  border-color: #A4A1A1;
+  transition: none;
 }
 
 #navbar-top button {
@@ -273,6 +269,11 @@ ul {
   text-align: center;
   background-color: #FFF;
   padding-bottom: 50px;
+}
+
+#course #reason_choose .col-md-4 {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #course #reason_choose .text-link {
