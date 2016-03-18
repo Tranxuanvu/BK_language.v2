@@ -23,22 +23,19 @@ $(document).ready(function () {
   var tabCycle = setInterval(tabChange, 6000);
 
   // Tab click event handler
-  // $('a').on('click', function (e) {
-  //   e.preventDefault();
-  //   // Stop the cycle
-  //   clearInterval(tabCycle);
-  //   // Show the clicked tabs associated tab-pane
-  //   $(this).tab('show');
-  //   // Start the cycle again in a predefined amount of time
-  //   setTimeout(function () {
-  //     // tabCycle = setInterval(tabChange, 5000);
-  //   }, 36000);
-  // });
+  $('#tabs a').on('click', function (e) {
+    e.originalEvent.preventDefault();
+    // Stop the cycle
+    console.log(clearInterval(tabCycle));
+    clearInterval(tabCycle);
+    // Show the clicked tabs associated tab-pane
+    $(this).tab('show');
+  });
 });
 
 $(document).ready(function () {
   $('a[rel=popover]').popover().click(function(e) {
-    e.preventDefault();        
+    e.originalEvent.preventDefault();        
     var open = $(this).attr('data-easein');
     if(open == 'shake') {
       $(this).next().velocity('callout.' + open);
@@ -183,7 +180,7 @@ $(document).ready(function () {
 $(document).ready(function () {
   $('.tab a').on('click', function (e) {
   
-    e.preventDefault();
+    e.originalEvent.preventDefault();
     
     $(this).parent().addClass('active');
     $(this).parent().siblings().removeClass('active');

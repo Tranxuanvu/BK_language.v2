@@ -431,6 +431,11 @@ ul {
   padding: 5px 15px;
 }
 
+#study-programs .nav>li>a:focus,
+#study-programs .nav>li>a:hover {
+  background-color: transparent;
+}
+
 #study-programs .nav-tabs > li > a{
   color: #424242;
   border-radius: 4px;
