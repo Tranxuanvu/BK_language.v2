@@ -1,3 +1,19 @@
+$(document).ready(function() {
+  // $('html body').on('mousewheel', function(event, delta, deltaX, deltaY) {
+    
+  //   event.originalEvent.preventDefault();
+
+  //   if (delta < 0) this.scrollLeft += (delta*30);
+  //   else if (delta > 0) this.scrollLeft -= (delta*30);
+  //   return false;
+  // });
+  $(window).mousewheel(function(event, delta, deltaX, deltaY) {
+    if (delta < 0) $(window).scrollTop($(window).scrollTop() + 65);
+    else if (delta > 0) $(window).scrollTop($(window).scrollTop() - 65);
+    return false;
+  });
+});
+
 $("head").append('<link rel="stylesheet" href="../css/header-large.css" type="text/css"/>');
 
 $(document).on("scroll",function(){
