@@ -22,11 +22,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     .when('/thi-quoc-te/:sub_category_slug?/:post_slug?', {
       templateUrl: function (params) {
         if (params.sub_category_slug == "lich-thi-quoc-te") {
-          return 'views/partials/lich_thi_quoc_te.html';  
-        /*} else if (params.sub_category_slug == "cau-lac-bo-UTEC" || params.sub_category_slug == "cau-lac-bo-BKDEC") {
-          return ;
+          return 'views/partials/post/thi_quoc_te/lich_thi_quoc_te.html'
+        } else if (params.sub_category_slug == "thu-tuc-va-quy-dinh-du-thi") {
+          return 'views/partials/post/thi_quoc_te/thu_tuc_va_qui_dinh_du_thi.html'
         } else {
-          return ;*/
+          return
         };
 
       },
@@ -43,7 +43,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         } else if (params.sub_category_slug == "cau-lac-bo-UTEC" || params.sub_category_slug == "cau-lac-bo-BKDEC") {
           return 'views/partials/post/hot_news/club.html'
         } else {
-          return ;
+          return
         };
 
       },
