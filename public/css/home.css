@@ -76,7 +76,7 @@ ul {
 }
 
 #sidebar ul > li {
-  margin: 5px 5px 5px 0;
+  /*margin: 5px 5px 5px 0;*/
 }
 
 #sidebar button {
@@ -141,6 +141,11 @@ ul {
   border: 1px solid #F5F0F0;
 }
 */
+
+#sidebar img {
+  height: 70px;
+}
+
 #sidebar ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color: #FFF !important;
 }
@@ -278,6 +283,10 @@ ul {
 
 #course .col-md-6 {
   padding: 0;
+}
+
+#course img {
+  height: 80px;
 }
 
 #our-team {
@@ -635,7 +644,7 @@ ul {
   display: inline-flex;
 }
 
-#contact h2 {
+#contact h3 {
   text-transform: uppercase;
 }
 
