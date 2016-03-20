@@ -17,7 +17,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       controller: 'PostController',
       title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa',
       categorySlug: "chuong-trinh-hoc",
-      menu: 0
+      menu: 1
     })
     .when('/thi-quoc-te/:sub_category_slug?/:post_slug?', {
       templateUrl: function (params) {
