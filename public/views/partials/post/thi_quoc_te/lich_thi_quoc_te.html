@@ -1,8 +1,8 @@
-<div class="bg-body">
+<div class="bg-body" ng-init="scrollTo('#content')">
   <wrap-owlcarousel class="owl-carousel owl-theme" id="slider" data-options="{autoPlay: 5000, singleItem : true, responsive: true}" ng-controller="MainController">
     <div owl-carousel-item="" ng-repeat="item in homeConfig.p[0].items" class="item">
       <div style="background-image: url('{{item.image_uri}}'); background-size: cover; height: 100%; width: 100%;"> </div>
-      <!-- <div class="container">
+      <div class="container">
         <div class="caption-first-slide common">
           Innovation at
           <br>
@@ -15,11 +15,11 @@
         <div class="image-caption-first">
           <img src="images/ipad.png" alt="Ipad" />
         </div>
-      </div> -->
+      </div>
     </div>
   </wrap-owlcarousel>
 
-  <div class="container">
+  <div id="content" class="container">
     <div class="row">
       <div class="col-md-8">
         <div class="content-international" img-title-center>
