@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Exo);
+
 header, nav, header a, header img, header li {
   transition: all 0.5s;
   -moz-transition: all 0.5s;

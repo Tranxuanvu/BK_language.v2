@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Exo);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,vietnamese);
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic&subset=latin,vietnamese);
 
 body {
   /*background-image: url('../images/parallax01.jpg');*/
@@ -7,10 +8,16 @@ body {
   background-attachment: fixed;
   background-position: top right;
   color: #384046;
-  font-family: 'Exo', sans-serif;
+  font-family: 'Arimo', sans-serif;
+  font-weight: 400;
   overflow-x: hidden;
   height: 100% !important;
   max-width: 100%;
+}
+
+header {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 400;
 }
 
 a {
@@ -266,11 +273,11 @@ ul {
   text-transform: uppercase;
 }
 
-#course #reason_choose .text-link > a {
+#course #reason_choose a {
   color: #424242;
 }
 
-#course #reason_choose .text-link > a:hover {
+#course #reason_choose a:hover {
   color: #616161;
 }
 
@@ -314,6 +321,7 @@ ul {
 }
 
 #our-team .content {
+  width: 262px;
   text-align: center;
   background-color: rgba(225,11,11,0.88);
   padding: 10px;
@@ -339,7 +347,7 @@ ul {
 }
 
 #our-team .content > span {
-  padding: 10px;
+  /*padding: 10px;*/
   color: #FFF;
 }
 
@@ -411,7 +419,7 @@ ul {
 #study-programs .nav-tabs {
   border: none;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 19px;
 }
 
 #study-programs .nav > li > a {
