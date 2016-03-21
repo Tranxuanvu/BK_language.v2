@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto+Slab&subset=latin,vietnamese);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic&subset=latin,vietnamese);
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic&subset=latin,vietnamese);
 
 body {
@@ -16,7 +16,7 @@ body {
 }
 
 header {
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Noto Sans', serif;
   font-weight: 400;
 }
 
@@ -151,6 +151,16 @@ ul {
 
 #sidebar img {
   height: 70px;
+}
+
+#sidebar .red-tooltip + .tooltip > .tooltip-inner {
+  background-color: #f00;
+  width: 100px;
+  font-size: 14px;
+}
+
+#sidebar .red-tooltip + .tooltip > .tooltip-arrow {
+  border-right-color: #f00;
 }
 
 #sidebar ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
