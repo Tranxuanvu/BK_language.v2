@@ -27,7 +27,7 @@ $(document).ready(function () {
     next.tab('show');
   };
   // Tab Cycle function
-  var tabCycle = setInterval(tabChange, 6000);
+  var tabCycle = setInterval(tabChange, 60000);
 
   // Tab click event handler
   $('#tabs a').on('click', function (e) {

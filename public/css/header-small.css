@@ -255,7 +255,7 @@ header, nav, header a, header img, header li {
 #search {
   position: absolute;
   top: 0;
-  right: 240px;
+  right: 300px;
   float: right;
   display: inline-flex;
 }
