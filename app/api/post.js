@@ -20,15 +20,23 @@ module.exports = function (app) {
                     req.body.slug = '';
                 }
                 
-                connection.query('SELECT post.*, user.full_name FROM post, user, category, sub_category WHERE post.slug = ? AND category.slug = ? AND sub_category.slug = ? AND post.author_id = user.id AND post.status_id = 3 LIMIT 1', [req.body.slug, req.body.category, req.body.subCategory], function (err, rows) {
-                    res.json(rows.length > 0 ? rows[0]: {});
-                    connection.destroy();
-                    pool.end();
-                });
+                if (req.body.subCategory != "blog") {
+                    connection.query('SELECT post.*, user.full_name FROM post, user, category, sub_category WHERE post.slug = ? AND category.slug = ? AND sub_category.slug = ? AND post.author_id = user.id AND post.status_id = 3 LIMIT 1', [req.body.slug, req.body.category, req.body.subCategory], function (err, rows) {
+                        res.json(rows.length > 0 ? rows[0]: {});
+                        connection.destroy();
+                        pool.end();
+                    });
+                } else {
+                    connection.query('SELECT post.*, category.slug AS category_slug, sub_category.slug AS sub_category_slug FROM post, category, sub_category WHERE post.sub_category_id = 27 AND post.sub_category_id = sub_category.id AND category.id = sub_category.category_id AND post.status_id = 3', function (err, rows) {
+                        res.json(rows.length > 0 ? rows: {});
+                        connection.destroy();
+                        pool.end();
+                    });
+                }
             }
         });
     });
-    
+
     app.post('/api/post/relative', function (req, res) {
         var pool = mysql.createPool(db);
         pool.getConnection(function (err, connection) {
@@ -57,7 +65,6 @@ module.exports = function (app) {
                 return;
             } else {
                 connection.query('SELECT sub_category.name, sub_category.slug FROM category, sub_category WHERE category.slug = ? AND sub_category.category_id = category.id', req.body.category, function (err, rows) {
-                    console.log(rows);
                     res.json(rows);
                     connection.destroy();
                     pool.end();

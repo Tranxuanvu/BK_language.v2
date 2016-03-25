@@ -28,24 +28,23 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         } else {
           return 'views/partials/post/thi_quoc_te/template.html'
         };
-
       },
       controller: 'PostController',
       title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa',
       categorySlug: "thi-quoc-te",
       menu: 3
     })
-    .when('/hot-news/:sub_category_slug?/:post_slug?', {
-      // templateUrl: 'views/partials/thong_bao_hot_news.html',
+    .when('/hot-news/:sub_category_slug?', {
       templateUrl: function (params) {
         if (params.sub_category_slug == "thong-bao-hot-news") {
           return 'views/partials/post/hot_news/thong_bao_hot_news.html'
         } else if (params.sub_category_slug == "cau-lac-bo-UTEC" || params.sub_category_slug == "cau-lac-bo-BKDEC") {
           return 'views/partials/post/hot_news/club.html'
+        } else if (params.sub_category_slug == "blog") {
+          return 'views/partials/post/hot_news/blog.html'
         } else {
           return 'views/partials/post/hot_news/template.html'
         };
-
       },
       controller: 'PostController',
       title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa',

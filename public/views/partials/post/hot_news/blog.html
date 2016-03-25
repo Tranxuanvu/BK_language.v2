@@ -1,0 +1,59 @@
+<div class="bg-body" ng-init="scrollToTop()">
+  <div class="container" id="hot-news-blog">
+    <div class="row">
+      <div class="col-md-8 wrapper-item">
+        <div class="row">
+          <div class="col-md-6" ng-repeat="p in post">
+            <div class="blog-item">
+              <a href="{{p.link_to_post}}">
+                <img src="{{p.image_url}}" height="200" width="300">
+              </a>
+              <div class="title-time">
+                <h4 style="text-transform: uppercase;"class="post-title">{{p.title}}</h4>
+                <div class="post-time"><i class="fa fa-calendar"></i> {{p.date_last_update | date: 'dd/MM/yyyy'}}</div>
+              </div>
+              <div class="post-discription" ng-bind-html="p.discription | to_trusted"></div>
+              <div class="like-more">
+                <div class="btn-like">
+                  <div id="fb-root"></div>
+
+                    <script>
+                      (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=1629214727347154";
+                        fjs.parentNode.insertBefore(js, fjs);
+                      }(document, 'script', 'facebook-jssdk'));
+                    </script>
+                  <div class="fb-like" data-href="https://www.facebook.com/ngoaingubk" data-layout="button_count" data-action="like">
+                  </div>
+                </div>
+                <div class="btn-left">
+                  <a href="#" class="btn btn-arrow glyphicon glyphicon-arrow-right"></a>
+                  <a href="#" type="button" class="btn btn-more">Xem thêm</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="block-rhs">
+          <h2>Hot news</h2>
+          <ul style="list-style: inherit;">
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+            <li><a href="#">Lorem ipsum</a></li>
+          </ul>
+        </div>
+        <div class="btn-contact">
+          <a href="#" class="btn btn-danger">Liên hệ</a>
+        </div>
+        <div class="block-rhs" style="margin-top: 0; height: 100px;"></div>
+        <div class="block-rhs banner"><h3>banner</h3></div>
+      </div >
+    </div>
+  </div>
+</div>
