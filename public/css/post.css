@@ -1,3 +1,11 @@
+.upper-case {
+  text-transform: uppercase;
+}
+
+.align-center{
+  text-align: center;
+}
+
 .post-detail {
   margin-top: 140px;
 }
@@ -200,12 +208,10 @@
 }
 
 #hot-news-blog .wrapper-item .blog-item{
-  /*width: 50%;*/
   background-color: #F9F9F9;
-/*  padding-left: 0;
-  padding-right: 0;*/
   margin-top: 15px;
   margin-bottom: 15px;
+  border: 0.5px solid #EEE;
 }
 
 #hot-news-blog .wrapper-item img{
@@ -286,7 +292,67 @@
   float: right;
   padding: 6px 17px;
 }
+
 #hot-news-blog .btn-left:hover .btn-more {
   background: #E10B0B;
   color: #FFF;
+}
+
+#hot-news-blog .title-sidebar-right {
+  position: relative;
+  bottom: -30px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+#hot-news-blog .title-sidebar-right h3 {
+  font-size: 20px;
+  background: #E10B0B;
+  margin: 0;
+  padding: 14px 10px;
+  color: #FFF;
+  text-align: center;
+}
+
+#hot-news-blog .form-control{
+  border-radius: 0;
+}
+
+#hot-news-blog input[type="text"]:focus,
+#hot-news-blog input[type="email"]:focus {
+  border-color: transparent;
+}
+
+#hot-news-blog input[type="submit"] {
+  border: none;
+  background: #FFF;
+  padding: 5px;
+  -webkit-box-shadow: inset -2px 2px 10px 0px rgba(204,204,204,1);
+  -moz-box-shadow: inset -2px 2px 10px 0px rgba(204,204,204,1);
+  box-shadow: inset -2px 2px 10px 0px rgba(204,204,204,1);
+}
+
+#hot-news-blog input[type="submit"]:focus {
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+}
+
+#hot-news-blog ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color: #444;
+}
+
+#hot-news-blog input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #444;
+  opacity: 1;
+}
+
+#hot-news-blog input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #444;
+  opacity: 1;
+}
+
+#hot-news-blog :-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #444;
 }
