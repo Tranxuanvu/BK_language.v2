@@ -34,6 +34,14 @@ ul {
   list-style: none;
 }
 
+.upper-case {
+  text-transform: uppercase;
+}
+
+.align-center{
+  text-align: center;
+}
+
 .container {
   padding-right: 60px;
   padding-left: 60px;
@@ -166,7 +174,7 @@ ul {
 }
 
 #sidebar .md-modal{
-  top: 25%;
+  top: 20%;
   left: 28%;
   -webkit-transform: none;
   transform: none;
@@ -178,9 +186,11 @@ ul {
   background: #FFF;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+  color: #444;
 }
 
 #sidebar .md-content h3 {
+  color: #FFF;
   background: #E10B0B;
   opacity: 1;
 }
