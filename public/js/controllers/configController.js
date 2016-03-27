@@ -12,7 +12,7 @@
             $('html,body').animate({
               scrollTop: $(id).offset().top - 110
             }, 600);
-        }, 500);
+        }, 1000);
   	}
 
     $scope.scrollToTop = function () {

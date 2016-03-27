@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic&subset=latin,vietnamese);
 @import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic&subset=latin,vietnamese);
 
+
 body {
   /*background-image: url('../images/parallax01.jpg');*/
   background-size: cover;
@@ -11,8 +12,7 @@ body {
   font-family: 'Arimo', sans-serif;
   font-weight: 400;
   overflow-x: hidden;
-  height: 100% !important;
-  max-width: 100%;
+  padding-right: 0 !important;
 }
 
 header {
@@ -53,6 +53,11 @@ ul {
 
 .visible{
   opacity: 1;
+}
+
+.modal-open {
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .display-block {
@@ -417,8 +422,22 @@ ul {
   opacity: 1;
 }
 
-#study-programs .video {
-  border: 10px solid #FFF;
+#study-programs .youtubeimg {
+  margin: 10px;
+}
+
+#study-programs .youtubeimg img {
+  height: 300px;
+  width: 444px
+}
+
+#study-programs a.youtubeimg:focus{
+  border-color: none;
+  outline: 0;
+}
+
+#study-programs .tab-content .details{
+  height: 300px;
 }
 
 #study-programs .tab-content ul >li {
