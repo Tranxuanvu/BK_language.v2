@@ -13,7 +13,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       menu: 0
     })
     .when('/chuong-trinh-hoc/:sub_category_slug?/:post_slug?', {
-      templateUrl: 'views/partials/post/chuong_trinh_hoc.html',
+      templateUrl: function (params){
+        if (params.sub_category_slug == "lich-khai-giang") {
+          return 'views/partials/post/lich_khai_giang.html'
+        }
+        else return 'views/partials/post/chuong_trinh_hoc.html'
+      },
       controller: 'PostController',
       title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa',
       categorySlug: "chuong-trinh-hoc",

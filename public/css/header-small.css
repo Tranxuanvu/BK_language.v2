@@ -176,7 +176,7 @@ header, nav, header a, header img, header li {
 .megamenu > li > a:hover {
   color: #FFF;
   background-color: transparent;
-  cursor: text;
+  /*cursor: text;*/
 }
 
 .megamenu .dropdown-header {
