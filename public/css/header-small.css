@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Exo);
+
 header, nav, header a, header img, header li {
   transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -149,13 +151,13 @@ header, nav, header a, header img, header li {
 }
 
 .item-menu > li > a {
-  color: #CCC;
+  color: #FFF3E0;
   padding: 10px 20px;
   margin: 1px 0;
 }
 
 .item-menu > li > a:hover {
-  color: #FFF;
+  color: inherit;
   background: rgba(255, 0, 11, 0.4);
 }
 
@@ -174,7 +176,7 @@ header, nav, header a, header img, header li {
 .megamenu > li > a:hover {
   color: #FFF;
   background-color: transparent;
-  cursor: text;
+  /*cursor: text;*/
 }
 
 .megamenu .dropdown-header {
@@ -204,14 +206,14 @@ header, nav, header a, header img, header li {
   clear: both;
   font-weight: normal;
   line-height: 1.428571429;
-  color: #CCC;
+  color: #FFF3E0;
   white-space: normal;
 }
 
 .megamenu > li > ul > li > a:hover,
 .megamenu > li > ul > li > a:focus {
   text-decoration: none;
-  color: #FFF;
+  color: inherit;
   background-color: rgba(255, 0, 11, 0.4);
 }
 
@@ -234,12 +236,26 @@ header, nav, header a, header img, header li {
   font-size: 18px;
 }
 
+/* btn login/register
+********************************/ 
+.login-register .btn {
+  margin: 4px 0;
+  border-radius: 15px;
+  background: none;
+  padding: 4px 30px;
+  color: #FFF;
+}
+
+.login-register .btn-default {
+  border-color: #FFF;
+}
+
 /* SEARCH BOX
 ********************************/ 
 #search {
   position: absolute;
   top: 0;
-  right: 240px;
+  right: 300px;
   float: right;
   display: inline-flex;
 }
@@ -275,7 +291,15 @@ header, nav, header a, header img, header li {
   color: #CCC;
 }
 
-#search *::-webkit-input-placeholder {
+#search ::-webkit-input-placeholder {
+  color: #FFF;
+}
+
+#search :-moz-placeholder {
+  color: #FFF;
+}
+
+#search ::-moz-placeholder {
   color: #FFF;
 }
 

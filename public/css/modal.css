@@ -20,7 +20,7 @@
   position: fixed;
   top: 55%;
   left: 50%;
-  width: 50%;
+  width: 44%;
   max-width: 630px;
   min-width: 320px;
   height: auto;
@@ -29,10 +29,10 @@
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-55%) translateY(-50%);
+  -moz-transform: translateX(-55%) translateY(-50%);
+  -ms-transform: translateX(-55%) translateY(-50%);
+  transform: translateX(-55%) translateY(-50%);
 }
 
 .md-show {

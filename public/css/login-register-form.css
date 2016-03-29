@@ -1,19 +1,42 @@
-#navbar-top .tab-group {
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+@import url(http://fonts.googleapis.com/css?family=Exo);
+
+.login-register .md-overlay {
+  background: #DDD;
+  width: 100%;
+}
+
+.login-register .md-content {
+  background: #FFF;
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  -webkit-box-shadow: 5px 5px 0px #ccc;
+  -moz-box-shadow: 5px 5px 0px #ccc;
+  box-shadow: 5px 5px 0px #ccc;
+}
+
+.login-register .md-modal {
+  width: 30%;
+  top: 50%;
+}
+
+.login-register .tab-group {
   list-style: none;
   padding: 0;
   margin: 0 0 15px 0;
 }
-#navbar-top .tab-group:after {
+.login-register .tab-group:after {
   content: "";
   display: table;
   clear: both;
 }
-#navbar-top .tab-group li a {
+.login-register .tab-group li a {
   display: block;
   text-decoration: none;
   padding: 15px;
   background: rgba(160, 179, 176, 0.25);
-  color: inherit;
+  color: #444;
   font-size: 20px;
   float: left;
   width: 50%;
@@ -22,148 +45,104 @@
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
-#navbar-top .tab-group li a:hover {
-  background: #C62828;
+.login-register .tab-group li a:hover {
+  background: #E53935;
   color: #fff;
 }
-#navbar-top .tab-group .active a {
-  background: #D32F2F;
-  color: #ffffff;
+.login-register .tab-group .active a {
+  background: #F44336;
+  color: #fff;
 }
 
-#navbar-top .tab-content > div:last-child {
+.login-register .tab-content > div:last-child {
   display: none;
 }
 
-#navbar-top h1 {
+.login-register h2 {
+  font-family: 'Exo', sans-serif;
   text-align: center;
-  color: #ffffff;
+  color: #444;
   font-weight: 300;
   margin: 0 0 20px;
 }
 
-#navbar-top label {
-  position: absolute;
-  -webkit-transform: translateY(6px);
-          transform: translateY(6px);
-  left: 13px;
-  color: rgba(255, 255, 255, 0.5);
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-  font-size: 22px;
-}
-#navbar-top label .req {
-  margin: 2px;
-  color: #1ab188;
-}
-
-#navbar-top label.active {
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
-}
-#navbar-top label.active .req {
-  opacity: 0;
-}
-
-#navbar-top label.highlight {
-  color: #ffffff;
-}
-
-#navbar-top input, #navbar-top textarea {
-  font-size: 22px;
+.login-register input{
   display: block;
   width: 100%;
   height: 100%;
-  padding: 5px 10px;
-  background: none;
-  background-image: none;
-  border: 1px solid #CCC;
-  color: #ffffff;
-  border-radius: 0;
+  color: #444;
+  padding: 7px 10px;
+  border: 1px solid rgba(85, 85, 85, 0.20);
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
-#navbar-top input:focus, #navbar-top textarea:focus {
+.login-register input:focus, .login-register textarea:focus {
   outline: 0;
-  border-color: inherit;
+  border: 1px solid #EF5350;
 }
 
-#navbar-top textarea {
-  border: 2px solid #a0b3b0;
-  resize: vertical;
-}
-
-#navbar-top .field-wrap {
+.login-register .field-wrap {
   position: relative;
   margin-bottom: 20px;
 }
 
-#navbar-top .top-row:after {
+.login-register .top-row:after {
   content: "";
   display: table;
   clear: both;
 }
-#navbar-top .top-row > div {
+.login-register .top-row > div {
   float: left;
   width: 48%;
   margin-right: 4%;
 }
-#navbar-top .top-row > div:last-child {
+.login-register .top-row > div:last-child {
   margin: 0;
 }
 
-#navbar-top .button {
-  border: 0;
+.login-register .button {
+  border: 1px solid #ccc;
   outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
-  font-weight: 600;
+  padding: 12px 10px;
   text-transform: uppercase;
   letter-spacing: .1em;
-  background: #D32F2F;
-  color: #ffffff;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  background: none;
+  color: rgba(164, 161, 161, 0.81);
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
   -webkit-appearance: none;
 }
-#navbar-top .button:hover, .button:focus {
-  background: #C62828;
+.login-register .button:hover, .button:focus {
+  background: #F44336;
+  color: #FFF;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -webkit-appearance: none;
 }
 
-#navbar-top .button-block {
+.login-register .button-block {
   display: block;
   width: 100%;
 }
 
-#navbar-top .forgot {
+.login-register .forgot {
+  color: #F00;
   margin-top: -20px;
   text-align: right;
 }
 
-#navbar-top textarea:focus {
-  outline: none !important;
-  border: 1px solid #F5F0F0;
+.login-register ::-webkit-input-placeholder {
+    color: #444;
 }
 
-#navbar-top ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-  color: #FFF !important;
+.login-register :-moz-placeholder {
+    color: #444;
 }
 
-#navbar-top :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: #FFF !important;
-  opacity: 1;
+.login-register ::-moz-placeholder {
+    color: #444;
 }
 
-#navbar-top ::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: #FFF !important;
-  opacity: 1;
-}
-
-#navbar-top :-ms-input-placeholder { /* Internet Explorer 10-11 */
-  color: #FFF !important;
+.login-register :-ms-input-placeholder {
+    color: #444;
 }

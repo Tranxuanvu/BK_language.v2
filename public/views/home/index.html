@@ -1,4 +1,4 @@
-<div class="bg-body">
+<div class="bg-body" ng-init="scrollToTop()">
   <wrap-owlcarousel class="owl-carousel owl-theme" id="slider" data-options="{autoPlay: 5000, singleItem : true, responsive: true}">
     <div owl-carousel-item="" ng-repeat="item in homeConfig.p[0].items" class="item">
       <div style="background-image: url('{{item.image_uri}}'); background-size: cover; height: 100%; width: 100%;"> </div>
@@ -17,97 +17,254 @@
         </div>
       </div>
     </div>
-    <!-- <div class="item">
-      <img src="images/slide-02.jpg" alt="Slide 02" />
-      <div class="container">
-        <div class="caption-second-slide common">
-          Where Creativity
-          <br>
-          Meets Technology
-        </div>
-      </div>
-    </div>
-    <div class="item">
-      <img src="images/slide-03.jpg" alt="Slide 03 " />
-      <div class="container">
-        <div class="caption-third-slide common">
-          Open Up Your
-          <br>
-          Business to
-          <br>
-          New Possibilities
-          <br>
-          <p>
-            <a class="btn btn-lg btn-danger" href="#" role="button">view portfolio</a>
-          </p>
-        </div>
-        <div class="image-caption-third">
-          <img src="images/iphone.png" alt="Iphone" />
-        </div>
-      </div>
-    </div> -->
-  </wrap-owlcarousel
+  </wrap-owlcarousel/>
 
   <!-- Language course -->
   <div class="section" id="course">
     <div class="container">
-      <div class="caption ani-course">
+      <div class="caption" id="ani-reason" viewport-checker>
         <span>Vì sao nên học tại ngoại ngữ Bách Khoa?</span>
       </div>
 
       <div class="row" id="reason_choose">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <div class="col-md-4">
-            <img src="images/page_icon01.png">
+        <div class="col-md-4" id="ani-block-lt" viewport-checker>
+          <a href="/ve-chung-toi/ly-do-chon-NNBK/ly-do">
+            <img src="/images/01.png">
             <div class="text-link">
-              <a>Cam kết chất lượng</a>
+              Trung tâm uy tín
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4" id="ani-block-ct" viewport-checker>
+          <a href="/ve-chung-toi/ly-do-chon-NNBK/ly-do">
+            <img src="images/02.png">
+            <div class="text-link">
+              Cam kết chất lượng
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4" id="ani-block-rt" viewport-checker>
+          <a href="/ve-chung-toi/ly-do-chon-NNBK/ly-do">
+            <img src="images/03.png">
+            <div class="text-link">
+              Đội ngũ giảng viên giỏi
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4" id="ani-block-lb" viewport-checker>
+          <a href="/ve-chung-toi/ly-do-chon-NNBK/ly-do">
+            <img src="images/04.png">
+            <div class="text-link">
+              Môi trường học chất lượng
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4" id="ani-block-cb" viewport-checker>
+          <a href="/ve-chung-toi/ly-do-chon-NNBK/ly-do">
+            <img src="images/05.png">
+            <div class="text-link">
+              Hoạt động ngoại khóa thú vị
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4" id="ani-block-rb" viewport-checker>
+          <a href="/ve-chung-toi/ly-do-chon-NNBK/ly-do">
+            <img src="images/06.png">
+            <div class="text-link">
+              Học phí sinh viên
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="study-programs" class="section">
+    <div class="container">
+      <div class="caption">
+        <span>Chương trình học</span>
+      </div>
+      <div class="wrapper-content">
+        <div class="wrapper-menu">
+          <ul class="nav nav-tabs" id="tab">
+            <li class="active">
+              <a data-toggle="tab" target="_self" href="#lop-chinh-qui" >Lớp chính quy</a>
+              <div class="retangle"></div>
+            </li>
+            <li>
+              <a data-toggle="tab" target="_self" href="#toiec">Toiec</a>
+              <div class="retangle"></div>
+            </li>
+            <li>
+              <a data-toggle="tab" target="_self" href="#ielst">Ielst</a>
+              <div class="retangle"></div>
+            </li>
+            <li>
+              <a data-toggle="tab" target="_self" href="#toeft">Toeft</a>
+              <div class="retangle"></div>
+            </li>
+            <li>
+              <a data-toggle="tab" target="_self" href="#nhat-ngu">Nhật ngữ</a>
+              <div class="retangle"></div>
+            </li>
+            <li>
+              <a data-toggle="tab" target="_self" href="#elt-online">Elt online</a>
+              <div class="retangle"></div>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div id="lop-chinh-qui" class="tab-pane active">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="#" class="youtubeimg" data-toggle="modal" data-target="#video-show-sprogram">
+                  <img src="http://img.youtube.com/vi/wHF3Jv6Gk2o/0.jpg">
+                </a>
+
+                <div pause-on-close class="modal fade" id="video-show-sprogram" tabindex="-1" role="dialog" aria-labelledby="video-show" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-body youtubeiframe">
+                        <iframe class="" width="568" height="355" src="" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="button"><a href="" class="btn btn-lg btn-danger" role="button">Xem thêm</a></div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <img src="images/page_icon01.png">
-            <div class="text-link">
-              <a>Đội ngũ giảng viên giỏi</a>
+          <div id="toiec" class="tab-pane">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="#" class="youtubeimg" data-toggle="modal" data-target="#video-show-toiec">
+                  <img src="http://img.youtube.com/vi/wHF3Jv6Gk2o/0.jpg">
+                </a>
+
+                <div pause-on-close class="modal fade" id="video-show-toiec" tabindex="-1" role="dialog" aria-labelledby="video-show" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-body youtubeiframe">
+                        <iframe class="" width="568" height="355" src="" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="button"><a href="" class="btn btn-lg btn-danger" role="button">Xem thêm</a></div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <img src="images/page_icon01.png">
-            <div class="text-link">
-              <a>Phát triển toàn diện</a>
+          <div id="ielst" class="tab-pane">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="#" class="youtubeimg" data-toggle="modal" data-target="#video-show-toiec">
+                  <img src="http://img.youtube.com/vi/Pi6b2GthO08/0.jpg">
+                </a>
+
+                <div pause-on-close class="modal fade" id="video-show-toiec" tabindex="-1" role="dialog" aria-labelledby="video-show" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-body youtubeiframe">
+                        <iframe class="" width="568" height="355" src="" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="button"><a href="" class="btn btn-lg btn-danger" role="button">Xem thêm</a></div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <img src="images/page_icon01.png">
-            <div class="text-link">
-              <a>Môi trường học chất lượng</a>
+          <div id="toeft" class="tab-pane">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="#" class="youtubeimg" data-toggle="modal" data-target="#video-show-toeft">
+                  <img src="http://img.youtube.com/vi/1Zn4L7vi9gg/0.jpg">
+                </a>
+
+                <div pause-on-close class="modal fade" id="video-show-toeft" tabindex="-1" role="dialog" aria-labelledby="video-show" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-body youtubeiframe">
+                        <iframe class="" width="568" height="355" src="" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="button"><a href="" class="btn btn-lg btn-danger" role="button">Xem thêm</a></div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <img src="images/page_icon01.png">
-            <div class="text-link">
-              <a>Hoạt động ngoại khóa thú vị</a>
+          <div id="nhat-ngu" class="tab-pane">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="#" class="youtubeimg" data-toggle="modal" data-target="#video-show-japanese">
+                  <img src="http://img.youtube.com/vi/wHF3Jv6Gk2o/0.jpg">
+                </a>
+
+                <div pause-on-close class="modal fade" id="video-show-japanese" tabindex="-1" role="dialog" aria-labelledby="video-show" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-body youtubeiframe">
+                        <iframe class="" width="568" height="355" src="" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="button"><a href="" class="btn btn-lg btn-danger" role="button">Xem thêm</a></div>
+              </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <img src="images/page_icon01.png">
-            <div class="text-link">
-              <a>Học phí sinh viên</a>
+          <div id="elt-online" class="tab-pane">
+            <div class="row">
+              <div class="col-md-6">
+                <a href="#" class="youtubeimg" data-toggle="modal" data-target="#video-show-elt">
+                  <img src="http://img.youtube.com/vi/wHF3Jv6Gk2o/0.jpg">
+                </a>
+
+                <div pause-on-close class="modal fade" id="video-show-elt" tabindex="-1" role="dialog" aria-labelledby="video-show" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-body youtubeiframe">
+                        <iframe class="" width="568" height="355" src="" frameborder="0" allowfullscreen></iframe>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 details">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="button"><a href="" class="btn btn-lg btn-danger" role="button">Xem thêm</a></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-2"></div>
       </div>
     </div>
   </div>
 
   <div class="section" id="our-team">
     <div class="container">
-      <div class="caption ani-our-team">
-        <span>Teacher</span>
+      <div class="caption" id="ani-teacher" viewport-checker>
+        <span>Đội ngũ giảng viên</span>
       </div>
       <div class="row">
-        <div class="">
-          <div class="col-md-3 our-team-box-model">
+        <div>
+          <div class="col-md-3" id="teacher-box-model" viewport-checker>
             <div class="box-model">
               <a href="#">
                 <div class="box-img"></div>
@@ -121,21 +278,21 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 our-team-box-model">
+          <div class="col-md-3" id="teacher-box-model" viewport-checker>
             <div class="box-model">
               <a href="#">
                 <div class="box-img"></div>
-                <img height="207" width="263" src="images/page_img02-bg.jpg" alt="Page img02 bg" />
+                <img height="207" width="262" src="images/page_img02-bg.jpg" alt="Page img02 bg" />
               </a>
               <div class="content">
                 <h4>
                   <a href="#">Albert Frost</a>
                 </h4>
-                <span style="padding: 14px; font-size: 15px;">Deputy Director on developments</span>
+                <span>Deputy Director on <br />developments</span>
               </div>
             </div>
           </div>
-          <div class="col-md-3 our-team-box-model">
+          <div class="col-md-3" id="teacher-box-model" viewport-checker>
             <div class="box-model">
               <a href="#">
                 <div class="box-img"></div>
@@ -149,17 +306,17 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 our-team-box-model">
+          <div class="col-md-3" id="teacher-box-model" viewport-checker>
             <div class="box-model">
               <a href="#">
                 <div class="box-img"></div>
-                <img height="207" width="263" src="images/page_img04-bg.jpg" alt="Page img04 bg" />
+                <img height="207" width="262" src="images/page_img04-bg.jpg" alt="Page img04 bg" />
               </a>
               <div class="content">
                 <h4>
                   <a href="#">Hugo Star</a>
                 </h4>
-                <span>Teacher of Italian, Chinese and German</span>
+                <span>Teacher of Italian, Chinese and <br/>German</span>
               </div>
             </div>
           </div>
@@ -167,10 +324,25 @@
       </div>
     </div>
   </div>
+
+  <div class="section" id="comment">
+    <div class="container">
+      <div class="quotes_start"><img src="images/quotes_start.png"></div>
+      <div class="wrapper">
+        <div class="avt"><img src="images/avt_cmt.png"></div>
+        <div class="content-cmt">
+          <a href="">I really like learning foreign languages in a group, like the system of training and teaching level. It is very interesting when you talk on a topic of daily communication, as if we lived abroad…</a>
+          <h4>Gloria Brightman, Tornton Industries</h4>
+        </div>
+      </div>
+      <div class="quotes_stop"><img src="images/quotes_stop.png"></div>
+    </div>
+  </div>
+
   <div class="section" id="gallery">
     <div class="container-fluid">
       <div fancybox class="row">
-        <div class="col-md-4">
+        <div class="col-md-4" id="ani-blog-lt" viewport-checker>
           <a href="images/gallery_img01-bg.jpg" class="fancybox" rel="group">
             <div class="gallery-img-hover">
               <div class="icon-blog">
@@ -182,7 +354,7 @@
           </a>
           
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id="ani-blog-ct" viewport-checker>
           <a href="images/gallery_img02-bg.jpg" class="fancybox" rel="group">
             <div class="gallery-img-hover">
               <div class="icon-blog">
@@ -193,7 +365,7 @@
             <img height="283" width="434" src="images/gallery_img02.jpg" alt="Gallery img02" />
           </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id="ani-blog-rt" viewport-checker>
           <a href="images/gallery_img03-bg.jpg" class="fancybox" rel="group">
             <div class="gallery-img-hover">
               <div class="icon-blog">
@@ -204,7 +376,7 @@
             <img height="283" width="434" src="images/gallery_img03.jpg" alt="Gallery img03" />
           </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id="ani-blog-lb" viewport-checker>
           <a href="images/gallery_img04-bg.jpg" class="fancybox" rel="group">
             <div class="gallery-img-hover">
               <div class="icon-blog">
@@ -215,7 +387,7 @@
             <img height="283" width="434" src="images/gallery_img04.jpg" alt="Gallery img04" />
           </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id="ani-blog-cb" viewport-checker>
           <a href="images/gallery_img05-bg.jpg" class="fancybox" rel="group">
             <div class="gallery-img-hover">
               <div class="icon-blog">
@@ -226,7 +398,7 @@
             <img height="283" width="434" src="images/gallery_img05.jpg" alt="Gallery img05" />
           </a>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" id="ani-blog-rb" viewport-checker>
           <a href="images/gallery_img06-bg.jpg" class="fancybox" rel="group">
             <div class="gallery-img-hover">
               <div class="icon-blog">
@@ -422,166 +594,6 @@
       </div>
     </div>
   </div> -->
-
-  <div id="study-programs" class="section">
-    <div class="container">
-      <div class="caption">
-        <span>Chương trình học</span>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 col-md-offset-2">
-            <ul class="nav nav-tabs" id="myTab">
-              <li class="active">
-                <a href="#lop-chinh-qui">Lớp chính quy</a>
-                <div class="retangle"></div>
-              </li>
-              <li>
-                <a href="#toiec">Toiec</a>
-                <div class="retangle"></div>
-              </li>
-              <li>
-                <a href="#ielst">Ielst</a>
-                <div class="retangle"></div>
-              </li>
-              <li>
-                <a href="#toeft">Toeft</a>
-                <div class="retangle"></div>
-              </li>
-              <li>
-                <a href="#nhat-ngu">Nhật ngữ</a>
-                <div class="retangle"></div>
-              </li>
-              <li>
-                <a href="#elt-online">Elt online</a>
-                <div class="retangle"></div>
-              </li>
-            </ul>
-            <div class="tab-content">
-              <div id="lop-chinh-qui" class="tab-pane active">
-                <div class="row">
-                  <div class="col-md-7">
-                    <iframe width="444" height="250" src="https://www.youtube-nocookie.com/embed/wHF3Jv6Gk2o?rel=0" frameborder="0" allowfullscreen class="video"></iframe>
-                  </div>
-                  <div class="col-md-5">
-                    <ul>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div id="toiec" class="tab-pane">
-                <div class="row">
-                  <div class="col-md-7">
-                    <iframe width="444" height="250" src="https://www.youtube-nocookie.com/embed/wHF3Jv6Gk2o?rel=0" frameborder="0" allowfullscreen class="video"></iframe>
-                  </div>
-                  <div class="col-md-5">
-                    <ul>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Toiec total 550</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Middle toiec 450</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Luyện thi toiec 200 - 700</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Luyện kỹ năng làm bài</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Toiec cấp tốc</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div id="ielst" class="tab-pane">
-                <div class="row">
-                  <div class="col-md-7">
-                    <iframe width="444" height="250" src="https://www.youtube-nocookie.com/embed/wHF3Jv6Gk2o?rel=0" frameborder="0" allowfullscreen class="video"></iframe>
-                  </div>
-                  <div class="col-md-5">
-                    <ul>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div id="toeft" class="tab-pane">
-                <div class="row">
-                  <div class="col-md-7">
-                    <iframe width="444" height="250" src="https://www.youtube-nocookie.com/embed/wHF3Jv6Gk2o?rel=0" frameborder="0" allowfullscreen class="video"></iframe>
-                  </div>
-                  <div class="col-md-5">
-                    <ul>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div id="nhat-ngu" class="tab-pane">
-                <div class="row">
-                  <div class="col-md-7">
-                    <iframe width="444" height="250" src="https://www.youtube-nocookie.com/embed/wHF3Jv6Gk2o?rel=0" frameborder="0" allowfullscreen class="video"></iframe>
-                  </div>
-                  <div class="col-md-5">
-                    <ul>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div id="elt-online" class="tab-pane">
-                <div class="row">
-                  <div class="col-md-7">
-                    <iframe width="444" height="250" src="https://www.youtube-nocookie.com/embed/wHF3Jv6Gk2o?rel=0" frameborder="0" allowfullscreen class="video"></iframe>
-                  </div>
-                  <div class="col-md-5">
-                    <ul>
-                      <li><a href="" class="btn btn-lg btn-danger" role="button">Lorem ipsum</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section" id="comment">
-    <div class="container">
-      
-    </div>
-  </div>
-
-  <div class="section" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2" ></div>
-        <div class="col-md-8">
-          <h2>Liên hệ</h2>
-          <div class="col-md-4">
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo</p>
-        </div>
-        <div class="col-md-4">
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo</p></p>
-        </div>
-        <div class="col-md-4">
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo</p></p>
-        </div>
-        </div>
-        <div class="col-md-2">
-          <ul class="icon">
-            <li><a href="{{config.website.googleplus_url}}"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
-            <li id="icon-facebook"><a href="{{config.website.facebook_url}}"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
   <script>
   </script>
   <div class="section" id="google-map">
@@ -597,5 +609,34 @@
         </div>
       </info-window>
     </ng-map>
+  </div>
+
+  <div class="section" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2" ></div>
+        <div class="col-md-8">
+          <h3>Liên hệ</h3>
+          <div class="col-md-4">
+          <h4>Phòng ghi danh TTNN:</h4>
+          <p>142 Tô Hiến Thành, Q10 <br /> (cạnh cổng 3 - ĐHBK) <br /> ĐT: 08 3864 7256 (ext 5379)</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Văn phòng TTNN:</h4>
+          <p>Lầu 1, Nhà C6, trường ĐHBK <br /> 268 Lý Thường Kiệt, P14, Q10 <br /> ĐT: 3864 7256 (ext 5310)</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Cơ sở 2:</h4>
+          <p>Lầu 8, nhà H1, trường ĐHBK, <br /> khu ĐH Quốc Gia, Thủ Đức <br /> ĐT: 0985 933 930 (A. Dũng)</p>
+        </div>
+        </div>
+        <div class="col-md-2">
+          <ul class="icon">
+            <li><a href="{{config.website.googleplus_url}}"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+            <li id="icon-facebook"><a href="{{config.website.facebook_url}}"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

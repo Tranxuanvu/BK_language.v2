@@ -1,0 +1,72 @@
+<div class="bg-body" ng-init="scrollToTop()">
+  <div class="container" id="hot-news-blog">
+    <div class="row">
+      <div class="col-md-8 wrapper-item">
+        <div class="row">
+          <div class="col-md-6" ng-repeat="p in post ">
+            <div class="blog-item">
+              <a href="{{p.link_to_post}}">
+                <img src="{{p.image_url}}" height="200" width="300">
+              </a>
+              <div class="title-time">
+                <h4 style="text-transform: uppercase;"class="post-title">{{p.title}}</h4>
+                <div class="post-time"><i class="fa fa-calendar"></i> {{p.date_last_update | date: 'dd/MM/yyyy'}}</div>
+              </div>
+              <div class="post-discription" ng-bind-html="p.discription | to_trusted"></div>
+              <div class="like-more">
+                <div class="btn-like">
+                  <div id="fb-root"></div>
+
+                    <script>
+                      (function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5&appId=1629214727347154";
+                        fjs.parentNode.insertBefore(js, fjs);
+                      }(document, 'script', 'facebook-jssdk'));
+                    </script>
+                  <div class="fb-like" data-href="https://www.facebook.com/ngoaingubk" data-layout="button_count" data-action="like">
+                  </div>
+                </div>
+                <div class="btn-left">
+                  <a href="#" class="btn btn-arrow glyphicon glyphicon-arrow-right"></a>
+                  <a href="#" type="button" class="btn btn-more">Xem thêm</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="title-sidebar-right">
+          <h3>Đăng ký nhận bài viết mới!</h3>
+        </div>
+        <div class="block-rhs">
+          <form action="#" method="" role=form>
+            <div class="form-group">
+              <input type="text" name="fname" value="" class="form-control" placeholder="Họ và Tên:"></input>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" value="" class="form-control"placeholder="Email:"></input>
+            </div>
+            <div class="form-group align-center">
+              <input type="submit" value="Đăng ký ngay" class="upper-case"></input>
+            </div>
+          </form>
+        </div>
+
+        <div class="title-sidebar-right upper-case">
+          <h3>Bài viết nổi bật</h3>
+        </div>
+        <div class="block-rhs" style="height: 160px;"></div>
+        <div class="block-rhs" style="height: 320px;">
+          <h3>Hot new</h3>
+        </div>
+        <div class="block-rhs banner" style="height: 160px;">
+          <h3>banner</h3>
+        </div>
+      </div >
+    </div>
+  </div>
+</div>

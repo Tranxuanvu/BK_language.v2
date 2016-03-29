@@ -10,14 +10,14 @@
     $scope.scrollTo = function (id) {
         $timeout( function(){
             $('html,body').animate({
-              scrollTop: $(id).offset().top - 145
+              scrollTop: $(id).offset().top - 110
             }, 600);
-        }, 1);
+        }, 1000);
   	}
 
     $scope.scrollToTop = function () {
         $('html,body').animate({scrollTop: 0}, 600);
-    }    
+    }
 
     $scope.stopVideo = function(){
         var outerDiv = document.getElementById("video-show");
