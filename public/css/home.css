@@ -31,7 +31,7 @@ a:hover {
 }
 
 ul {
-  list-style: none;
+  /*list-style: none;*/
 }
 
 .upper-case {
@@ -89,7 +89,7 @@ ul {
 /*Sidebar*/
 #sidebar {
   position: fixed;
-  top: 300px;
+  top: 230px;
   z-index: 2;
   padding: 10px 10px 10px 0;
 }
@@ -280,6 +280,12 @@ ul {
   position: absolute;
   top: 190px;
   left: 490px;
+}
+
+#slider .owl-controls{
+  position: absolute;
+  bottom: 0;
+  left: 45%;
 }
 
 /* 

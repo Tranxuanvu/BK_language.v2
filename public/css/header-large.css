@@ -28,6 +28,7 @@ header, nav, header a, header img, header li {
 #slider {
   background-color: #FFF;
   margin-top: 100px;
+  margin-bottom: 40px;
 }
 
 .navbar-default {

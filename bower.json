@@ -32,7 +32,6 @@
     "ckeditor": "~4.5.7",
     "ngmap": "~1.16.7",
     "velocity": "~1.2.3",
-    "jQuery-viewport-checker": "~1.8.7",
-    "jquery-mousewheel": "~3.1.13"
+    "jQuery-viewport-checker": "~1.8.7"
   }
 }

@@ -56,6 +56,13 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       categorySlug: "hot-news",
       menu: 4
     })
+    .when('/hot-news/blog/:post_slug', {
+      templateUrl:'views/partials/post/hot_news/blog_detail.html',
+      controller: 'PostController',
+      title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa',
+      categorySlug: "hot-news",
+      menu: 4
+    })
     .otherwise({
       redirectTo: '/'
     });
