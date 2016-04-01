@@ -9,7 +9,7 @@
                 <img src="{{p.image_url}}" height="200" width="300">
               </a>
               <div class="title-time">
-                <h4 style="text-transform: uppercase;"class="post-title">{{p.title}}</h4>
+                <a href="{{p.link_to_post}}"><h4 style="text-transform: uppercase;"class="post-title">{{p.title}}</h4></a>
                 <div class="post-time"><i class="fa fa-calendar"></i> {{p.date_last_update | date: 'dd/MM/yyyy'}}</div>
               </div>
               <div class="post-discription" ng-bind-html="p.discription | to_trusted"></div>
@@ -30,8 +30,8 @@
                   </div>
                 </div>
                 <div class="btn-left">
-                  <a href="#" class="btn btn-arrow glyphicon glyphicon-arrow-right"></a>
-                  <a href="#" type="button" class="btn btn-more">Xem thêm</a>
+                  <a href="{{p.link_to_post}}" class="btn btn-arrow glyphicon glyphicon-arrow-right"></a>
+                  <a href="{{p.link_to_post}}" type="button" class="btn btn-more">Xem thêm</a>
                 </div>
               </div>
             </div>

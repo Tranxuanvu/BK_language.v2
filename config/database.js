@@ -1,9 +1,9 @@
 module.exports = {
   host: 'localhost',
-  port: 3001,
+  port: 3306,
   user: 'root',
   password : '',
-  database : 'bk_language',
+  database : 'c6_language',
   autoReconnect: true,
   keepAlive: false
 }

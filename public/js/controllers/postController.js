@@ -30,7 +30,6 @@
                     $scope.post[i].link_to_post = document.location.origin + '/' + post[i].category_slug + '/' + post[i].sub_category_slug + '/' + post[i].slug;
                 }
             }
-            console.log($scope.post);
             
             Post.getRelative(post.id).then(function (relativePosts) {
                 $scope.relativePosts = relativePosts;

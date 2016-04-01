@@ -13,7 +13,7 @@ module.exports = function (app) {
                 console.log({ "code" : err.code, "status" : err.message });
                 return;
             } else {
-                connection.query('SELECT sub_category.id, category.id AS category_id, sub_category.name, category.name AS category_name, sub_category.name AS sub_category_name FROM sub_category JOIN category ON category.id = sub_category.category_id ORDER BY id ASC ', function (err, rows) {
+                connection.query('SELECT sub_category.id, category.id AS category_id, sub_category.name, category.name AS category_name, sub_category.name AS sub_category_name FROM sub_category JOIN category ON category.id = sub_category.category_id ORDER BY category.id ASC ', function (err, rows) {
                     connection.destroy();
                     pool.end();
                     

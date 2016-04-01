@@ -150,6 +150,14 @@ angular.module('appDirectives', []).directive('ckEditor', [function () {
                             classToAdd: 'visible animated fadeInRightBig',
                             offset: 180
                         })
+                        case "ani-sprogram" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated bounceInDown',
+                            offset: 190
+                        })
+                        // case "ani-tab" : element.addClass("hidden_class").viewportChecker({
+                        //     classToAdd: 'visible animated zoomInUp',
+                        //     offset: 250
+                        // })
                         case "ani-teacher" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated bounceInDown',
                             offset: 190
@@ -158,28 +166,32 @@ angular.module('appDirectives', []).directive('ckEditor', [function () {
                             classToAdd: 'visible animated flipInY',
                             offset: 300
                         })
+                        case "ani-cmt" : element.addClass("hidden_class").viewportChecker({
+                            classToAdd: 'visible animated slideInLeft',
+                            offset: 300
+                        })
                         case "ani-blog-lt" : element.addClass("hidden_class").viewportChecker({
-                            classToAdd: 'visible animated rotateIn',
+                            classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
                         case "ani-blog-ct" : element.addClass("hidden_class").viewportChecker({
-                            classToAdd: 'visible animated rotateIn',
+                            classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
                         case "ani-blog-rt" : element.addClass("hidden_class").viewportChecker({
-                            classToAdd: 'visible animated rotateIn',
+                            classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
                         case "ani-blog-lb" : element.addClass("hidden_class").viewportChecker({
-                            classToAdd: 'visible animated rotateIn',
+                            classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
                         case "ani-blog-cb" : element.addClass("hidden_class").viewportChecker({
-                            classToAdd: 'visible animated rotateIn',
+                            classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
                         case "ani-blog-rb" : element.addClass("hidden_class").viewportChecker({
-                            classToAdd: 'visible animated rotateIn',
+                            classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
                     };
