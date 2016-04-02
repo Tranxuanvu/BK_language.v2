@@ -27,7 +27,7 @@ module.exports = function (app) {
                         pool.end();
                     });
                 } else if (req.body.subCategory == "lich-khai-giang") {
-                    connection.query('SELECT post.* FROM post WHERE post.sub_category_id = 28 AND post.status_id = 3 ORDER BY post.index', function (err, rows) {
+                    connection.query('SELECT post.* FROM post WHERE post.sub_category_id = 52 AND post.status_id = 3 ORDER BY post.index', function (err, rows) {
                         res.json(rows.length > 0 ? rows: {});
                         connection.destroy();
                         pool.end();
