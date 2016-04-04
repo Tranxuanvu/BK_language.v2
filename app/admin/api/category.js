@@ -60,7 +60,6 @@ module.exports = function (app) {
                 //Insert
                 if (req.body.adds.length > 0) {
                     req.body.adds.forEach(function (subCategory) {
-                        console.log(queries++);
                         connection.query('INSERT INTO sub_category SET ?', { name: subCategory.name, slug: subCategory.slug, category_id: req.body.id }, function (err, result) {
                             if (0 === --queries) {
                                 callBack(connection);
@@ -72,7 +71,6 @@ module.exports = function (app) {
                 //Update
                 if (req.body.updates.length > 0) {
                     req.body.updates.forEach(function (subCategory) {
-                        console.log(queries++);
                         connection.query('UPDATE sub_category SET ? WHERE ?', [{ name: subCategory.name, slug: subCategory.slug, category_id: req.body.id }, { id: subCategory.id }], function (err, result) {
                             if (0 === --queries) {
                                 callBack(connection);
@@ -84,7 +82,6 @@ module.exports = function (app) {
                 //Delete
                 if (req.body.deletes.length > 0) {
                     req.body.deletes.forEach(function (subCategory) {
-                        console.log(queries++);
                         connection.query('DELETE FROM sub_category WHERE ?', { id: subCategory.id }, function (err, result) {
                             if (0 === --queries) {
                                 callBack(connection);
@@ -118,7 +115,6 @@ module.exports = function (app) {
                 //Insert
                 if (req.body.adds.length > 0) {
                     req.body.adds.forEach(function (category) {
-                        console.log(queries++);
                         connection.query('INSERT INTO category SET ?', { name: subCategory.name, slug: subCategory.slug}, function (err, result) {
                             if (0 === --queries) {
                                 callBack(connection);
@@ -130,7 +126,6 @@ module.exports = function (app) {
                 //Update
                 if (req.body.updates.length > 0) {
                     req.body.updates.forEach(function (category) {
-                        console.log(queries++);
                         connection.query('UPDATE category SET ? WHERE ?', [{ name: category.name, slug: category.slug }, { id: category.id }], function (err, result) {
                             if (0 === --queries) {
                                 callBack(connection);
@@ -142,7 +137,6 @@ module.exports = function (app) {
                 //Delete
                 if (req.body.deletes.length > 0) {
                     req.body.deletes.forEach(function (category) {
-                        console.log(queries++);
                         connection.query('DELETE FROM category WHERE ?', { id: category.id }, function (err, result) {
                             if (0 === --queries) {
                                 callBack(connection);

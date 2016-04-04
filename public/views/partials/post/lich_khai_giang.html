@@ -1,22 +1,30 @@
 <div class="bg-body" ng-init="scrollToTop()">
   <div class="container" id="post-sprogram">
     <div class="row">
-      <div class="col-md-8 align-center">
+      <div class="col-md-9 align-center">
         <div ng-repeat="p in post ">
           <div class="post-content" ng-bind-html="p.content | to_trusted"></div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="block-rhs" style="height: 250px;">
         </div>
 
         <div class="block-rhs" style="height: 250px;">
         </div>
 
-        <div class="orther-program upper-case">
+        <div class="orther-program title-sidebar-right upper-case">
           <h3>Chương trình khác</h3>
         </div>
-        <div class="block-rhs" style="height: 160px;"></div>
+        <div class="block-rhs">
+          <wrap-owlcarousel class="owl-carousel owl-theme" id="slider-sprogram" data-options="{autoPlay: 5000, singleItem : true, responsive: true}" ng-controller="MainController">
+            <div owl-carousel-item="" ng-repeat="item in homeConfig.p[0].items">
+              <a href="#">
+                <div style="background: url('{{item.image_uri}}'); background-size: cover; height: 150px; width: 100%;"></div>
+              </a>
+            </div>
+          </wrap-owlcarousel>
+        </div>
       </div >
     </div>
   </div>

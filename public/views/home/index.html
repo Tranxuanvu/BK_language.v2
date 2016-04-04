@@ -1,8 +1,8 @@
 <div class="bg-body" ng-init="scrollToTop()">
   <wrap-owlcarousel class="owl-carousel owl-theme" id="slider" data-options="{autoPlay: 5000, singleItem : true, responsive: true}">
     <div owl-carousel-item="" ng-repeat="item in homeConfig.p[0].items" class="item">
-      <div style="background-image: url('{{item.image_uri}}'); background-size: cover; height: 100%; width: 100%;"> </div>
-      <div class="container">
+      <div style="background: url('{{item.image_uri}}'); background-size: cover; background-position: top; height: 100%; width: 100%;"> </div>
+      <!-- <div class="container">
         <div class="caption-first-slide common">
           Innovation at
           <br>
@@ -15,7 +15,7 @@
         <div class="image-caption-first">
           <img src="images/ipad.png" alt="Ipad" />
         </div>
-      </div>
+      </div> -->
     </div>
   </wrap-owlcarousel/>
 
@@ -79,7 +79,7 @@
     </div>
   </div>
 
-  <div id="study-programs" class="section">
+  <!-- <div id="study-programs" class="section">
     <div class="container">
       <div class="caption" id="ani-sprogram" viewport-checker>
         <span>Chương trình học</span>
@@ -255,7 +255,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="section" id="our-team">
     <div class="container">
@@ -640,3 +640,5 @@
     </div>
   </div>
 </div>
+
+<!-- <script src="/js/dynamic-tabs.js"></script> -->
