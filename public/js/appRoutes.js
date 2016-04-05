@@ -2,7 +2,6 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
   $routeProvider
     .when('/', {
       templateUrl: 'views/home/index.html',
-      controller: 'MainController',
       title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa'
     })
     .when('/ve-chung-toi/:sub_category_slug?/:post_slug?', {

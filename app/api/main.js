@@ -87,8 +87,6 @@ module.exports = function (app) {
                                     
                                     var menu = menuParseById(rows, req.body.menu_id);
 
-                                    console.log(menu);
-
                                     try {
                                         fs.writeFile(config.menu_cache_path + req.body.menu_id, JSON.stringify(menu));
                                     } catch (ex) {

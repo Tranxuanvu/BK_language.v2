@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="bklanguage" ng-controller="ConfigController">
+<html ng-app="bklanguage" ng-controller="MainController">
   <head>
     <title ng-bind="title"></title>
     <meta charset="utf-8">
@@ -29,9 +29,9 @@
       <div id="navbar-top">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 hotline">
+            <div class="col-md-6 hotline" ng-repeat="item in homeConfig.p[0].items">
               <span><i class="fa fa-phone fa-lg"></i></span>
-              <span>{{config.hotline}}</span>
+              <span>{{item.hotline}}</span>
             </div>
             
           </div>
@@ -47,7 +47,9 @@
 
           <div class="navbar-brand">
             <a href="/" style="color: #FFF;">
-              <div id="logo"></div>
+              <div ng-repeat="item in homeConfig.p[1].items">              
+                <div id="logo" style="background: url('{{item.logo_image_uri}}');"></div>
+              </div>
             </a>
           </div> 
         </div>

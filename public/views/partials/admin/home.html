@@ -14,7 +14,7 @@
                         <input type="text" id="title" ng-model="post.title" ng-change="nbspReplaceInTitle(post.title)" class="form-control" autocomplete="off" required>
                     </div>
                     <div class="form-group">
-                        <label for="image" class="label-ctrl">- Chọn ảnh (*):</label>
+                        <label for="image" class="label-ctrl">- Chọn ảnh:</label>
                         <input type="file" ng-model="file" ngf-select="onUpdateThumb($files)" accept="image/*" id="image" class="form-control file-upload">
                     </div>
                     <div class="form-group">
@@ -38,58 +38,10 @@
                         <select class="form-control" ng-options="option.name for option in catalogs track by option.id" ng-model="selectedOption" ng-change="categoryChange()"></select>
                     </div>
 
-                    <div class="form-group">
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-app-sm" data-toggle="modal" data-target="#myModal">Chọn bài viết liên quan</button>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                        <h4 class="modal-title" id="myModalLabel">- Chọn bài viết liên quan</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <table ng-table="tableParams" show-filter="true" class="table table-striped table-condensed table-bordered">
-                                            <tr ng-repeat="row in $data track by row.id">
-                                                <td width="2%" data-title="'#'">
-                                                    <input type="checkbox" ng-model="row.isCheck">
-                                                </td>
-                                                <td width="2%" data-title="'Top Link'">
-                                                    <input type="checkbox" ng-model="row.topLink">
-                                                </td>
-                                                <td width="35%" data-title="'Tên bài viết'" filter="{title: 'text'}">
-                                                    {{row.title}}
-                                                </td>
-                                                <td width="20%" data-title="'Loại bài viết'" filter="{catalog: 'select'}" filter-data="dcatalogs">{{row.catalog}}</td>
-                                                <td width="10%" data-title="'Người viết'" filter="{'author': 'select'}" filter-data="dauthors">{{row.author}}</td>
-                                                <td width="10%" data-title="'Ngày viết'" sortable="'dateInit'">{{row.dateInit | date: 'dd/MM/yyyy HH:mm'}}</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-app-sm" data-dismiss="modal">
-                                            <i class="fa fa-clipboard"></i> Lưu
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="note" class="label-ctrl">- Nổi bật:</label>
                         <input type="checkbox" ng-model="post.on_page" ng-init="post.on_page = false">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <!-- <label for="desc" class="label-ctrl">- Tóm tắt {{isReview ? 'người review': 'bài viết'}}:</label> -->
                         <label for="desc" class="label-ctrl">- Tóm tắt:</label>
@@ -107,10 +59,10 @@
                         <label for="googleplus_url" class="label-ctrl">- Link google+:</label>
                         <input type="text" class="form-control" ng-model="post.googleplus_url" id="googleplus_url"/>
                     </div> -->
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="title" class="label-ctrl">- Tags:</label>
                         <tags-input ng-model="post.tags"></tags-input>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         - Links bài viết:
                         <a href="{{links_to_post}}">{{links_to_post}}</a>

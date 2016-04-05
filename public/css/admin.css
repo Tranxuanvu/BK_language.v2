@@ -185,6 +185,12 @@ input::-webkit-inner-spin-button {
   border-color: #128f76;
 }
 
+.panel-custom {
+  border-top-color: transparent;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
 .form-control {
   border: 1px solid #dce4ec;
   border-radius: 0 !important;
@@ -301,5 +307,5 @@ input[type='file'].form-control {
 }
 
 .menu-container ul{
-    list-style-type: none;
+  list-style-type: none;
 }

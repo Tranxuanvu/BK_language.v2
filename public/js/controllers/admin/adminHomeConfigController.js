@@ -6,7 +6,7 @@
         $window.location.href = '/admin/login';
     }
     else {
-        $scope.homeConfig = { p: [{ items: [] }, { items: [] }, { items: [] }, { items: [] }] };
+        $scope.homeConfig = { p: [{ items: [] }, { items: [] }, { items: [] }, { items: [] }, { items: [] }, { items: [] }, { items: [] }, { items: [] }] };
         
         AdminHomeConfig.loadConfig().then(function (data) {
             if (data.p != null) {
@@ -16,17 +16,18 @@
         
         $scope.save = function () {
             AdminHomeConfig.saveConfig($scope.homeConfig).then(function (result) {
-                console.log(result);
+                // console.log(result);
+                alert("Lưu thành công!");
             });
         };
         
-        $scope.addReview = function (id) {
-            AdminHomeConfig.loadReview(id).then(function (data) {
-                if (data.length > 0) {
-                    $scope.homeConfig.p[3].items.push({ title: data[0].sub_category_name, reviewer: data[0].title + ' - ' + data[0].cure, uri: '/' + data[0].category_slug + '/' + data[0].sub_category_slug + '/' + data[0].slug, description: data[0].discription });
-                }
-            });
-        }
+        // $scope.addReview = function (id) {
+        //     AdminHomeConfig.loadReview(id).then(function (data) {
+        //         if (data.length > 0) {
+        //             $scope.homeConfig.p[3].items.push({ title: data[0].sub_category_name, reviewer: data[0].title + ' - ' + data[0].cure, uri: '/' + data[0].category_slug + '/' + data[0].sub_category_slug + '/' + data[0].slug, description: data[0].discription });
+        //         }
+        //     });
+        // }
         
         $scope.options = {
             language: 'vi',
@@ -48,6 +49,7 @@
         }
         
         $scope.uploadImage = function (item, field) {
+            console.log(item);
             Upload.upload({
                 url: '/api/uploads',
                 method: 'POST',

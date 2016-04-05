@@ -3,28 +3,6 @@
         $scope.config = config;
     });
     
-    $scope.redirect = function (uri) {
-        $window.location.href = uri;
-    }
-
-    $scope.scrollTo = function (id) {
-        $timeout( function(){
-            $('html,body').animate({
-              scrollTop: $(id).offset().top - 110
-            }, 600);
-        }, 1000);
-  	}
-
-    $scope.scrollToTop = function () {
-        $('html,body').animate({scrollTop: 0}, 600);
-    }
-
-    $scope.stopVideo = function(){
-        var outerDiv = document.getElementById("video-show");
-        var youtubeIframe = outerDiv.getElementsByTagName("iframe")[0].contentWindow;
-        youtubeIframe.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');    
-    }
-
     $scope.closeMenu = function() {
         if($('#t-cssmenu').attr('class') == "m-vertical-menu col-sm-12 show-menu-1") {
             $("html, body").animate({scrollTop: 0}, 100);
