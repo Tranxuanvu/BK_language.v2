@@ -1,5 +1,5 @@
-<div class="bg-body" ng-init="scrollTo('#detail')">
-  <wrap-owlcarousel class="owl-carousel owl-theme" id="slider" data-options="{autoPlay: 5000, singleItem : true, responsive: true}" ng-controller="MainController">
+<div class="bg-body" ng-init="scrollTo('#post-sprogram')">
+  <!-- <wrap-owlcarousel class="owl-carousel owl-theme" id="slider" data-options="{autoPlay: 5000, singleItem : true, responsive: true}" ng-controller="MainController">
     <div owl-carousel-item="" ng-repeat="item in homeConfig.p[0].items" class="item">
       <div style="background-image: url('{{item.image_uri}}'); background-size: cover; height: 100%; width: 100%;"> </div>
       <div class="container">
@@ -17,18 +17,44 @@
         </div>
       </div>
     </div>
-  </wrap-owlcarousel>
+  </wrap-owlcarousel> -->
 
-  <div class="container" id="detail">
+  <div class="container" id="post-sprogram">
     <div class="row">
-      <div class="col-md-8">
-        <div class="content" img-title-center>
+      <div class="col-md-9">
+        <div class="wrapper-menu upper-case">
+          <ul class="nav nav-pills" id="tabcth">
+            <li class="active">
+              <a data-toggle="tab" target="_self" href="#tabtqkh">Tổng quan khóa học</a>
+            </li>
+            <li>
+              <a data-toggle="tab" target="_self" href="#tablkg">Lịch khai giảng</a>
+            </li>
+          </ul>
+        </div>
+        <div class="tab-content">
+          <div id="tabtqkh" class="tab-pane active">
+            <div class="content" img-title-center>
+              <!-- <h3 style="text-transform: uppercase;">Something</h3> -->
+              <!-- <h3 style="text-transform: uppercase;"class="post-title">{{post.title}}</h3> -->
+              <div class="post-content" ng-bind-html="post.content | to_trusted"></div>
+            </div>
+          </div>
+          <div id="tablkg" class="tab-pane">
+            <div class="content" img-title-center>
+              <!-- <h3 style="text-transform: uppercase;">Something</h3> -->
+              <!-- <h3 style="text-transform: uppercase;"class="post-title">{{post.title}}</h3> -->
+              <!-- <div class="post-content" ng-bind-html="post.content | to_trusted"></div> -->
+            </div>
+          </div>
+        </div>
+        <!-- <div class="content" img-title-center> -->
           <!-- <h3 style="text-transform: uppercase;">Something</h3> -->
           <!-- <h3 style="text-transform: uppercase;"class="post-title">{{post.title}}</h3> -->
-          <div class="post-content" ng-bind-html="post.content | to_trusted"></div>
-        </div>
+          <!-- <div class="post-content" ng-bind-html="post.content | to_trusted"></div> -->
+        <!-- </div> -->
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <div class="block-rhs">
           <h2>Hot news</h2>
           <ul style="list-style: inherit;">
@@ -44,7 +70,16 @@
             <a href="#">Kiểm tra ngay</a>
           </div>
         </div>
-        <div class="block-rhs" style="margin-bottom: 30px;"><h3>chương trình khác</h3></div>
+        <div class="title-sidebar-right upper-case">
+          <h3>Chương trình khác</h3>
+        </div>
+        <div class="block-rhs">
+          <wrap-owlcarousel class="owl-carousel owl-theme" id="slider-sprogram" data-options="{autoPlay: 5000, singleItem : true, responsive: true}" ng-controller="MainController">
+            <div owl-carousel-item="" ng-repeat="item in homeConfig.p[0].items">
+              <div style="background: url('{{item.image_uri}}'); background-size: cover; height: 150px; width: 100%;"></div>
+            </div>
+          </wrap-owlcarousel>
+        </div>
       </div>
     </div>
   </div>
