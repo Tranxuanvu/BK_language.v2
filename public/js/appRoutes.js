@@ -56,8 +56,12 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       categorySlug: "hot-news",
       menu: 4
     })
-    .when('/hot-news/blog/:post_slug', {
-      templateUrl:'views/partials/post/hot_news/blog_detail.html',
+    .when('/hot-news/:sub_category_slug/:post_slug', {
+      templateUrl: function (params) {
+        if (params.sub_category_slug == "blog") {
+          return 'views/partials/post/hot_news/blog_detail.html'
+        }
+      },
       controller: 'PostController',
       title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa',
       categorySlug: "hot-news",

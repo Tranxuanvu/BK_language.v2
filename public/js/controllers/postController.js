@@ -8,16 +8,19 @@
     Post.getSubCategoryList(categorySlug).then(function (data) {
 
         $scope.subCategories = data;
+        // console.log(subCagotorySlug);
 
-        if (data.length > 0) {
-            if (subCagotorySlug == null) {
-                subCagotorySlug = data[0].slug;
-            }
+        // if (data.length > 0) {
+        //     if (subCagotorySlug == null) {
+        //         subCagotorySlug = data[0].slug;
+        //     }
             
-            if (data[0].posts.length > 0 && postSlug == null) {
-                postSlug = data[0].posts[0].slug;
-            }
-        }
+        //     // if (data[0].posts.length > 0 && postSlug == null) {
+        //     //     postSlug = data[0].posts[0].slug;
+        //     //     console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@');
+        //     //     console.log(postSlug);
+        //     // }
+        // }
         
         Post.getPost(categorySlug, subCagotorySlug, postSlug).then(function (post) {
             if (post.length == 1) {
