@@ -96,10 +96,15 @@ ul {
 
 #sidebar ul {
   padding-left: 0;
+  border: 1.5px solid #FFF;
+  border-left-color: transparent;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 
 #sidebar img {
-  height: 70px;
+  height: 65px;
 }
 
 #sidebar .red-tooltip + .tooltip > .tooltip-inner {

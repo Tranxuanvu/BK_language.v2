@@ -1,24 +1,4 @@
-<div class="bg-body" ng-init="scrollTo('#post-sprogram')">
-  <!-- <wrap-owlcarousel class="owl-carousel owl-theme" id="slider" data-options="{autoPlay: 5000, singleItem : true, responsive: true}" ng-controller="MainController">
-    <div owl-carousel-item="" ng-repeat="item in homeConfig.p[0].items" class="item">
-      <div style="background-image: url('{{item.image_uri}}'); background-size: cover; height: 100%; width: 100%;"> </div>
-      <div class="container">
-        <div class="caption-first-slide common">
-          Innovation at
-          <br>
-          the Speed of Life
-          <br>
-          <p>
-            <a class="btn btn-lg btn-danger" href="#" role="button">view portfolio</a>
-          </p>
-        </div>
-        <div class="image-caption-first">
-          <img src="images/ipad.png" alt="Ipad" />
-        </div>
-      </div>
-    </div>
-  </wrap-owlcarousel> -->
-
+<div class="bg-body">
   <div class="container" id="post-sprogram">
     <div class="row">
       <div class="col-md-9">
@@ -73,10 +53,12 @@
         <div class="title-sidebar-right upper-case">
           <h3>Chương trình khác</h3>
         </div>
-        <div class="block-rhs">
-          <wrap-owlcarousel class="owl-carousel owl-theme" id="slider-sprogram" data-options="{autoPlay: 5000, singleItem : true, responsive: true}" ng-controller="MainController">
-            <div owl-carousel-item="" ng-repeat="item in homeConfig.p[0].items">
-              <div style="background: url('{{item.image_uri}}'); background-size: cover; height: 150px; width: 100%;"></div>
+        <div class="block-rhs wrapper-slider">
+          <wrap-owlcarousel class="owl-carousel owl-theme" id="slider-sprogram" data-options="{autoPlay: 5000, singleItem: true, responsive: true}" ng-controller="BlocksController">
+            <div owl-carousel-item="" ng-repeat="item in blocksConfig.p[0].items" class="item">
+              <a href="{{item.link_to_post}}">
+                <div class="img-slider" style="background: url('{{item.slide_image_uri}}'); background-size: cover; background-position: top;"></div>
+              </a>
             </div>
           </wrap-owlcarousel>
         </div>

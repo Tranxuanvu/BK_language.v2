@@ -13,20 +13,28 @@ module.exports = function (app) {
                 console.log({ "code" : err.code, "status" : err.message });
                 return;
             } else {
-                connection.query('SELECT sub_category.id, category.id AS category_id, sub_category.name, category.name AS category_name, sub_category.name AS sub_category_name FROM sub_category JOIN category ON category.id = sub_category.category_id ORDER BY category.id ASC ', function (err, rows) {
-                    connection.destroy();
-                    pool.end();
-                    
+                connection.query('SELECT category.id AS category_id, category.name AS category_name FROM category ORDER BY category.id ASC ', function (err, rows) {
                     var result = [];
                     rows.forEach(function (e) {
                         result.push({
-                            id: e.id,
+                            id: e.category_id,
                             category_id: e.category_id,
-                            name: e.category_name + ' - ' + e.name
+                            name: e.category_name
                         });
                     });
-                    
-                    res.json(result);
+
+                    connection.query('SELECT sub_category.id, category.id AS category_id, sub_category.name, category.name AS category_name, sub_category.name AS sub_category_name FROM sub_category JOIN category ON category.id = sub_category.category_id ORDER BY category.id ASC ', function (err, rowss) {
+                        connection.destroy();
+                        pool.end();
+                        rowss.forEach(function (e) {
+                            result.push({
+                                id: e.id + result.length,
+                                category_id: e.category_id,
+                                name: e.category_name + '-' + e.name
+                            });
+                        });
+                        res.json(result);
+                    });
                 });
             }
         });

@@ -20,4 +20,14 @@ module.exports = function (app) {
             }
         });
     });
+
+    app.post('/api/admin/config/save_blocks', function (req, res) {
+        fs.writeFile(config.blocks_config_path, JSON.stringify(req.body.blocks_config), { flag: 'w' }, function (err) {
+            if (err) {
+                res.json({ err: -1, message: err.message });
+            } else {
+                res.json({ err: 0 });
+            }
+        });
+    });
 };

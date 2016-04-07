@@ -38,6 +38,13 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       categorySlug: "thi-quoc-te",
       menu: 3
     })
+    .when('/hot-news', {
+      templateUrl: 'views/partials/post/hot_news/index.html',
+      controller: 'PostController',
+      title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa',
+      categorySlug: "hot-news",
+      menu: 4
+    })
     .when('/hot-news/:sub_category_slug?', {
       templateUrl: function (params) {
         if (params.sub_category_slug == "thong-bao-hot-news") {

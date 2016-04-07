@@ -34,7 +34,10 @@ var app = angular.module('bklanguage', [
     'ConfigService',
 
     'searchController',
-    'SearchService'
+    'SearchService',
+
+    'blocksController',
+    'BlocksService'
 ])
 .filter('to_trusted', ['$sce', function ($sce) {
         return function (text) {
@@ -76,9 +79,11 @@ angular.module('admin', [
     'adminConfigController',
     'AdminConfigService',
 
-    
     'adminHomeConfigController',
     'AdminHomeConfigService',
+
+    'adminBlocksConfigController',
+    'AdminBlocksConfigService',
 
     'adminLoginController'
 ]);

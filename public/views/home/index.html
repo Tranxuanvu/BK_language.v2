@@ -1,21 +1,9 @@
 <div class="bg-body" ng-init="scrollToTop()">
   <wrap-owlcarousel class="owl-carousel owl-theme" id="slider" data-options="{autoPlay: 5000, singleItem : true, responsive: true}">
     <div owl-carousel-item="" ng-repeat="item in homeConfig.p[2].items" class="item">
-      <div style="background: url('{{item.slide_image_uri}}'); background-size: cover; background-position: top; height: 100%; width: 100%;"> </div>
-      <!-- <div class="container">
-        <div class="caption-first-slide common">
-          Innovation at
-          <br>
-          the Speed of Life
-          <br>
-          <p>
-            <a class="btn btn-lg btn-danger" href="#" role="button">view portfolio</a>
-          </p>
-        </div>
-        <div class="image-caption-first">
-          <img src="images/ipad.png" alt="Ipad" />
-        </div>
-      </div> -->
+      <a href="{{item.link_to_post}}">
+        <div style="background: url('{{item.slide_image_uri}}'); background-size: cover; background-position: top; height: 100%; width: 100%;"></div>
+      </a>
     </div>
   </wrap-owlcarousel/>
 

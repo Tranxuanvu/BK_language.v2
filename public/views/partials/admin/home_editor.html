@@ -16,11 +16,17 @@
         <div class="tab-content">
             <div id="tab-slider" class="panel-body tab-pane active">
                 <div class="form-group">
-                    <button class="btn btn-primary" ng-click="homeConfig.p[2].items.push({slide_image_uri: '/' })"><span class="fa fa-plus"></span></button>
+                    <button class="btn btn-primary" ng-click="homeConfig.p[2].items.push({link_to_post:'', slide_image_uri: '/' })"><span class="fa fa-plus"></span></button>
                 </div>
                 <div class="col-md-offset-1 form-group">
                     <div class="form-group well col-md-12" ng-repeat="(idx, item) in homeConfig.p[2].items">
-                        <div class="col-md-11">
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <div class="input-group-addon">{{base_url}}</div>
+                                <input class="form-control" ng-model="item.link_to_post" placeholder="Link tới bài viết"></input>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
                             <div class="input-group">
                                 <div class="input-group-addon">{{base_url}}</div>
                                 <input class="form-control" ng-model="item.slide_image_uri" />

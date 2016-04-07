@@ -26,6 +26,8 @@ angular.module('adminPostEditController', ['ckeditor']).controller('AdminPostEdi
         
         $scope.links_to_post = document.location.origin + '/';
         AdminPost.getSlugById({ id: $routeParams.id }).then(function (data) {
+            console.log('++++++++');
+            console.log(data);
             $scope.links_to_post += data[0].category_slug + '/' + data[0].sub_category_slug + '/' + data[0].post_slug;
         });
         

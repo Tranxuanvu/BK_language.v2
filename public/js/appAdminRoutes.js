@@ -41,6 +41,10 @@ angular.module('appAdminRoutes', []).config(['$routeProvider', '$locationProvide
 			templateUrl: 'views/partials/admin/home_editor.html',
 			controller: 'AdminHomeConfigController',
 		})
+    .when('/admin/chinh-sua-blocks', {
+            templateUrl: 'views/partials/admin/blocks_editor.html',
+            controller: 'AdminBlocksConfigController'
+        })
     .when('/admin/config', {
             templateUrl: 'views/partials/admin/config_edit.html',
             controller: 'AdminConfigController',

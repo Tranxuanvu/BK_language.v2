@@ -1,0 +1,47 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+    <h3 class="orange-text">
+        <i class="fa fa-pencil-square"></i>
+        Chỉnh Sửa Các Khối
+    </h3>
+    <ul class="nav nav-tabs" role="tablist" id="tabs">
+        <li class="active"><a href="#tab-other-spro" show-tab>Chương trình khác</a></li>
+    </ul>
+    <div class="panel panel-default panel-custom">
+        <div class="tab-content">
+            <div id="tab-other-spro" class="panel-body tab-pane active">
+                <div class="form-group">
+                    <button class="btn btn-primary" ng-click="blocksConfig.p[0].items.push({link_to_post: '', slide_image_uri: '/' })"><span class="fa fa-plus"></span></button>
+                </div>
+                <div class="col-md-offset-1 form-group">
+                    <div class="form-group well col-md-12" ng-repeat="(idx, item) in blocksConfig.p[0].items">
+                        <div class="col-md-5">
+                            <div class="input-group">
+                                <div class="input-group-addon">{{base_url}}</div>
+                                <input class="form-control" ng-model="item.link_to_post" placeholder="link tới bài viết"></input>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <div class="input-group-addon">{{base_url}}</div>
+                                <input class="form-control" ng-model="item.slide_image_uri" />
+                                <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(item, 'slide_image_uri')">
+                                    <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-danger" ng-click="blocksConfig.p[0].items.splice(idx, 1)"><span class="fa fa-trash"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary" ng-click="save()">Lưu</button>
+    </div>
+
+    <!--Select input-->
+    <input type="file" ng-model="file" ngf-select="uploadImage(currentUploadItem, currentUploadField)" accept="image/*" id="upload" style="display: none"/>
+</div>
