@@ -20,16 +20,23 @@
         }
         
         Post.getPost(categorySlug, subCagotorySlug, postSlug).then(function (post) {
-            post.tags = post.tags != null ? JSON.parse(post.tags):[];
-            $scope.post = post;
+            if (post.length == 1) {
+                $scope.post = post[0];
+            }
 
-            // add link of post to array $scope.post
-            $scope.list_link_to_post = [];
-            for (i in post){
-                if (i != 'tags') {
-                    $scope.post[i].link_to_post = document.location.origin + '/' + post[i].category_slug + '/' + post[i].sub_category_slug + '/' + post[i].slug;
+            if (post.length > 1) {
+                $scope.post = post;
+
+                // add link of post to array $scope.post
+                $scope.list_link_to_post = [];
+                for (i in post){
+                    if (i != 'tags') {
+                        $scope.post[i].link_to_post = document.location.origin + '/' + post[i].category_slug + '/' + post[i].sub_category_slug + '/' + post[i].slug;
+                    }
                 }
             }
+            // post.tags = post.tags != null ? JSON.parse(post.tags):[];
+            
             
             Post.getRelative(post.id).then(function (relativePosts) {
                 $scope.relativePosts = relativePosts;

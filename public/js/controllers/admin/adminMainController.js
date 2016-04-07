@@ -164,14 +164,14 @@ angular.module('adminMainController', ['ckeditor']).controller('AdminMainControl
             $scope.post.googleplus_url = $scope.post.googleplus_url || '';
             $scope.post.cure = $scope.post.cure || '';
             
-            // angular.forEach($scope.relative, function (e) {
-            //     if (e.isCheck) {
-            //         $scope.post.links.push({
-            //             redirect_link_id: e.id,
-            //             top_link: e.topLink
-            //         });
-            //     }
-            // });
+            angular.forEach($scope.relative, function (e) {
+                if (e.isCheck) {
+                    $scope.post.links.push({
+                        redirect_link_id: e.id,
+                        top_link: e.topLink
+                    });
+                }
+            });
             
             AdminMain.create($scope.post).then(function (data) {
                 $scope.post = {};

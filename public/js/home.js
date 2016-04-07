@@ -13,6 +13,9 @@ $(document).on("scroll",function(){
 /****************************************/
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
+  $('#sidebar a').click(function () {
+    $(this).tooltip('hide');
+  })
 });
 
 $(document).ready(function () {
