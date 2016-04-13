@@ -145,7 +145,7 @@
             
             <div id="tab-blog" class="panel-body tab-pane">
                 <div class="form-group">
-                    <button class="btn btn-primary" ng-click="homeConfig.p[7].items.push({abstract: '', blog_image_uri: '/' })"><span class="fa fa-plus"></span></button>
+                    <button class="btn btn-primary" ng-click="homeConfig.p[7].items.push({abstract: '', blog_image_uri: '/',blog_link: '' })"><span class="fa fa-plus"></span></button>
                 </div>
                 <div class="col-md-offset-1 form-group">
                     <div class="form-group well col-md-12" ng-repeat="(idx, item) in homeConfig.p[7].items">
@@ -153,6 +153,10 @@
                             <textarea class="form-control" ng-model="item.abstract" style="height: 100px; resize: vertical"></textarea>
                         </div>
                         <div class="col-md-6">
+                            <div class="input-group" style="margin-bottom: 20px;">
+                                <div class="input-group-addon">{{base_url}}</div>
+                                <input class="form-control" ng-model="item.blog_link" placeholder="Đường dẫn bài viết" />
+                            </div>
                             <div class="input-group">
                                 <div class="input-group-addon">{{base_url}}</div>
                                 <input class="form-control" ng-model="item.blog_image_uri" />
