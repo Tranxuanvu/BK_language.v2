@@ -106,26 +106,6 @@ angular.module('appDirectives', []).directive('ckEditor', [function () {
                 });
             }
         }
-    }).directive('fancybox', function(){
-        return {
-            restrict: 'A',
-
-            link: function(scope, element, attrs){
-              $(element).fancybox({  
-                type        :'iframe',
-                scrolling   : 'no',
-                maxWidth    : 800,
-                maxHeight   : 400,
-                fitToView   : true,
-                width       : '70%',
-                height      : '70%',
-                autoSize    : false,
-                closeClick  : true,
-                openEffect  : 'none',
-                closeEffect : 'none'
-              });
-            }
-        }
     }).directive('viewportChecker', function() {
         return {
             link: function(scope, element, attr) {
