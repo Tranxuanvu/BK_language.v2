@@ -166,8 +166,7 @@ module.exports = function (app) {
                     for (var i = 0; i < req.body.links.length; i++) {
                         var idata = {
                             post_id: rows.insertId,
-                            redirect_link_id: req.body.links[i].redirect_link_id,
-                            top_link: req.body.links[i].top_link
+                            redirect_link_id: req.body.links[i].redirect_link_id
                         }
                         
                         connection.query('INSERT INTO links SET ?', idata);

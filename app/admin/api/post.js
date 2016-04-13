@@ -142,13 +142,11 @@ module.exports = function (app) {
                 
                 connection.query('UPDATE post SET ? WHERE id = ?', [data, req.body.id], function (err, rows) {
                     connection.query('DELETE FROM links WHERE post_id =  ?', req.body.id);
-                    console.log(req.body.id);
                     
                     for (var i = 0; i < req.body.links.length; i++) {
                         var idata = {
                             post_id: req.body.id,
-                            redirect_link_id: req.body.links[i].redirect_link_id,
-                            top_link: req.body.links[i].top_link
+                            redirect_link_id: req.body.links[i].redirect_link_id
                         }
                         
                         connection.query('INSERT INTO links SET ?', idata);
