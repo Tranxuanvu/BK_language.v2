@@ -21,6 +21,8 @@
     <link rel="stylesheet" type="text/css" href="../css/animate.css" />
 
     <link rel="stylesheet" type="text/css" href="../libs/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../libs/ngtoast/dist/ngToast.min.css">
   </head>
   <body ng-controller="menuController" ng-init="loadMenu(1, 'mainMenu')">
     <header class="navbar navbar-default navbar-fixed-top">
@@ -52,9 +54,12 @@
           </div> 
         </div>
         <div class="navbar-collapse collapse menu">
-          <div class="login-register">
+          <div class="login-register" ng-controller="AuthenticationController">
             <div>
-              <a class="md-trigger btn btn-default" data-modal="modal-login-register">Login/Register</a>
+              <a ng-if="!currentUser" class="md-trigger btn btn-default" data-modal="modal-login-register">Login/Register</a>
+              <div ng-if="currentUser">
+                <h5>Welcome <a href="#" ng-click="logout()" ng-bind="currentUser | split: '@':0" style="color: #330F0F"></a> !</h5>
+              </div>
             </div>
 
             <div class="md-modal md-effect-19" id="modal-login-register">
@@ -68,54 +73,54 @@
                   <div id="login">
                     <h2>Chào mừng bạn quay trở lại!</h2>
                     
-                    <form action="#" method="post">
+                    <form name="loginForm" class="form-horizontal" role="form" method="post">
                     
                       <div class="field-wrap">
-                        <input placeholder="Email:*" type="email"required autocomplete="off"/>
+                        <input placeholder="Email:*" type="email" ng-model="user.email" required autocomplete="off"/>
                       </div>
                       
                       <div class="field-wrap">
-                        <input placeholder="Mật khẩu:*"type="password" required autocomplete="off"/>
+                        <input placeholder="Mật khẩu:*"type="password" ng-model="user.password" required autocomplete="off"/>
                       </div>
                       
                       <p class="forgot"><a href="#">Quên mật khẩu?</a></p>
                       
-                      <button class="button button-block"/>Đăng nhập</button>
+                      <button class="button button-block" type="submit" ng-click="login()" data-ng-disabled="loginForm.$invalid">Đăng nhập</button>
                     
                     </form>
                   </div>
                   <div id="signup">   
                     <h2>Đăng ký tài khoản miễn phí </h2>
                     
-                    <form action="#" method="post">
+                    <form name="formRegister" class="form-horizontal" method="post">
                     
                       <div class="field-wrap">
-                        <input placeholder="Email:*" type="email" required autocomplete="off" />
+                        <input placeholder="Email:*" type="email" ng-model="user.email" required autocomplete="off" />
                       </div>
 
                       <div class="top-row">
                         <div class="field-wrap">
-                          <input placeholder="SĐT:*" type="text" required autocomplete="off" />
+                          <input placeholder="SĐT:*" type="text" ng-model="user.phoneNumber" required autocomplete="off" />
                         </div>
                         
                         <div class="field-wrap">
-                          <input placeholder="Họ tên:" type="text" autocomplete="off" />
+                          <input placeholder="Họ tên:" type="text"  ng-model="user.fullName" autocomplete="off" />
                         </div>
                       </div>
 
                       <div class="field-wrap">
-                        <input placeholder="Nhập mật khẩu:*" type="password" required autocomplete="off" />
+                        <input placeholder="Nhập mật khẩu:*" type="password" ng-model="user.password" required autocomplete="off" />
                       </div>
                       
                       <div class="field-wrap">
-                        <input placeholder="Nhập lại mật khẩu:*" type="password" required autocomplete="off"/>
+                        <input placeholder="Nhập lại mật khẩu:*" type="password" ng-model="user.rePassword"required autocomplete="off"/>
                       </div>
                       
                       <div class="field-wrap">
-                        <input placeholder="Trường hoặc Công ty:" type="text" autocomplete="off"/>
+                        <input placeholder="Trường hoặc Công ty:" type="text" ng-model="user.schoolCompany" autocomplete="off"/>
                       </div>
                       
-                      <button type="submit" class="button button-block"/>Đăng ký</button>
+                      <button type="submit" class="button button-block" ng-click="register(user)" data-ng-disabled="loginForm.$invalid">Đăng ký</button>
                     
                     </form>
 
@@ -125,12 +130,11 @@
               </div>
             </div>
 
-            <div class="md-overlay"></div>
+            <div class="md-overlay">
+              <toast></toast>
+            </div>
           </div>
           <div id="search">
-            <div id="welcome">
-              <h5>Welcome ...!</h5>
-            </div>
             <form role="search" class="navbar-form">
               <div class="input-group">
                 <input type="text" placeholder="Search" name="q" class="form-control"/>
@@ -263,6 +267,9 @@
     <script src="/libs/angular-route/angular-route.min.js"></script>
     <script src="/libs/ngmap/build/scripts/ng-map.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="../libs/angular-cookies/angular-cookies.js"></script>
+    <script src="../libs/angular-md5/angular-md5.js"></script>
+    <script src="../libs/ngtoast/dist/ngToast.min.js"></script>
 
     <!-- Controller import -->
     <script src="/js/controllers/menuController.js"></script>
@@ -297,6 +304,9 @@
 
     <script src="/js/controllers/blocksController.js"></script>
     <script src="/js/services/BlocksService.js"></script>
+
+    <script src="/js/controllers/authenticationController.js"></script>
+    <script src="/js/services/AuthenticationService.js"></script>
 
     <!-- Derecitve import -->
     <script src="/js/directives/appDirectives.js"></script>

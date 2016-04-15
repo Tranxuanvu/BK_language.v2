@@ -5,6 +5,9 @@ var app = angular.module('bklanguage', [
     'ngMap',
     'appDirectives',
     'ui.bootstrap',
+    'ngCookies',
+    'angular-md5',
+    'ngToast',
 
     'mainController',
     'MainService',
@@ -37,7 +40,10 @@ var app = angular.module('bklanguage', [
     'SearchService',
 
     'blocksController',
-    'BlocksService'
+    'BlocksService',
+
+    'authenticationController',
+    'AuthenticationService'
 ])
 .filter('to_trusted', ['$sce', function ($sce) {
         return function (text) {
@@ -47,7 +53,7 @@ var app = angular.module('bklanguage', [
 
 app.run(['$location', '$rootScope', function ($location, $rootScope) {
         $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
-            $rootScope.title = current.$$route.title || 'O2 Skin';
+            $rootScope.title = current.$$route.title || 'BK English';
             $rootScope.menu = current.$$route.menu;
             $rootScope.active = 'active';
         });

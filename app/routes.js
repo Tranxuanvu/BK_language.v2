@@ -2,6 +2,7 @@
 var main = require('./api/main');
 var mainPost = require('./api/post');
 var mainConfig = require('./api/config');
+var authentication = require('./api/authentication')
 
 // admin api
 var admin = require('./admin/api/admin');
@@ -14,6 +15,7 @@ module.exports = function (app) {
   main(app);
   mainPost(app);
   mainConfig(app);
+  authentication(app);
   
   // admin api route generate
   admin(app);
