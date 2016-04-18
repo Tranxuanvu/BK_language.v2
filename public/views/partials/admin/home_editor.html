@@ -20,14 +20,12 @@
                 </div>
                 <div class="col-md-offset-1 form-group">
                     <div class="form-group well col-md-12" ng-repeat="(idx, item) in homeConfig.p[2].items">
-                        <div class="col-md-5">
-                            <div class="input-group">
+                        <div class="col-md-11">
+                            <div class="input-group input">
                                 <div class="input-group-addon">{{base_url}}</div>
                                 <input class="form-control" ng-model="item.link_to_post" placeholder="Link tới bài viết"></input>
                             </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="input-group">
+                            <div class="input-group input">
                                 <div class="input-group-addon">{{base_url}}</div>
                                 <input class="form-control" ng-model="item.slide_image_uri" />
                                 <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(item, 'slide_image_uri')">
@@ -35,7 +33,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-1">
+                        <div class="btn-del col-md-1">
                             <button class="btn btn-danger" ng-click="homeConfig.p[2].items.splice(idx, 1)"><span class="fa fa-trash"></span></button>
                         </div>
                     </div>
@@ -96,19 +94,23 @@
                 </div>
                 <div class="col-md-offset-1 form-group">
                     <div class="form-group well col-md-12" ng-repeat="(idx, item) in homeConfig.p[5].items">
-                        <div class="col-md-3">
-                            <input class="form-control" ng-model="item.name" placeholder="Enter name teacher" />
-                        </div>
-                        <div class="col-md-3">
-                            <textarea class="form-control" ng-model="item.description" style="height: 100px; resize: vertical"></textarea>
-                        </div>
-                        <div class="col-md-5">
-                            <div class="input-group">
-                                <div class="input-group-addon">{{base_url}}</div>
-                                <input class="form-control" ng-model="item.teacher_image_uri" />
-                                <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(item, 'teacher_image_uri')">
-                                    <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                        <div class="col-md-11">
+                            <div class="row input">
+                                <div class="col-md-4">
+                                    <input class="form-control" ng-model="item.name" placeholder="Enter name teacher" />
                                 </div>
+                                <div class="col-md-8">
+                                    <div class="input-group">
+                                        <div class="input-group-addon">{{base_url}}</div>
+                                        <input class="form-control" ng-model="item.teacher_image_uri" />
+                                        <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(item, 'teacher_image_uri')">
+                                            <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="textarea">
+                                <textarea class="form-control" ng-model="item.description" style="height: 74px; resize: vertical"></textarea>
                             </div>
                         </div>
                         <div class="col-md-1">
@@ -149,15 +151,15 @@
                 </div>
                 <div class="col-md-offset-1 form-group">
                     <div class="form-group well col-md-12" ng-repeat="(idx, item) in homeConfig.p[7].items">
-                        <div class="col-md-5">
-                            <textarea class="form-control" ng-model="item.abstract" style="height: 100px; resize: vertical"></textarea>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="input-group" style="margin-bottom: 20px;">
+                        <div class="col-md-11">
+                            <div class="textarea">
+                                <textarea class="form-control" ng-model="item.abstract" style="height: 100px; resize: vertical"></textarea>
+                            </div>
+                            <div class="input-group input">
                                 <div class="input-group-addon">{{base_url}}</div>
                                 <input class="form-control" ng-model="item.blog_link" placeholder="Đường dẫn bài viết" />
                             </div>
-                            <div class="input-group">
+                            <div class="input-group input">
                                 <div class="input-group-addon">{{base_url}}</div>
                                 <input class="form-control" ng-model="item.blog_image_uri" />
                                 <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(item, 'blog_image_uri')">

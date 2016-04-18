@@ -218,6 +218,16 @@ input[type='file'].form-control {
   font-style: italic;
 }
 
+.input,
+.textarea {
+  padding: 5px 0;
+}
+
+.btn-del {
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+
 .main-content {
   padding: 10px 5%;
 }
