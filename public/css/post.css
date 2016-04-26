@@ -63,14 +63,10 @@
   padding-right: 10px;
 }
 
-#post-sprogram .orther-program {
-  position: relative;
-  bottom: -30px;
-}
-
 #post-sprogram .title-sidebar-right {
+  opacity: 0.85;
   position: relative;
-  bottom: -30px;
+  z-index: 1;
 }
 
 #post-sprogram .title-sidebar-right h3 {
@@ -82,8 +78,14 @@
   text-align: center;
 }
 
+#post-sprogram .slider-sidebar-right {
+  position: relative;
+  top: -50px;
+}
+
 #post-sprogram .wrapper-slider {
   padding: 0;
+  margin-top: 30px;
 }
 
 #post-sprogram #slider-sprogram {
@@ -104,9 +106,14 @@
   width: 100%;
 }
 
-#post-sprogram .owl-theme .owl-controls .owl-page span {
-  background: #FFF;
+#post-sprogram .owl-theme .owl-controls {
+  position: relative;
+  bottom: 35px;
 }
+
+/*#post-sprogram .owl-theme .owl-controls .owl-page span {
+  background: #FFF;
+}*/
 
 /*Thi quoc te*/
 .content-international > h4 {

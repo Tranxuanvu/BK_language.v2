@@ -12,18 +12,19 @@
 
         <div class="block-rhs" style="height: 250px;">
         </div>
-
-        <div class="orther-program title-sidebar-right upper-case">
-          <h3>Chương trình khác</h3>
-        </div>
-        <div class="block-rhs wrapper-slider">
-          <wrap-owlcarousel class="owl-carousel owl-theme" id="slider-sprogram" data-options="{autoPlay: 5000, singleItem: true, responsive: true}" ng-controller="BlocksController">
-            <div owl-carousel-item="" ng-repeat="item in blocksConfig.p[0].items" class="item">
-              <a href="{{item.link_to_post}}">
-                <div class="img-slider" style="background: url('{{item.slide_image_uri}}'); background-size: cover; background-position: top;"></div>
-              </a>
-            </div>
-          </wrap-owlcarousel>
+        <div class="wrapper-slider">
+          <div class="title-sidebar-right upper-case">
+            <h3>Chương trình khác</h3>
+          </div>
+          <div class="slider-sidebar-right">
+            <wrap-owlcarousel class="owl-carousel owl-theme" id="slider-sprogram" data-options="{autoPlay: 5000, singleItem: true, responsive: true}" ng-controller="BlocksController">
+              <div owl-carousel-item="" ng-repeat="item in blocksConfig.p[0].items" class="item">
+                <a href="{{item.link_to_post}}">
+                  <div class="img-slider" style="background: url('{{item.slide_image_uri}}'); background-size: cover; background-position: top;"></div>
+                </a>
+              </div>
+            </wrap-owlcarousel>
+          </div>
         </div>
       </div>
     </div>

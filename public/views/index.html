@@ -22,7 +22,7 @@
 
     <link rel="stylesheet" type="text/css" href="../libs/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" type="text/css" href="../libs/ngtoast/dist/ngToast.min.css">
+    <link rel="stylesheet" type="text/css" href="../libs/ngToast/dist/ngToast.min.css">
   </head>
   <body ng-controller="menuController" ng-init="loadMenu(1, 'mainMenu')">
     <header class="navbar navbar-default navbar-fixed-top">
@@ -37,145 +37,147 @@
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="navbar-header">
-          <button data-target=".navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+      <div style="border-bottom: 1px solid #FFF;">
+        <div class="container">
+          <div class="navbar-header">
+            <button data-target=".navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
 
-          <div class="navbar-brand">
-            <a href="/" style="color: #FFF;">
-              <div ng-repeat="item in homeConfig.p[1].items">              
-                <div id="logo" style="background: url('{{item.logo_image_uri}}');"></div>
+            <div class="navbar-brand">
+              <a href="/" style="color: #FFF;">
+                <div ng-repeat="item in homeConfig.p[1].items">              
+                  <div id="logo" style="background: url('{{item.logo_image_uri}}');"></div>
+                </div>
+              </a>
+            </div> 
+          </div>
+          <div class="navbar-collapse collapse menu">
+            <div class="login-register" ng-controller="AuthenticationController">
+              <div>
+                <a ng-if="!currentUser" class="md-trigger btn btn-default" data-modal="modal-login-register">Login/Register</a>
+                <div ng-if="currentUser">
+                  <h5>Welcome <a href="#" ng-click="logout()" ng-bind="currentUser | split: '@':0" style="color: #330F0F"></a> !</h5>
+                </div>
               </div>
-            </a>
-          </div> 
-        </div>
-        <div class="navbar-collapse collapse menu">
-          <div class="login-register" ng-controller="AuthenticationController">
-            <div>
-              <a ng-if="!currentUser" class="md-trigger btn btn-default" data-modal="modal-login-register">Login/Register</a>
-              <div ng-if="currentUser">
-                <h5>Welcome <a href="#" ng-click="logout()" ng-bind="currentUser | split: '@':0" style="color: #330F0F"></a> !</h5>
-              </div>
-            </div>
 
-            <div class="md-modal md-effect-19" id="modal-login-register">
-              <div class="md-content">
-                <ul class="tab-group">
-                  <li class="tab active"><a href="#login" id="tab-signin">Đăng nhập</a></li>
-                  <li class="tab"><a href="#signup" id="tab-signup">Đăng ký</a></li>
-                </ul>
-                
-                <div class="tab-content">
-                  <div id="login">
-                    <h2>Chào mừng bạn quay trở lại!</h2>
-                    
-                    <form name="loginForm" class="form-horizontal" role="form" method="post">
-                    
-                      <div class="field-wrap">
-                        <input placeholder="Email:*" type="email" ng-model="user.email" required autocomplete="off"/>
-                      </div>
+              <div class="md-modal md-effect-19" id="modal-login-register">
+                <div class="md-content">
+                  <ul class="tab-group">
+                    <li class="tab active"><a href="#login" id="tab-signin">Đăng nhập</a></li>
+                    <li class="tab"><a href="#signup" id="tab-signup">Đăng ký</a></li>
+                  </ul>
+                  
+                  <div class="tab-content">
+                    <div id="login">
+                      <h2>Chào mừng bạn quay trở lại!</h2>
                       
-                      <div class="field-wrap">
-                        <input placeholder="Mật khẩu:*"type="password" ng-model="user.password" required autocomplete="off"/>
-                      </div>
+                      <form name="loginForm" class="form-horizontal" role="form" method="post">
                       
-                      <p class="forgot"><a href="#">Quên mật khẩu?</a></p>
-                      
-                      <button class="button button-block" type="submit" ng-click="login()" data-ng-disabled="loginForm.$invalid">Đăng nhập</button>
-                    
-                    </form>
-                  </div>
-                  <div id="signup">   
-                    <h2>Đăng ký tài khoản miễn phí </h2>
-                    
-                    <form name="formRegister" class="form-horizontal" method="post">
-                    
-                      <div class="field-wrap">
-                        <input placeholder="Email:*" type="email" ng-model="user.email" required autocomplete="off" />
-                      </div>
-
-                      <div class="top-row">
                         <div class="field-wrap">
-                          <input placeholder="SĐT:*" type="text" ng-model="user.phoneNumber" required autocomplete="off" />
+                          <input placeholder="Email:*" type="email" ng-model="user.email" required autocomplete="off"/>
                         </div>
                         
                         <div class="field-wrap">
-                          <input placeholder="Họ tên:" type="text"  ng-model="user.fullName" autocomplete="off" />
+                          <input placeholder="Mật khẩu:*"type="password" ng-model="user.password" required autocomplete="off"/>
                         </div>
-                      </div>
-
-                      <div class="field-wrap">
-                        <input placeholder="Nhập mật khẩu:*" type="password" ng-model="user.password" required autocomplete="off" />
-                      </div>
+                        
+                        <p class="forgot"><a href="#">Quên mật khẩu?</a></p>
+                        
+                        <button class="button button-block" type="submit" ng-click="login()" data-ng-disabled="loginForm.$invalid">Đăng nhập</button>
                       
-                      <div class="field-wrap">
-                        <input placeholder="Nhập lại mật khẩu:*" type="password" ng-model="user.rePassword"required autocomplete="off"/>
-                      </div>
+                      </form>
+                    </div>
+                    <div id="signup">   
+                      <h2>Đăng ký tài khoản miễn phí </h2>
                       
-                      <div class="field-wrap">
-                        <input placeholder="Trường hoặc Công ty:" type="text" ng-model="user.schoolCompany" autocomplete="off"/>
-                      </div>
+                      <form name="formRegister" class="form-horizontal" method="post">
                       
-                      <button type="submit" class="button button-block" ng-click="register(user)" data-ng-disabled="loginForm.$invalid">Đăng ký</button>
-                    
-                    </form>
+                        <div class="field-wrap">
+                          <input placeholder="Email:*" type="email" ng-model="user.email" required autocomplete="off" />
+                        </div>
 
-                  </div>
-                </div> <!---/tab-contends -->
-                <!-- <button class="md-close">Đóng!</button> -->
-              </div>
-            </div>
+                        <div class="top-row">
+                          <div class="field-wrap">
+                            <input placeholder="SĐT:*" type="text" ng-model="user.phoneNumber" required autocomplete="off" />
+                          </div>
+                          
+                          <div class="field-wrap">
+                            <input placeholder="Họ tên:" type="text"  ng-model="user.fullName" autocomplete="off" />
+                          </div>
+                        </div>
 
-            <div class="md-overlay">
-              <toast></toast>
-            </div>
-          </div>
-          <div id="search">
-            <form role="search" class="navbar-form">
-              <div class="input-group">
-                <input type="text" placeholder="Search" name="q" class="form-control"/>
-                <div class="input-group-btn">
-                  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                        <div class="field-wrap">
+                          <input placeholder="Nhập mật khẩu:*" type="password" ng-model="user.password" required autocomplete="off" />
+                        </div>
+                        
+                        <div class="field-wrap">
+                          <input placeholder="Nhập lại mật khẩu:*" type="password" ng-model="user.rePassword"required autocomplete="off"/>
+                        </div>
+                        
+                        <div class="field-wrap">
+                          <input placeholder="Trường hoặc Công ty:" type="text" ng-model="user.schoolCompany" autocomplete="off"/>
+                        </div>
+                        
+                        <button type="submit" class="button button-block" ng-click="register(user)" data-ng-disabled="loginForm.$invalid">Đăng ký</button>
+                      
+                      </form>
+
+                    </div>
+                  </div> <!---/tab-contends -->
+                  <!-- <button class="md-close">Đóng!</button> -->
                 </div>
               </div>
-            </form>
-          </div>
 
-          <script type="text/ng-template" id="main_menu_item_render.html">
-            <a href="{{data.uri}}">{{data.name}} 
-              <b class="caret" ng-show="data.submenus.length > 0"></b>
-            </a>
-            <ul class="dropdown-menu" ng-class="{'item-menu': data.type == 0, 'megamenu': data.type == 1}" ng-show="data.submenus.length > 0" ng-switch="data.type">
+              <div class="md-overlay">
+                <toast></toast>
+              </div>
+            </div>
+            <div id="search">
+              <form role="search" class="navbar-form">
+                <div class="input-group">
+                  <input type="text" placeholder="Search" name="q" class="form-control"/>
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                  </div>
+                </div>
+              </form>
+            </div>
 
-                <!-- MEGA_MENU -->
+            <script type="text/ng-template" id="main_menu_item_render.html">
+              <a href="{{data.uri}}">{{data.name}} 
+                <b class="caret" ng-show="data.submenus.length > 0"></b>
+              </a>
+              <ul class="dropdown-menu" ng-class="{'item-menu': data.type == 0, 'megamenu': data.type == 1}" ng-show="data.submenus.length > 0" ng-switch="data.type">
 
-                <li ng-switch-when="1" ng-repeat="data in data.submenus">
-                  <a href="{{data.uri}}" ng-bind="data.name"></a>
-                  <ul>
-                    <li ng-repeat="data in data.submenus" ng-include="'submenu1_item_render.html'"></li>
-                  </ul>
-                </li>
+                  <!-- MEGA_MENU -->
 
-                <!-- NORMAL_MENU -->
+                  <li ng-switch-when="1" ng-repeat="data in data.submenus">
+                    <a href="{{data.uri}}" ng-bind="data.name"></a>
+                    <ul>
+                      <li ng-repeat="data in data.submenus" ng-include="'submenu1_item_render.html'"></li>
+                    </ul>
+                  </li>
 
-                <li ng-switch-default>
-                  <a ng-repeat="data in data.submenus" href="{{data.uri}}" ng-bind="data.name"></a>
-                </li>
+                  <!-- NORMAL_MENU -->
+
+                  <li ng-switch-default>
+                    <a ng-repeat="data in data.submenus" href="{{data.uri}}" ng-bind="data.name"></a>
+                  </li>
+              </ul>
+            </script>
+
+            <script type="text/ng-template" id="submenu1_item_render.html">
+              <a href="{{data.uri}}" ng-bind="data.name"></a>
+            </script>
+
+            <ul class="nav navbar-nav">
+              <li ng-class="{'active-home': menu == $index, 'dropdown': 'data.submenus.length > 0', 'menu-large': data.type == 1 }" ng-repeat="data in mainMenu.submenus" ng-include="'main_menu_item_render.html'" on-toggle-hover>
+              </li>
             </ul>
-          </script>
-
-          <script type="text/ng-template" id="submenu1_item_render.html">
-            <a href="{{data.uri}}" ng-bind="data.name"></a>
-          </script>
-
-          <ul class="nav navbar-nav">
-            <li ng-class="{'active-home': menu == $index, 'dropdown': 'data.submenus.length > 0', 'menu-large': data.type == 1 }" ng-repeat="data in mainMenu.submenus" ng-include="'main_menu_item_render.html'" on-toggle-hover>
-            </li>
-          </ul>
+          </div>
         </div>
       </div>
     </header>
@@ -269,7 +271,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script src="../libs/angular-cookies/angular-cookies.js"></script>
     <script src="../libs/angular-md5/angular-md5.js"></script>
-    <script src="../libs/ngtoast/dist/ngToast.min.js"></script>
+    <script src="../libs/ngToast/dist/ngToast.min.js"></script>
 
     <!-- Controller import -->
     <script src="/js/controllers/menuController.js"></script>

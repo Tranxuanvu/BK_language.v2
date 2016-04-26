@@ -14,9 +14,10 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
     .when('/chuong-trinh-hoc/:sub_category_slug/:post_slug?', {
       templateUrl: function (params){
         if (params.sub_category_slug == "lich-khai-giang") {
-          return 'views/partials/post/lich_khai_giang.html'
-        }
-        else return 'views/partials/post/chuong_trinh_hoc.html'
+          return 'views/partials/post/chuong_trinh_hoc/lich_khai_giang.html'
+        }else if (params.sub_category_slug == "quy-che" || params.sub_category_slug == "thong-bao") {
+          return 'views/partials/post/chuong_trinh_hoc/template.html'
+        } else return 'views/partials/post/chuong_trinh_hoc/chuong_trinh_hoc.html'
       },
       controller: 'PostController',
       title: 'Trung Tâm Ngoại Ngữ ĐH Bách Khoa',

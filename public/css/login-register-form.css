@@ -17,7 +17,7 @@
 }
 
 .login-register .md-modal {
-  width: 30%;
+  width: 36%;
   top: 50%;
 }
 
@@ -60,10 +60,12 @@
 
 .login-register h2 {
   font-family: 'Exo', sans-serif;
+  font-size: 25px;
   text-align: center;
   color: #444;
   font-weight: 300;
   margin: 0 0 20px;
+  text-transform: uppercase;
 }
 
 .login-register input{
