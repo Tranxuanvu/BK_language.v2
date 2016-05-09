@@ -56,6 +56,12 @@ module.exports = function (app) {
                         connection.destroy();
                         pool.end();
                     });
+                } else if (req.body.subCategory == "su-kien" && req.body.slug != "") {
+                    connection.query('SELECT post.*, user.full_name FROM post, user, category, sub_category WHERE post.slug = ? AND category.slug = ? AND sub_category.slug = ? AND post.author_id = user.id AND post.status_id = 3 LIMIT 1', [req.body.slug, req.body.category, req.body.subCategory], function (err, rows) {
+                        res.json(rows.length > 0 ? rows: {});
+                        connection.destroy();
+                        pool.end();
+                    });
                 } else if (req.body.subCategory == "tin-tuc") {
                     connection.query('SELECT post.* FROM post WHERE post.sub_category_id = 53 AND post.status_id = 3', function (err, rows) {
                         res.json(rows.length > 0 ? rows: {});

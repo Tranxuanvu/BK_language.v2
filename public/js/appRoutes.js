@@ -61,6 +61,8 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
       templateUrl: function (params) {
         if (params.sub_category_slug == "blog") {
           return 'views/partials/post/hot_news/blog_detail.html'
+        }else if (params.sub_category_slug == "su-kien"){
+          return 'views/partials/post/hot_news/event_detail.html'
         }
       },
       controller: 'PostController',
