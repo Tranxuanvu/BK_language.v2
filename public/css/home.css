@@ -871,3 +871,11 @@ ng-map {
 .event .support {
   margin-right: 10px;
 }
+
+.sm-content {
+  display: none;
+}
+
+.toggle a:focus, a:hover {
+  color: transparent;
+}
