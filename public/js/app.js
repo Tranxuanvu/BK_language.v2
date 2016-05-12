@@ -7,7 +7,6 @@ var app = angular.module('bklanguage', [
     'ui.bootstrap',
     'ngCookies',
     'angular-md5',
-    'ngSanitize',
     'ngToast',
 
     'mainController',
