@@ -39,13 +39,7 @@
 </div>
 <script>
   $(document).ready(function () {
-    $("a[href^='#']").each(function() { 
-      this.href = this.href.replace("#", "http://stackoverflow.com");
-    });
-    console.log($("a[href^='javascript:void(0)']").length);
-
     $(this).on('click', '.toggle', function() {
-      // hides children divs if shown, shows if hidden 
       $(this).children(".sm-content").slideToggle('200');
 
       if($("div.sm-content:visible").length > 1) {
