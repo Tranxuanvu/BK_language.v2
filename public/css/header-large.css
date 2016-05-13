@@ -12,7 +12,6 @@ header, nav, header a, header img, header li {
 }
 
 #logo {
-  background-image: url('../images/logo1.png');
   background-size: cover;
   background-repeat: no-repeat;
   transform: scale(1);
@@ -124,6 +123,7 @@ header, nav, header a, header img, header li {
   transform: scaleY(1);
   transition: all 0.4s;
 }
+
 /* MEGA MENU STYLE
 ********************************/ 
 .menu {

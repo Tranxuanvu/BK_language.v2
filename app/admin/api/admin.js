@@ -16,7 +16,7 @@ module.exports = function (app) {
                 connection.query('SELECT sub_category.id, category.id AS category_id, sub_category.name, category.name AS category_name, sub_category.name AS sub_category_name FROM sub_category JOIN category ON category.id = sub_category.category_id ORDER BY category.id ASC ', function (err, rows) {
                     connection.destroy();
                     pool.end();
-                    
+
                     var result = [];
                     rows.forEach(function (e) {
                         result.push({
@@ -25,7 +25,7 @@ module.exports = function (app) {
                             name: e.category_name + ' - ' + e.name
                         });
                     });
-                    
+
                     res.json(result);
                 });
             }
@@ -166,8 +166,7 @@ module.exports = function (app) {
                     for (var i = 0; i < req.body.links.length; i++) {
                         var idata = {
                             post_id: rows.insertId,
-                            redirect_link_id: req.body.links[i].redirect_link_id,
-                            top_link: req.body.links[i].top_link
+                            redirect_link_id: req.body.links[i].redirect_link_id
                         }
                         
                         connection.query('INSERT INTO links SET ?', idata);

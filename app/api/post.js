@@ -19,9 +19,51 @@ module.exports = function (app) {
                 if (req.body.slug == null) {
                     req.body.slug = '';
                 }
-                
-                if (req.body.subCategory == "blog") {
+
+                if (req.body.subCategory == "thong-bao-hot-news") {
+                    connection.query('SELECT post.* FROM post WHERE post.sub_category_id = 23 AND post.status_id = 3', function (err, rows) {
+                        res.json(rows.length > 0 ? rows: {});
+                        connection.destroy();
+                        pool.end();
+                    });
+                } else if (req.body.subCategory == "cau-lac-bo-UTEC") {
+                    connection.query('SELECT post.* FROM post WHERE post.sub_category_id = 24 AND post.status_id = 3', function (err, rows) {
+                        res.json(rows.length > 0 ? rows: {});
+                        connection.destroy();
+                        pool.end();
+                    });
+                } else if (req.body.subCategory == "cau-lac-bo-BKDEC") {
+                    connection.query('SELECT post.* FROM post WHERE post.sub_category_id = 25 AND post.status_id = 3', function (err, rows) {
+                        res.json(rows.length > 0 ? rows: {});
+                        connection.destroy();
+                        pool.end();
+                    });
+                } else if (req.body.subCategory == "tai-lieu-hoc-tap") {
+                    connection.query('SELECT post.* FROM post WHERE post.sub_category_id = 26 AND post.status_id = 3', function (err, rows) {
+                        res.json(rows.length > 0 ? rows: {});
+                        connection.destroy();
+                        pool.end();
+                    });
+                } else if (req.body.subCategory == "blog" && req.body.slug == "") {
                     connection.query('SELECT post.*, category.slug AS category_slug, sub_category.slug AS sub_category_slug FROM post, category, sub_category WHERE post.sub_category_id = 27 AND post.sub_category_id = sub_category.id AND category.id = sub_category.category_id AND post.status_id = 3 ORDER BY id DESC', function (err, rows) {
+                        res.json(rows.length > 0 ? rows: {});
+                        connection.destroy();
+                        pool.end();
+                    });
+                } else if (req.body.subCategory == "blog" && req.body.slug != "") {
+                    connection.query('SELECT post.*, user.full_name FROM post, user, category, sub_category WHERE post.slug = ? AND category.slug = ? AND sub_category.slug = ? AND post.author_id = user.id AND post.status_id = 3 LIMIT 1', [req.body.slug, req.body.category, req.body.subCategory], function (err, rows) {
+                        res.json(rows.length > 0 ? rows: {});
+                        connection.destroy();
+                        pool.end();
+                    });
+                } else if (req.body.subCategory == "su-kien" && req.body.slug != "") {
+                    connection.query('SELECT post.*, user.full_name FROM post, user, category, sub_category WHERE post.slug = ? AND category.slug = ? AND sub_category.slug = ? AND post.author_id = user.id AND post.status_id = 3 LIMIT 1', [req.body.slug, req.body.category, req.body.subCategory], function (err, rows) {
+                        res.json(rows.length > 0 ? rows: {});
+                        connection.destroy();
+                        pool.end();
+                    });
+                } else if (req.body.subCategory == "tin-tuc") {
+                    connection.query('SELECT post.* FROM post WHERE post.sub_category_id = 53 AND post.status_id = 3', function (err, rows) {
                         res.json(rows.length > 0 ? rows: {});
                         connection.destroy();
                         pool.end();
@@ -34,11 +76,11 @@ module.exports = function (app) {
                     });
                 } else {
                     connection.query('SELECT post.*, user.full_name FROM post, user, category, sub_category WHERE post.slug = ? AND category.slug = ? AND sub_category.slug = ? AND post.author_id = user.id AND post.status_id = 3 LIMIT 1', [req.body.slug, req.body.category, req.body.subCategory], function (err, rows) {
-                        res.json(rows.length > 0 ? rows[0]: {});
+                        res.json(rows.length > 0 ? rows: {});
                         connection.destroy();
                         pool.end();
                     });
-                }
+                }   
             }
         });
     });
@@ -52,7 +94,7 @@ module.exports = function (app) {
                 console.log({ "code" : err.code, "status" : err.message });
                 return;
             } else {
-                connection.query('SELECT post.*, links.top_link , user.full_name, category.slug AS category_slug, sub_category.slug AS sub_category_slug FROM post,links, category, sub_category, menu, user WHERE links.post_id = ? AND links.redirect_link_id = post.id AND post.sub_category_id = sub_category.id AND category.id = sub_category.category_id AND user.id = post.author_id AND post.status_id = 3 GROUP BY post.id', req.body.post_id, function (err, rows) {
+                connection.query('SELECT post.*, user.full_name, category.slug AS category_slug, sub_category.slug AS sub_category_slug FROM post,links, category, sub_category, menu, user WHERE links.post_id = ? AND links.redirect_link_id = post.id AND post.sub_category_id = sub_category.id AND category.id = sub_category.category_id AND user.id = post.author_id AND post.status_id = 3 GROUP BY post.id', [req.body.post_id], function (err, rows) {
                     res.json(rows);
                     connection.destroy();
                     pool.end();

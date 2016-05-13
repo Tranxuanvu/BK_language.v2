@@ -46,6 +46,16 @@ angular.module('appDirectives', []).directive('ckEditor', [function () {
                 }, 100);
             }
         };
+    }).directive('showTab', function () {
+        return {
+            restrict: 'A',
+            link: function (scope, element, attrs) {
+                element.on('click', function(e) {
+                    e.preventDefault();
+                    $(element).tab('show');
+                });
+            }
+        };
     }).directive("wrapOwlcarousel", function() {
         return {
             restrict: 'E',
@@ -96,26 +106,6 @@ angular.module('appDirectives', []).directive('ckEditor', [function () {
                 });
             }
         }
-    }).directive('fancybox', function(){
-        return {
-            restrict: 'A',
-
-            link: function(scope, element, attrs){
-              $(element).fancybox({  
-                type        :'iframe',
-                scrolling   : 'no',
-                maxWidth    : 800,
-                maxHeight   : 400,
-                fitToView   : true,
-                width       : '70%',
-                height      : '70%',
-                autoSize    : false,
-                closeClick  : true,
-                openEffect  : 'none',
-                closeEffect : 'none'
-              });
-            }
-        }
     }).directive('viewportChecker', function() {
         return {
             link: function(scope, element, attr) {
@@ -126,27 +116,27 @@ angular.module('appDirectives', []).directive('ckEditor', [function () {
                             classToAdd: 'visible animated bounceInDown',
                             offset: 130
                         })
-                        case "ani-block-lt" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-block-1" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated fadeInLeftBig',
                             offset: 150
                         })
-                        case "ani-block-ct" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-block-2" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated fadeInDownBig',
                             offset: 150
                         })
-                        case "ani-block-rt" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-block-3" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated fadeInRightBig',
                             offset: 150
                         })
-                        case "ani-block-lb" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-block-4" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated fadeInLeftBig',
                             offset: 180
                         })
-                        case "ani-block-cb" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-block-5" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated fadeInUpBig',
                             offset: 180
                         })
-                        case "ani-block-rb" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-block-6" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated fadeInRightBig',
                             offset: 180
                         })
@@ -170,27 +160,27 @@ angular.module('appDirectives', []).directive('ckEditor', [function () {
                             classToAdd: 'visible animated slideInLeft',
                             offset: 300
                         })
-                        case "ani-blog-lt" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-blog-1" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
-                        case "ani-blog-ct" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-blog-2" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
-                        case "ani-blog-rt" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-blog-3" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
-                        case "ani-blog-lb" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-blog-4" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
-                        case "ani-blog-cb" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-blog-5" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated rollIn',
                             offset: 310
                         })
-                        case "ani-blog-rb" : element.addClass("hidden_class").viewportChecker({
+                        case "ani-blog-6" : element.addClass("hidden_class").viewportChecker({
                             classToAdd: 'visible animated rollIn',
                             offset: 310
                         })

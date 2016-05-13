@@ -10,6 +10,19 @@
         <input type="text" class="form-control" id="hotline" ng-model="config.hotline" required placeholder="HotLine">
       </div>
     </div>
+
+    <div class="row form-group">
+      <div class="col-md-6">
+        <label for="hotline">Logo</label>
+        <div class="input-group">
+          <div class="input-group-addon">{{base_url}}</div>
+          <input class="form-control" ng-model="logoUpload.image_uri" />
+          <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(logoUpload.image_uri, 'image_uri')">
+              <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- <div class="row form-group">
       <div class="col-md-6 ">
         <label for="location">Tọa Độ</label>
@@ -35,4 +48,7 @@
       </div>
     </div>
   </form>
+
+  <!--Select input-->
+  <input type="file" ng-model="file" ngf-select="uploadImage(currentUploadItem, currentUploadField)" accept="image/*" id="upload" style="display: none"/>
 </div>

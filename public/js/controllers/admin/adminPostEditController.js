@@ -111,7 +111,6 @@ angular.module('adminPostEditController', ['ckeditor']).controller('AdminPostEdi
                 angular.forEach($scope.relative, function (e, k) {
                     if (data[i].redirect_link_id == e.id) {
                         e.isCheck = true;
-                        e.topLink = (data[i].top_link == 1) ? true : false;
                     }
                 })
             }
@@ -202,8 +201,7 @@ angular.module('adminPostEditController', ['ckeditor']).controller('AdminPostEdi
                 
                 if (e.isCheck) {
                     $scope.post.links.push({
-                        redirect_link_id: e.id,
-                        top_link: e.topLink
+                        redirect_link_id: e.id
                     });
                 }
 

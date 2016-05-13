@@ -21,4 +21,14 @@ module.exports = function (app) {
             }
         });
     });
+
+    app.post('/api/config/load_blocks_config', function (req, res) {
+        fs.readFile(config.blocks_config_path, function (err, data) {
+            if (err) {
+                res.json({});
+            } else {
+                res.json(JSON.parse(data));
+            }
+        });
+    });
 };

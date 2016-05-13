@@ -1,21 +1,9 @@
 <div class="bg-body" ng-init="scrollToTop()">
   <wrap-owlcarousel class="owl-carousel owl-theme" id="slider" data-options="{autoPlay: 5000, singleItem : true, responsive: true}">
-    <div owl-carousel-item="" ng-repeat="item in homeConfig.p[0].items" class="item">
-      <div style="background: url('{{item.image_uri}}'); background-size: cover; background-position: top; height: 100%; width: 100%;"> </div>
-      <!-- <div class="container">
-        <div class="caption-first-slide common">
-          Innovation at
-          <br>
-          the Speed of Life
-          <br>
-          <p>
-            <a class="btn btn-lg btn-danger" href="#" role="button">view portfolio</a>
-          </p>
-        </div>
-        <div class="image-caption-first">
-          <img src="images/ipad.png" alt="Ipad" />
-        </div>
-      </div> -->
+    <div owl-carousel-item="" ng-repeat="item in homeConfig.p[2].items" class="item">
+      <a href="{{item.link_to_post}}">
+        <div style="background: url('{{item.slide_image_uri}}'); background-size: cover; background-position: top; height: 100%; width: 100%;"></div>
+      </a>
     </div>
   </wrap-owlcarousel/>
 
@@ -27,15 +15,15 @@
       </div>
 
       <div class="row" id="reason_choose">
-        <div class="col-md-4" id="ani-block-lt" viewport-checker>
+        <div class="col-md-4" ng-repeat="(idx, item) in homeConfig.p[3].items" id="ani-block-{{idx + 1}}" viewport-checker>
           <a href="/ve-chung-toi/ly-do-chon-NNBK/ly-do">
-            <img src="/images/01.png">
+            <img src="{{item.image_uri}}">
             <div class="text-link">
-              Trung tâm uy tín
+              {{item.title}}
             </div>
           </a>
         </div>
-        <div class="col-md-4" id="ani-block-ct" viewport-checker>
+        <!-- <div class="col-md-4" id="ani-block-ct" viewport-checker>
           <a href="/ve-chung-toi/ly-do-chon-NNBK/ly-do">
             <img src="images/02.png">
             <div class="text-link">
@@ -74,7 +62,7 @@
               Học phí sinh viên
             </div>
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -263,61 +251,17 @@
         <span>Đội ngũ giảng viên</span>
       </div>
       <div class="row">
-        <div>
-          <div class="col-md-3" id="teacher-box-model" viewport-checker>
-            <div class="box-model">
-              <a href="#">
-                <div class="box-img"></div>
-                <img height="207" width="262" src="images/page_img01-bg.jpg" alt="Page img01 bg" />
-              </a>
-              <div class="content">
-                <h4>
-                  <a href="#">Robert Smith</a>
-                </h4>
-                <span>Founder, Director, teacher of 3 languages</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3" id="teacher-box-model" viewport-checker>
-            <div class="box-model">
-              <a href="#">
-                <div class="box-img"></div>
-                <img height="207" width="262" src="images/page_img02-bg.jpg" alt="Page img02 bg" />
-              </a>
-              <div class="content">
-                <h4>
-                  <a href="#">Albert Frost</a>
-                </h4>
-                <span>Deputy Director on <br />developments</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3" id="teacher-box-model" viewport-checker>
-            <div class="box-model">
-              <a href="#">
-                <div class="box-img"></div>
-                <img height="207" width="262" src="images/page_img03-bg.jpg" alt="Page img03 bg " />
-              </a>
-              <div class="content">
-                <h4>
-                  <a href="#">Angela White</a>
-                </h4>
-                <span>Teacher of Russian, Spanish and French</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3" id="teacher-box-model" viewport-checker>
-            <div class="box-model">
-              <a href="#">
-                <div class="box-img"></div>
-                <img height="207" width="262" src="images/page_img04-bg.jpg" alt="Page img04 bg" />
-              </a>
-              <div class="content">
-                <h4>
-                  <a href="#">Hugo Star</a>
-                </h4>
-                <span>Teacher of Italian, Chinese and <br/>German</span>
-              </div>
+        <div class="col-md-3" id="teacher-box-model" viewport-checker ng-repeat="(idx, item) in homeConfig.p[5].items">
+          <div class="box-model">
+            <a href="#">
+              <div class="box-img"></div>
+              <img height="207" width="262" src="{{item.teacher_image_uri}}" alt="hình ảnh giáo viên" />
+            </a>
+            <div class="content" style="height: 100px;">
+              <h4>
+                <a href="#" ng-bind="item.name"></a>
+              </h4>
+              <span ng-bind="item.description"></span>
             </div>
           </div>
         </div>
@@ -341,259 +285,21 @@
 
   <div class="section" id="gallery">
     <div class="container-fluid">
-      <div fancybox class="row">
-        <div class="col-md-4" id="ani-blog-lt" viewport-checker>
-          <a href="images/gallery_img01-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover">
-              <div class="icon-blog">
-                <span>Blog</span>
-              </div>
-              <div class="abstract">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-            </div>
-            <img height="283" width="434" src="images/gallery_img01.jpg" alt="Gallery img01" />
-          </a>
-          
-        </div>
-        <div class="col-md-4" id="ani-blog-ct" viewport-checker>
-          <a href="images/gallery_img02-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover">
-              <div class="icon-blog">
-                <span>Blog</span>
-              </div>
-              <div class="abstract">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-            </div>
-            <img height="283" width="434" src="images/gallery_img02.jpg" alt="Gallery img02" />
-          </a>
-        </div>
-        <div class="col-md-4" id="ani-blog-rt" viewport-checker>
-          <a href="images/gallery_img03-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover">
-              <div class="icon-blog">
-                <span>Blog</span>
-              </div>
-              <div class="abstract">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-            </div>
-            <img height="283" width="434" src="images/gallery_img03.jpg" alt="Gallery img03" />
-          </a>
-        </div>
-        <div class="col-md-4" id="ani-blog-lb" viewport-checker>
-          <a href="images/gallery_img04-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover">
-              <div class="icon-blog">
-                <span>Blog</span>
-              </div>
-              <div class="abstract">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-            </div>
-            <img height="283" width="434" src="images/gallery_img04.jpg" alt="Gallery img04" />
-          </a>
-        </div>
-        <div class="col-md-4" id="ani-blog-cb" viewport-checker>
-          <a href="images/gallery_img05-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover">
-              <div class="icon-blog">
-                <span>Blog</span>
-              </div>
-              <div class="abstract">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-            </div>
-            <img height="283" width="434" src="images/gallery_img05.jpg" alt="Gallery img05" />
-          </a>
-        </div>
-        <div class="col-md-4" id="ani-blog-rb" viewport-checker>
-          <a href="images/gallery_img06-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover">
-              <div class="icon-blog">
-                <span>Blog</span>
-              </div>
-              <div class="abstract">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
-            </div>
-            <img height="283" width="434" src="images/gallery_img06.jpg" alt="Gallery img06" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- 
-  <div class="section" id="field">
-    <div class="container ani-field">
-      <h1>What We Do</h1>
       <div class="row">
-        <div class="col-md-3">
-          <img src="images/page_icon05.png" alt="Page icon05" />
-          <h3>
-            <a class="uppercase-bold" href="#">Teaching</a>
-          </h3>
-          <p>of different language and cultures</p>
-        </div>
-        <div class="col-md-3">
-          <img src="images/page_icon06.png" alt="Page icon06" />
-          <h3>
-            <a class="uppercase-bold" href="#">Preparation</a>
-          </h3>
-          <p>for international exams</p>
-        </div>
-        <div class="col-md-3">
-          <img src="images/page_icon07.png" alt="Page icon07" />
-          <h3>
-            <a class="uppercase-bold" href="#">Organization</a>
-          </h3>
-          <p>of international language camps</p>
-        </div>
-        <div class="col-md-3">
-          <img src="images/page_icon08.png" alt="Page icon08" />
-          <h3>
-            <a class="uppercase-bold" href="#">Sales</a>
-          </h3>
-          <p>of methodical linguistic literature</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section" id="services">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 caption ani-services">
-          <span>Our Services</span>
-          <p>Today the school is a leader in the market of educational services and is the largest language school.</p>
-        </div>
-        <div class="col-md-3 services-item">
-          <div class="border-box">
-            <div class="witget-09">
-              <div class="icon-witget-09"></div>
-              <h3 class="uppercase-bold">
-                <a href="#">Summer languges program</a>
-              </h3>
+        <div class="col-md-4" ng-repeat="(idx, item) in homeConfig.p[7].items" id="ani-blog-{{idx+1}}" viewport-checker>
+          <a href="{{item.blog_link}}" rel="group">
+            <div class="gallery-img-hover">
+              <div class="icon-blog">
+                <span>Blog</span>
+              </div>
+              <div class="abstract" ng-bind="item.abstract"></div>
             </div>
-            <div class="content-services">
-              <p>Launched in Summer our Summer Languages Program is a range of short, but sweet Arabic, French, German, Italian, Mandarin, Portuguese, Russian and Spanish courses.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 services-item">
-          <div class="border-box">
-            <div class="witget-10">
-              <div class="icon-witget-10"></div>
-              <h3 class="uppercase-bold">
-                <a href="#">Cirtificate course program</a>
-              </h3>
-            </div>
-            <div class="content-services">
-              <p>Our Modern Foreign Language Certificate Course Program offers you the option of taking an extra curricular language course whilst at LSE.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 services-item">
-          <div class="border-box">
-            <div class="witget-11">
-              <div class="icon-witget-11"></div>
-              <h3 class="uppercase-bold">
-                <a href="#">Language degree course</a>
-              </h3>
-            </div>
-            <div class="content-services">
-              <p>If you are an Undergraduate student you can study a language as a fully assessed part of your degree programme by taking one of our Modern Foreign Language Degree Courses.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 services-item">
-          <div class="border-box">
-            <div class="witget-12">
-              <div class="icon-witget-12"></div>
-              <h3 class="uppercase-bold">
-                <a href="#">Online system-maintenance</a>
-              </h3>
-            </div>
-            <div class="content-services">
-              <p>Regardless of whether you"re on a lesson or not by going to our website, you can learn the theme of the last sessions, view and download all the necessary materials.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="section" id="gallery">
-    <div class="container-fluid">
-      <div fancybox class="row">
-        <div class="col-md-8 col-md-offset-2 caption">
-          <span>Gallery</span>
-          <p>Continuous improvement of curricula and provision of a wide spectrum of quality language services.</p>
-        </div>
-        <div class="col-md-4">
-          <a href="images/gallery_img01-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover"></div>
-            <img height="283" width="434" src="images/gallery_img01.jpg" alt="Gallery img01" />
-          </a>
-          
-        </div>
-        <div class="col-md-4">
-          <a href="images/gallery_img02-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover"></div>
-            <img height="283" width="434" src="images/gallery_img02.jpg" alt="Gallery img02" />
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="images/gallery_img03-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover"></div>
-            <img height="283" width="434" src="images/gallery_img03.jpg" alt="Gallery img03" />
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="images/gallery_img04-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover"></div>
-            <img height="283" width="434" src="images/gallery_img04.jpg" alt="Gallery img04" />
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="images/gallery_img05-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover"></div>
-            <img height="283" width="434" src="images/gallery_img05.jpg" alt="Gallery img05" />
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="images/gallery_img06-bg.jpg" class="fancybox" rel="group">
-            <div class="gallery-img-hover"></div>
-            <img height="283" width="434" src="images/gallery_img06.jpg" alt="Gallery img06" />
+            <img height="283" width="434" src="{{item.blog_image_uri}}" alt="Hình ảnh blog" />
           </a>
         </div>
       </div>
     </div>
   </div>
-  <div class="section" id="contact1">
-    <div class="container">
-      <h3 class="uppercase-bold">Get started</h3>
-      <div class="row">
-        <div class="col-md-5">
-          <span>Your opinion about our work is very important to us. If you have any questions, send them to us and our team will help you instantly.</span>
-          <hr>
-          <h4>velit vel ipsum auctor pulvinar</h4>
-          <br>
-          <p>8901 Marmora Road</p>
-          <p>Glasgow, DO4 89GR.</p>
-          <p>Freephone: +1 800 559 6580</p>
-          <p>Telephone: +1 959 603 6035</p>
-          <p>FAX: +1 504 889 9898</p>
-          <br>
-          <p>E-mail: mail@demolink.org</p>
-        </div>
-        <div class="col-md-7" id="form-input">
-          <form role="form" style="float: right;">
-            <div class="form-group">
-              <input class="form-control" id="name" placeholder="Name:*" type="text">
-            </div>
-            <div class="form-group">
-              <input class="form-control" id="email" placeholder="Email:*" type="email">
-            </div>
-            <div class="form-group">
-              <input class="form-control" id="pwd" placeholder="Phone:" type="text">
-            </div>
-            <div class="form-group">
-              <textarea cols="68" id="textarea" name="textarea" rows="11"></textarea>
-            </div>
-            <a class="btn btn-default" style="float: right;" type="submit">Send</a>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div> -->
   <script>
   </script>
   <div class="section" id="google-map">

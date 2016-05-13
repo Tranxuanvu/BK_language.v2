@@ -167,8 +167,7 @@ angular.module('adminMainController', ['ckeditor']).controller('AdminMainControl
             angular.forEach($scope.relative, function (e) {
                 if (e.isCheck) {
                     $scope.post.links.push({
-                        redirect_link_id: e.id,
-                        top_link: e.topLink
+                        redirect_link_id: e.id
                     });
                 }
             });

@@ -34,7 +34,8 @@
             }
 
             AdminConfig.saveConfig($scope.config).then(function (result) {
-                console.log(result);
+                // console.log(result);
+                alert("Lưu thành công!");
             });
         }
     }

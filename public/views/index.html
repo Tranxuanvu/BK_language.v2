@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="bklanguage" ng-controller="ConfigController">
+<html ng-app="bklanguage" ng-controller="MainController">
   <head>
     <title ng-bind="title"></title>
     <meta charset="utf-8">
@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="../css/owl.carousel.css">
     <link rel="stylesheet" href="../css/owl.theme.css">
 
-    <link rel="stylesheet" href="../fancybox/jquery.fancybox.css" type="text/css" media="screen" />
-
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" type="text/css" href="../css/home.css">
@@ -23,155 +21,163 @@
     <link rel="stylesheet" type="text/css" href="../css/animate.css" />
 
     <link rel="stylesheet" type="text/css" href="../libs/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../libs/ngToast/dist/ngToast.min.css">
   </head>
   <body ng-controller="menuController" ng-init="loadMenu(1, 'mainMenu')">
     <header class="navbar navbar-default navbar-fixed-top">
       <div id="navbar-top">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 hotline">
+            <div class="col-md-6 hotline" ng-repeat="item in homeConfig.p[0].items">
               <span><i class="fa fa-phone fa-lg"></i></span>
-              <span>{{config.hotline}}</span>
+              <span>{{item.hotline}}</span>
             </div>
             
           </div>
         </div>
       </div>
-      <div class="container">
-        <div class="navbar-header">
-          <button data-target=".navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+      <div style="border-bottom: 1px solid #FFF;">
+        <div class="container">
+          <div class="navbar-header">
+            <button data-target=".navbar-collapse" data-toggle="collapse" type="button" class="navbar-toggle">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
 
-          <div class="navbar-brand">
-            <a href="/" style="color: #FFF;">
-              <div id="logo"></div>
-            </a>
-          </div> 
-        </div>
-        <div class="navbar-collapse collapse menu">
-          <div class="login-register">
-            <div>
-              <a class="md-trigger btn btn-default" data-modal="modal-login-register">Login/Register</a>
-            </div>
+            <div class="navbar-brand">
+              <a href="/" style="color: #FFF;">
+                <div ng-repeat="item in homeConfig.p[1].items">              
+                  <div id="logo" style="background: url('{{item.logo_image_uri}}');"></div>
+                </div>
+              </a>
+            </div> 
+          </div>
+          <div class="navbar-collapse collapse menu">
+            <div class="login-register" ng-controller="AuthenticationController">
+              <div>
+                <a ng-if="!currentUser" class="md-trigger btn btn-default" data-modal="modal-login-register">Login/Register</a>
+                <div ng-if="currentUser">
+                  <h5>Welcome <a href="#" ng-click="logout()" ng-bind="currentUser | split: '@':0" style="color: #330F0F"></a> !</h5>
+                </div>
+              </div>
 
-            <div class="md-modal md-effect-19" id="modal-login-register">
-              <div class="md-content">
-                <ul class="tab-group">
-                  <li class="tab active"><a href="#login" id="tab-signin">Đăng nhập</a></li>
-                  <li class="tab"><a href="#signup" id="tab-signup">Đăng ký</a></li>
-                </ul>
-                
-                <div class="tab-content">
-                  <div id="login">
-                    <h2>Chào mừng bạn quay trở lại!</h2>
-                    
-                    <form action="#" method="post">
-                    
-                      <div class="field-wrap">
-                        <input placeholder="Email:*" type="email"required autocomplete="off"/>
-                      </div>
+              <div class="md-modal md-effect-19" id="modal-login-register">
+                <div class="md-content">
+                  <ul class="tab-group">
+                    <li class="tab active"><a href="#login" id="tab-signin">Đăng nhập</a></li>
+                    <li class="tab"><a href="#signup" id="tab-signup">Đăng ký</a></li>
+                  </ul>
+                  
+                  <div class="tab-content">
+                    <div id="login">
+                      <h2>Chào mừng bạn quay trở lại!</h2>
                       
-                      <div class="field-wrap">
-                        <input placeholder="Mật khẩu:*"type="password" required autocomplete="off"/>
-                      </div>
+                      <form name="loginForm" class="form-horizontal" role="form" method="post">
                       
-                      <p class="forgot"><a href="#">Quên mật khẩu?</a></p>
-                      
-                      <button class="button button-block"/>Đăng nhập</button>
-                    
-                    </form>
-                  </div>
-                  <div id="signup">   
-                    <h2>Đăng ký tài khoản miễn phí </h2>
-                    
-                    <form action="#" method="post">
-                    
-                      <div class="field-wrap">
-                        <input placeholder="Email:*" type="email" required autocomplete="off" />
-                      </div>
-
-                      <div class="top-row">
                         <div class="field-wrap">
-                          <input placeholder="SĐT:*" type="text" required autocomplete="off" />
+                          <input placeholder="Email:*" type="email" ng-model="user.email" required autocomplete="off"/>
                         </div>
                         
                         <div class="field-wrap">
-                          <input placeholder="Họ tên:" type="text" autocomplete="off" />
+                          <input placeholder="Mật khẩu:*"type="password" ng-model="user.password" required autocomplete="off"/>
                         </div>
-                      </div>
-
-                      <div class="field-wrap">
-                        <input placeholder="Nhập mật khẩu:*" type="password" required autocomplete="off" />
-                      </div>
+                        
+                        <p class="forgot"><a href="#">Quên mật khẩu?</a></p>
+                        
+                        <button class="button button-block" type="submit" ng-click="login()" data-ng-disabled="loginForm.$invalid">Đăng nhập</button>
                       
-                      <div class="field-wrap">
-                        <input placeholder="Nhập lại mật khẩu:*" type="password" required autocomplete="off"/>
-                      </div>
+                      </form>
+                    </div>
+                    <div id="signup">   
+                      <h2>Đăng ký tài khoản miễn phí </h2>
                       
-                      <div class="field-wrap">
-                        <input placeholder="Trường hoặc Công ty:" type="text" autocomplete="off"/>
-                      </div>
+                      <form name="formRegister" class="form-horizontal" method="post">
                       
-                      <button type="submit" class="button button-block"/>Đăng ký</button>
-                    
-                    </form>
+                        <div class="field-wrap">
+                          <input placeholder="Email:*" type="email" ng-model="user.email" required autocomplete="off" />
+                        </div>
 
-                  </div>
-                </div> <!---/tab-contends -->
-                <!-- <button class="md-close">Đóng!</button> -->
-              </div>
-            </div>
+                        <div class="top-row">
+                          <div class="field-wrap">
+                            <input placeholder="SĐT:*" type="text" ng-model="user.phoneNumber" required autocomplete="off" />
+                          </div>
+                          
+                          <div class="field-wrap">
+                            <input placeholder="Họ tên:" type="text"  ng-model="user.fullName" autocomplete="off" />
+                          </div>
+                        </div>
 
-            <div class="md-overlay"></div>
-          </div>
-          <div id="search">
-            <div id="welcome">
-              <h5>Welcome ...!</h5>
-            </div>
-            <form role="search" class="navbar-form">
-              <div class="input-group">
-                <input type="text" placeholder="Search" name="q" class="form-control"/>
-                <div class="input-group-btn">
-                  <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                        <div class="field-wrap">
+                          <input placeholder="Nhập mật khẩu:*" type="password" ng-model="user.password" required autocomplete="off" />
+                        </div>
+                        
+                        <div class="field-wrap">
+                          <input placeholder="Nhập lại mật khẩu:*" type="password" ng-model="user.rePassword"required autocomplete="off"/>
+                        </div>
+                        
+                        <div class="field-wrap">
+                          <input placeholder="Trường hoặc Công ty:" type="text" ng-model="user.schoolCompany" autocomplete="off"/>
+                        </div>
+                        
+                        <button type="submit" class="button button-block" ng-click="register(user)" data-ng-disabled="loginForm.$invalid">Đăng ký</button>
+                      
+                      </form>
+
+                    </div>
+                  </div> <!---/tab-contends -->
+                  <!-- <button class="md-close">Đóng!</button> -->
                 </div>
               </div>
-            </form>
-          </div>
 
-          <script type="text/ng-template" id="main_menu_item_render.html">
-            <a href="{{data.uri}}" class="dropdown-toggle" data-toggle="dropdown">{{data.name}} 
-              <b class="caret" ng-show="data.submenus.length > 0"></b>
-            </a>
-            <ul class="dropdown-menu" ng-class="{'item-menu': data.type == 0, 'megamenu': data.type == 1}" ng-show="data.submenus.length > 0" ng-switch="data.type">
+              <div class="md-overlay">
+                <toast></toast>
+              </div>
+            </div>
+            <div id="search">
+              <form role="search" class="navbar-form">
+                <div class="input-group">
+                  <input type="text" placeholder="Search" name="q" class="form-control"/>
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                  </div>
+                </div>
+              </form>
+            </div>
 
-                <!-- MEGA_MENU -->
+            <script type="text/ng-template" id="main_menu_item_render.html">
+              <a href="{{data.uri}}">{{data.name}} 
+                <b class="caret" ng-show="data.submenus.length > 0"></b>
+              </a>
+              <ul class="dropdown-menu" ng-class="{'item-menu': data.type == 0, 'megamenu': data.type == 1}" ng-show="data.submenus.length > 0" ng-switch="data.type">
 
-                <li ng-switch-when="1" ng-repeat="data in data.submenus">
-                  <a href="{{data.uri}}" ng-bind="data.name"></a>
-                  <ul>
-                    <li ng-repeat="data in data.submenus" ng-include="'submenu1_item_render.html'"></li>
-                  </ul>
-                </li>
+                  <!-- MEGA_MENU -->
 
-                <!-- NORMAL_MENU -->
+                  <li ng-switch-when="1" ng-repeat="data in data.submenus">
+                    <a href="{{data.uri}}" ng-bind="data.name"></a>
+                    <ul>
+                      <li ng-repeat="data in data.submenus" ng-include="'submenu1_item_render.html'"></li>
+                    </ul>
+                  </li>
 
-                <li ng-switch-default>
-                  <a ng-repeat="data in data.submenus" href="{{data.uri}}" ng-bind="data.name"></a>
-                </li>
+                  <!-- NORMAL_MENU -->
+
+                  <li ng-switch-default>
+                    <a ng-repeat="data in data.submenus" href="{{data.uri}}" ng-bind="data.name"></a>
+                  </li>
+              </ul>
+            </script>
+
+            <script type="text/ng-template" id="submenu1_item_render.html">
+              <a href="{{data.uri}}" ng-bind="data.name"></a>
+            </script>
+
+            <ul class="nav navbar-nav">
+              <li ng-class="{'active-home': menu == $index, 'dropdown': 'data.submenus.length > 0', 'menu-large': data.type == 1 }" ng-repeat="data in mainMenu.submenus" ng-include="'main_menu_item_render.html'" on-toggle-hover>
+              </li>
             </ul>
-          </script>
-
-          <script type="text/ng-template" id="submenu1_item_render.html">
-            <a href="{{data.uri}}" ng-bind="data.name"></a>
-          </script>
-
-          <ul class="nav navbar-nav">
-            <li ng-class="{'active-home': menu == $index, 'dropdown': 'data.submenus.length > 0', 'menu-large': data.type == 1 }" ng-repeat="data in mainMenu.submenus" ng-include="'main_menu_item_render.html'" on-toggle-hover>
-            </li>
-          </ul>
+          </div>
         </div>
       </div>
     </header>
@@ -179,42 +185,12 @@
 <!-- Modal -->
     <div id="sidebar">
       <ul>
-        <li><a class="md-trigger red-tooltip" data-modal="modal-11" data-toggle="tooltip" data-placement="right" title="Lịch khai giảng"><img src="images/lichkhaigiang.png"></a></li>
-        <li><a class="md-trigger red-tooltip" data-modal="modal-10" data-toggle="tooltip" data-placement="right" title="Hot news"><img src="images/hotnews.png"></a></li>
+        <li><a href="/chuong-trinh-hoc/lich-khai-giang" class="red-tooltip" data-toggle="tooltip" data-placement="right" title="Lịch khai giảng"><img src="images/lichkhaigiang.png"></a></li>
+        <li><a href="/hot-news/tin-tuc" class="red-tooltip" data-toggle="tooltip" data-placement="right" title="Hot news"><img src="images/hotnews.png"></a></li>
         <li><a class="md-trigger red-tooltip" data-modal="modal-15" data-toggle="tooltip" data-placement="right" title="Liên hệ"><img src="images/lienhe.png"></a></li>
         <li><a class="md-trigger red-tooltip" data-modal="modal-15-DK" data-toggle="tooltip" data-placement="right" title="Đăng ký"><img style="background: #FFF;" src="images/DK.png"></a></li>
 
       </ul>
-
-      <div class="md-modal md-effect-11" id="modal-11">
-        <div class="md-content">
-          <h3>Lịch khai giảng</h3>
-          <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <ul>
-              <li><a href="" style="color: #FFF;">Link 1</a></li>
-              <li><a href=""style="color: #FFF;">Link 2</a></li>
-              <li><a href=""style="color: #FFF;">Link 3</a></li>
-            </ul>
-            <button class="md-close">Đóng!</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="md-modal md-effect-10" id="modal-10">
-        <div class="md-content">
-          <h3>Hot News</h3>
-          <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <ul>
-              <li><a href=""style="color: #FFF;">Link 1</a></li>
-              <li><a href=""style="color: #FFF;">Link 2</a></li>
-              <li><a href=""style="color: #FFF;">Link 3</a></li>
-            </ul>
-            <button class="md-close">Đóng!</button>
-          </div>
-        </div>
-      </div>
       <div class="md-modal md-effect-15" id="modal-15">
         <div class="md-content">
           <h3>Liên hệ </h3>
@@ -238,7 +214,7 @@
       </div>
       <div class="md-modal md-effect-15" id="modal-15-DK">
         <div class="md-content">
-          <h3>Liên hệ </h3>
+          <h3>Đăng Ký </h3>
           <div>
             <p class="upper-case">gọi ngay (08) 3866 6869 hoặc để lại thông tin để được tư vấn miễn phí</p>
             <form action="/" method="post">
@@ -293,6 +269,9 @@
     <script src="/libs/angular-route/angular-route.min.js"></script>
     <script src="/libs/ngmap/build/scripts/ng-map.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="../libs/angular-cookies/angular-cookies.js"></script>
+    <script src="../libs/angular-md5/angular-md5.js"></script>
+    <script src="../libs/ngToast/dist/ngToast.min.js"></script>
 
     <!-- Controller import -->
     <script src="/js/controllers/menuController.js"></script>
@@ -325,6 +304,12 @@
     <script src="/js/controllers/configController.js"></script>
     <script src="/js/services/ConfigService.js"></script>
 
+    <script src="/js/controllers/blocksController.js"></script>
+    <script src="/js/services/BlocksService.js"></script>
+
+    <script src="/js/controllers/authenticationController.js"></script>
+    <script src="/js/services/AuthenticationService.js"></script>
+
     <!-- Derecitve import -->
     <script src="/js/directives/appDirectives.js"></script>
 
@@ -333,10 +318,24 @@
     <script src="/js/filters.js"></script>
     <script src="/js/app.js"></script>
 
-    <script type="text/javascript" src="../fancybox/jquery.fancybox.pack.js"></script>
     <script src="/js/owl.carousel.js"></script>
 
     <script src="/js/home.js"></script>
     <script src="/js/md-classie.js"></script>
+
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/570e12bbd9900cfe1d80d5fa/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
   </body>
 </html>

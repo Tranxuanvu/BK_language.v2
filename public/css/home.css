@@ -96,10 +96,15 @@ ul {
 
 #sidebar ul {
   padding-left: 0;
+  border: 1.5px solid #FFF;
+  border-left-color: transparent;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.75);
 }
 
 #sidebar img {
-  height: 70px;
+  height: 65px;
 }
 
 #sidebar .red-tooltip + .tooltip > .tooltip-inner {
@@ -823,4 +828,54 @@ ul {
 ng-map {
   width: 100%;
   height: 400px !important;
+}
+
+.event {
+  margin: 5px 0;
+  display: inline-flex;
+  position: relative;
+  width: 100%;
+}
+
+.event p {
+  margin: 0;
+  display: inline-flex;
+  width: 100%;
+}
+
+.event .day-of-event {
+  float: left;
+  font-size: 17px;
+  text-align: center;
+  text-transform: uppercase;
+  background: #E10B0B;
+  color: #fff;
+  padding: 20px 12px;
+  min-width: 111px;
+}
+
+.event .title-of-event {
+  float: left;
+  font-size: 17px;
+  text-align: center;
+  text-transform: uppercase;
+  background: #FEDE55;
+  color: #676161;
+  padding: 20px 12px;
+  max-width: 226px;
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.event .support {
+  margin-right: 10px;
+}
+
+.sm-content {
+  display: none;
+}
+
+.toggle a:focus, a:hover {
+  color: transparent;
 }

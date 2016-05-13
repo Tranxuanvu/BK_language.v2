@@ -8,39 +8,37 @@
     Post.getSubCategoryList(categorySlug).then(function (data) {
 
         $scope.subCategories = data;
-
-        if (data.length > 0) {
-            if (subCagotorySlug == null) {
-                subCagotorySlug = data[0].slug;
-            }
-            
-            if (data[0].posts.length > 0 && postSlug == null) {
-                postSlug = data[0].posts[0].slug;
-            }
-        }
         
         Post.getPost(categorySlug, subCagotorySlug, postSlug).then(function (post) {
-            post.tags = post.tags != null ? JSON.parse(post.tags):[];
-            $scope.post = post;
-
-            // add link of post to array $scope.post
-            $scope.list_link_to_post = [];
-            for (i in post){
-                if (i != 'tags') {
-                    $scope.post[i].link_to_post = document.location.origin + '/' + post[i].category_slug + '/' + post[i].sub_category_slug + '/' + post[i].slug;
-                }
+            if (post.length == 1) {
+                $scope.post = post[0];
             }
-            
-            Post.getRelative(post.id).then(function (relativePosts) {
-                $scope.relativePosts = relativePosts;
-                
-                var article_links = [];
-                for (i in relativePosts) {
-                    if (relativePosts[i].top_link == 1) {
-                        article_links.push(relativePosts[i]);
+
+            if (post.length > 1) {
+                $scope.post = post;
+
+                // add link of post to array $scope.post
+                $scope.list_link_to_post = [];
+                for (i in post){
+                    if (i != 'tags') {
+                        $scope.post[i].link_to_post = document.location.origin + '/' + post[i].category_slug + '/' + post[i].sub_category_slug + '/' + post[i].slug;
                     }
                 }
-                $scope.article_links = article_links;
+            }
+            // post.tags = post.tags != null ? JSON.parse(post.tags):[];
+            
+            
+            Post.getRelative(post[0].id).then(function (relativePosts) {
+
+                $scope.relativePosts = relativePosts;
+                
+                // var article_links = [];
+                // for (i in relativePosts) {
+                //     if (relativePosts[i].top_link == 1) {
+                //         article_links.push(relativePosts[i]);
+                //     }
+                // }
+                // $scope.article_links = article_links;
 
                 for (j in relativePosts){
                 	/*var jqxhr = $.getJSON('https://api.facebook.com/method/links.getStats?urls='+encodeURIComponent($window.location.href)+'&format=json');
