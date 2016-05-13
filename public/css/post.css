@@ -448,3 +448,13 @@
 #hot-news-blog :-ms-input-placeholder { /* Internet Explorer 10-11 */
   color: #444;
 }
+
+#blog-detail {
+  margin-top: 140px;
+  margin-bottom: 50px;
+}
+
+#blog-detail .col-md-3 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
