@@ -19,8 +19,6 @@ angular.module('authenticationController', []).filter('split', function() {
     $scope.currentUser = user.email;
   } else {
     $scope.login = function () {
-
-      console.log('Login');
       
       $scope.user.password = md5.createHash($scope.user.password);
       
