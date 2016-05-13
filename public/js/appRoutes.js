@@ -48,6 +48,8 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
           return 'views/partials/post/hot_news/club.html'
         } else if (params.sub_category_slug == "blog") {
           return 'views/partials/post/hot_news/blog.html'
+        }else if (params.sub_category_slug == "tai-lieu-hoc-tap") {
+          return 'views/partials/post/hot_news/document.html'
         } else {
           return 'views/partials/post/hot_news/template.html'
         };

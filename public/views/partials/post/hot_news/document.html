@@ -1,0 +1,23 @@
+<div class="bg-body" ng-controller="AuthenticationController">
+  <div>
+    <div ng-if="!currentUser">
+      <div id="content" class="container" style="margin-top: 140px;">
+        <div class="post-content hidden-link " ng-bind-html="post.content | to_trusted"></div>
+      </div>
+    </div>
+    <div ng-if="currentUser">
+      <div id="content" class="container" style="margin-top: 140px;">
+        <div class="post-content" ng-bind-html="post.content | to_trusted"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    var timer = setTimeout(function() {
+      $('.hidden-link p a').remove();
+      $('.hidden-link p').append("<span style='color: #e10b0b; padding-left: 10px;'>Bạn phải đăng nhập để thấy được link download</span>");
+    }, 300);
+  });
+</script>
