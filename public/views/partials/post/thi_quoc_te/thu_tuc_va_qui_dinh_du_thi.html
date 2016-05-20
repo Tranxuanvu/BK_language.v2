@@ -17,8 +17,8 @@
         </div>
       </div>
       <div class="col-md-1"></div>
-      <div class="col-md-3">
-        <div class="block-rhs">
+      <div class="col-md-3" ng-controller="BlocksController">
+        <!-- <div class="block-rhs">
           <h2>Hot news</h2>
           <ul style="list-style: inherit;">
             <li><a href="#">Lorem ipsum</a></li>
@@ -29,8 +29,15 @@
         </div>
         <div class="block-rhs" style="height: 200px;">
           <h2>Thi thử <br /> toeic</h2>
+        </div> -->
+
+        <div class="block-banner-rhs" ng-repeat="item in blocksConfig.p[1].items">
+          <a href="{{item.link_to_post}}">
+            <img src="{{item.slide_image_uri}}" alt="banner">
+          </a>
         </div>
-        <div class="block-rhs" style="height: 200px; margin-bottom: 20px;">
+
+        <div class="block-rhs" style="height: 250px; margin-bottom: 20px;">
           <h2>Blog</h2>
         </div>
       </div>

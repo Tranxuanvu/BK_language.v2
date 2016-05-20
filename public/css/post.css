@@ -6,12 +6,18 @@
   margin-bottom: 20px;
 }
 
+.block-banner-rhs {
+  border: 1px solid #CCC;
+  margin-top: 30px;
+}
+
 .block-rhs {
   background-color: #FEDE55;
   /*height: 400px;*/
   /*color: #FFF;*/
   padding: 10px;
   /*margin: 30px 20px 0 20px;*/
+  border: 0.5px solid #CCC;
   margin-top: 30px;
 }
 
@@ -59,8 +65,8 @@
 }
 
 #post-sprogram .col-md-3 {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 9px;
+  padding-right: 9px;
 }
 
 #post-sprogram .title-sidebar-right {

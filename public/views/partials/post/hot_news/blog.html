@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="col-md-1"></div>
-      <div class="col-md-3">
+      <div class="col-md-3" ng-controller="BlocksController">
         <div class="title-sidebar-right">
           <h3>Đăng ký nhận bài viết mới!</h3>
         </div>
@@ -61,11 +61,16 @@
           <h3>Bài viết nổi bật</h3>
         </div>
         <div class="block-rhs" style="height: 160px;"></div>
-        <div class="block-rhs" style="height: 320px;">
+        <!-- <div class="block-rhs" style="height: 320px;">
           <h3>Hot new</h3>
-        </div>
-        <div class="block-rhs banner" style="height: 160px;">
+        </div> -->
+        <!-- <div class="block-rhs banner" style="height: 160px;">
           <h3>banner</h3>
+        </div> -->
+        <div class="block-banner-rhs" ng-repeat="item in blocksConfig.p[1].items">
+          <a href="{{item.link_to_post}}">
+            <img src="{{item.slide_image_uri}}" alt="banner">
+          </a>
         </div>
       </div >
     </div>

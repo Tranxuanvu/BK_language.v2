@@ -5,7 +5,7 @@ angular.module('adminBlocksConfigController', []).controller('AdminBlocksConfigC
         $window.location.href = '/admin/login';
     }
     else {
-        $scope.blocksConfig = { p: [{ items: [] }] };
+        $scope.blocksConfig = { p: [{ items: [] }, { items: [] }, { items: [] }] };
         
         AdminBlocksConfig.loadConfig().then(function (data) {
             if (data.p != null) {
