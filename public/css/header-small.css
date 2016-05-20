@@ -28,7 +28,7 @@ header, nav, header a, header img, header li {
 }
 
 .navbar-default {
-  background-color: #E10B0B;
+  background-color: #FFF;
   color: #FFF;
 }
 
@@ -58,37 +58,37 @@ header, nav, header a, header img, header li {
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: #FFF;
+  color: #000;
   text-transform: uppercase;
   font-size: 14px;
 }
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #F2F2F2;
-  background-color: #D50000;
+  color: #000;
+  background-color: #FBED55;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:hover {
-  color: #FFF;
-  background-color: #D50000;
+  color: #000;
+  background-color: #FBED55;
 }
 
 .navbar-header {
-  color: #FFF;
+  color: #000;
   margin: 0 !important;
 }
 
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #FFF;
+  background-color: #000;
 }
 
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
-  color: #FFF;
-  background-color: #D50000;
+  color: #000;
+  background-color: #FBED55;
 }
 
 .navbar-fixed-bottom .navbar-collapse,
@@ -101,7 +101,7 @@ header, nav, header a, header img, header li {
 }
 
 .active-home {
-  background-color: #D50000;
+  background-color: #FBED55;
 }
 
 .uppercase-bold {
@@ -142,24 +142,24 @@ header, nav, header a, header img, header li {
 .megamenu {
   padding: 20px 0px;
   width: 100%;
-  background-color: #D50000;
+  background-color: #FBED55;
 }
 
 .item-menu {
-  background-color: #D50000;
+  background-color: #FBED55;
   width: 211px;
   transition: all 0.5s;
 }
 
 .item-menu > li > a {
-  color: #FFF3E0;
+  color: #000;
   padding: 10px 20px;
   margin: 1px 0;
 }
 
 .item-menu > li > a:hover {
   color: inherit;
-  background: rgba(255, 0, 11, 0.4);
+  background: rgba(85, 85, 85, 0.2);
 }
 
 .megamenu > li {
@@ -170,18 +170,18 @@ header, nav, header a, header img, header li {
 }
 
 .megamenu > li > a {
-  color: #FFF;
+  color: #000;
   text-transform: uppercase;
 }
 
 .megamenu > li > a:hover {
-  color: #FFF;
+  color: #000;
   background-color: transparent;
   /*cursor: text;*/
 }
 
 .megamenu .dropdown-header {
-  color: #FFF !important;
+  color: #000 !important;
   font-size: 15px;
 }
 
@@ -207,7 +207,7 @@ header, nav, header a, header img, header li {
   clear: both;
   font-weight: normal;
   line-height: 1.428571429;
-  color: #FFF3E0;
+  color: #000;
   white-space: normal;
 }
 
@@ -215,7 +215,7 @@ header, nav, header a, header img, header li {
 .megamenu > li > ul > li > a:focus {
   text-decoration: none;
   color: inherit;
-  background-color: rgba(255, 0, 11, 0.4);
+  background-color: rgba(85, 85, 85, 0.2);
 }
 
 .megamenu.disabled > a,
@@ -244,10 +244,11 @@ header, nav, header a, header img, header li {
   border-radius: 15px;
   background: none;
   padding: 4px 30px;
-  color: #FFF;
+  color: #A4A1A1;
+  border-color: #A4A1A1
 }
 
-.login-register .btn-default {
+.btn-default {
   border-color: #FFF;
 }
 
@@ -267,14 +268,14 @@ header, nav, header a, header img, header li {
 
 #search .form-control {
   background-color: transparent;
-  border-color: #FFF;
+  border-color: #A4A1A1;
   border-radius: 15px 0 0 15px;
-  color: #FFF;
+  color: #A4A1A1;
 }
 
 #search .form-control:focus {
   box-shadow: none;
-  border-color: #FFF;
+  border-color: #A4A1A1;
 }
 
 #search .btn {
@@ -282,9 +283,9 @@ header, nav, header a, header img, header li {
 }
 
 #search .btn-default {
-  color: #FFF;
+  color: #A4A1A1;
   background-color: transparent;
-  border-color: #FFF;
+  border-color: #A4A1A1;
 }
 
 #search .btn-default:hover {
@@ -293,15 +294,15 @@ header, nav, header a, header img, header li {
 }
 
 #search ::-webkit-input-placeholder {
-  color: #FFF;
+  color: #A4A1A1;
 }
 
 #search :-moz-placeholder {
-  color: #FFF;
+  color: #A4A1A1;
 }
 
 #search ::-moz-placeholder {
-  color: #FFF;
+  color: #A4A1A1;
 }
 
 /* Reponsive
@@ -365,7 +366,7 @@ header, nav, header a, header img, header li {
 
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover {
     color: #FFF;
-    background: rgba(255, 0, 11, 0.4);
+    background: rgba(85, 85, 85, 0.2);
   }
 
   #search {
