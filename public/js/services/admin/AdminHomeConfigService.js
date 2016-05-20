@@ -3,6 +3,7 @@
 		return {
 			loadConfig: function () {
                 return $http.post('/api/config/load_home_config').then(function (result) {
+                    console.log(result.data)
                     return result.data;
                 })
             },
