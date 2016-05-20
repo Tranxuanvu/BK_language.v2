@@ -188,4 +188,37 @@ angular.module('appDirectives', []).directive('ckEditor', [function () {
                 });
             }
         };
+    }).directive("scaleImage", function(){
+        return {
+            restrict: 'A',
+            link: function(scope, element, attrs){
+                $(window).load(function() {                    
+                    element.each(function () {
+                        var maxWidth = 250;
+                        var maxHeight = 250;
+                        var ratio = 0;
+                        var width = element[0].width;
+                        var height = element[0].height;
+
+                        // Check if the current width is larger than the max
+                        if(width > maxWidth){
+                          ratio = maxWidth / width;
+                          $(this).css("width", maxWidth);
+                          $(this).css("height", height * ratio);
+                          height = height * ratio;
+                          width = width * ratio;
+                        }
+
+                        // Check if current height is larger than max
+                        if(height > maxHeight){
+                          ratio = maxHeight / height;
+                          $(this).css("height", maxHeight);
+                          $(this).css("width", width * ratio);
+                          width = width * ratio;
+                          height = height * ratio;
+                        }
+                    });
+                });
+            }
+        }
     });

@@ -25,8 +25,8 @@
         <!-- </div> -->
       </div>
       <div class="col-md-1"></div>
-      <div class="col-md-3">
-        <div class="block-rhs">
+      <div class="col-md-3" ng-controller="BlocksController">
+        <!-- <div class="block-rhs">
           <h2>Hot news</h2>
           <ul style="list-style: inherit;">
             <li><a href="#">Lorem ipsum</a></li>
@@ -40,13 +40,20 @@
           <div style="text-align: center;">
             <a href="#">Kiểm tra ngay</a>
           </div>
+        </div> -->
+
+        <div class="block-banner-rhs" ng-repeat="item in blocksConfig.p[1].items">
+          <a href="{{item.link_to_post}}">
+            <img src="{{item.slide_image_uri}}" alt="banner">
+          </a>
         </div>
+
         <div class="wrapper-slider">
           <div class="title-sidebar-right upper-case">
             <h3>Chương trình khác</h3>
           </div>
           <div class="slider-sidebar-right">
-            <wrap-owlcarousel class="owl-carousel owl-theme" id="slider-sprogram" data-options="{autoPlay: 5000, singleItem: true, responsive: true}" ng-controller="BlocksController">
+            <wrap-owlcarousel class="owl-carousel owl-theme" id="slider-sprogram" data-options="{autoPlay: 5000, singleItem: true, responsive: true}">
               <div owl-carousel-item="" ng-repeat="item in blocksConfig.p[0].items" class="item">
                 <a href="{{item.link_to_post}}">
                   <div class="img-slider" style="background: url('{{item.slide_image_uri}}'); background-size: cover; background-position: top;"></div>

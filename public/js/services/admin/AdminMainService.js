@@ -39,6 +39,7 @@ angular.module('AdminMainService', []).factory('AdminMain', ['$http', function($
 		},
 		checkLogIn: function (data) {
 			return $http.post('/api/admin/login', data).then(function (result) {
+				console.log(result.data);
 				return result.data;
 			})
 		}

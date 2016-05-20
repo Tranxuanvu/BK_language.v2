@@ -5,7 +5,9 @@
     </h3>
     <ul class="nav nav-tabs" role="tablist" id="tabs">
         <li class="active"><a href="#tab-other-spro" show-tab>Chương trình khác</a></li>
+        <li><a href="#tab-banner" show-tab>Banner</a></li>
     </ul>
+
     <div class="panel panel-default panel-custom">
         <div class="tab-content">
             <div id="tab-other-spro" class="panel-body tab-pane active">
@@ -31,6 +33,34 @@
                         </div>
                         <div class="btn-del col-md-1">
                             <button class="btn btn-danger" ng-click="blocksConfig.p[0].items.splice(idx, 1)"><span class="fa fa-trash"></span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tab-banner" class="panel-body tab-pane">
+                <div class="form-group">
+                    <button class="btn btn-primary" ng-click="blocksConfig.p[1].items.push({link_to_post: '', slide_image_uri: '' })"><span class="fa fa-plus"></span></button>
+                </div>
+                <div class="col-md-offset-1 form-group">
+                    <div class="form-group well col-md-12" ng-repeat="(idx, item) in blocksConfig.p[1].items">
+                        <div class="col-md-11">
+                            <div class="row">
+                                <div class="input-group input">
+                                    <div class="input-group-addon">{{base_url}}</div>
+                                    <input class="form-control" ng-model="item.link_to_post" placeholder="link tới bài viết"></input>
+                                </div>
+                                <div class="input-group input">
+                                    <div class="input-group-addon">{{base_url}}</div>
+                                    <input class="form-control" ng-model="item.slide_image_uri" placeholder="banner" />
+                                    <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(item, 'slide_image_uri')">
+                                        <span class="fa fa-cloud-upload"></span><!--UploadImage-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-del col-md-1">
+                            <button class="btn btn-danger" ng-click="blocksConfig.p[1].items.splice(idx, 1)"><span class="fa fa-trash"></span></button>
                         </div>
                     </div>
                 </div>

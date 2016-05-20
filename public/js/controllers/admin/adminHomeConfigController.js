@@ -49,7 +49,6 @@
         }
         
         $scope.uploadImage = function (item, field) {
-            console.log(item);
             Upload.upload({
                 url: '/api/uploads',
                 method: 'POST',

@@ -7,10 +7,16 @@
         </div>
       </div>
       <div class="col-md-1"></div>
-      <div class="col-md-3">
+      <div class="col-md-3" ng-controller="BlocksController">
+        <!-- <div class="block-rhs" style="height: 250px;"></div>
         <div class="block-rhs" style="height: 250px;"></div>
-        <div class="block-rhs" style="height: 250px;"></div>
-        <div class="block-rhs" style="height: 250px;"></div>
+        <div class="block-rhs" style="height: 250px;"></div> -->
+
+        <div class="block-banner-rhs" ng-repeat="item in blocksConfig.p[1].items">
+          <a href="{{item.link_to_post}}">
+            <img src="{{item.slide_image_uri}}" alt="banner">
+          </a>
+        </div>
       </div>
     </div>
   </div>
