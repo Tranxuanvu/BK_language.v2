@@ -3,6 +3,31 @@ var db = require('../../config/database');
 var menu_id = 1;
 
 module.exports = function (app) {
+    app.post('/test-result', function(req, res){
+        var pool = mysql.createPool(db);
+        pool.getConnection(function (err, connection) {
+            if (err) {
+                pool.end();
+                res.json({});
+                console.log({ "code" : err.code, "status" : err.message });
+                return;
+            } else {
+                connection.query('SELECT * FROM detailPoint INNER JOIN enterPoint ON enterPoint.id=detailPoint.classID WHERE mobile = ? AND lower(fullname) = ?', [req.body.phone, req.body.name], function (err, rows) {
+                    connection.destroy();
+                    pool.end();
+                    
+                    var result = [];
+                    rows.forEach(function (e) {
+                        if(e.type == req.body.type)
+                            result.push(e);
+                    });
+                    res.json(result);
+                });
+                
+            }
+        });
+    })
+
     app.post('/api/post/detail', function (req, res) {
         var pool = mysql.createPool(db);
         pool.getConnection(function (err, connection) {

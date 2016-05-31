@@ -1,0 +1,117 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2">
+    <h3 class="orange-text">
+        <i class="fa fa-file-excel-o "></i>
+        Nhập điểm thi
+    </h3>
+
+
+<select name="format" style="display: none">
+<option value="csv"> CSV</option>
+<option value="json" selected> JSON</option>
+<option value="form"> FORMULAE</option>
+</select>
+
+<input type="checkbox" name="useworker" style="display: none"><br />
+<input type="checkbox" name="xferable" style="display: none"><br />
+<input type="checkbox" name="userabs"  style="display: none"><br />
+
+<style type="text/css">
+    .leftPanel{
+        float: left;
+        width: 50%;
+        box-sizing: border-box;
+    }
+
+    .rightPanel{
+        float: right;
+        width: 50%;
+        box-sizing: border-box;
+        padding-right: 10px;
+    }
+
+    .mytable tr{
+        padding: 10px;
+    }
+
+    .mytable tr td label{
+        width: 90px;
+    }
+
+</style>
+
+<div>
+    <div class="leftPanel">
+        <h3>Bước 1:</h3>
+
+        <table class="mytable">
+            <tr>
+                <td><label class="label-ctrl">Lớp: </label></td>
+                <td><input ng-model="info.class" class="form-control" placeholder="Lớp"></td>
+            </tr>
+            <tr>
+                <td><label class="label-ctrl">Ngày thi: </label></td>
+                <td><input ng-model="info.date" class="form-control" type="date" title="Ngày khai giảng hoặc là ngày thi thử"></td>
+            </tr>
+            <tr>
+                <td><label class="label-ctrl">Cách thức: </label></td>
+                <td><input type="radio" name="kind" ng-model="info.type" value="1"> Thi thử 
+                    <input type="radio" name="kind" ng-model="info.type" value="0"> Thi cuối khóa 
+                </td>
+            </tr>
+        </table>
+        
+    </div>
+    <div class="rightPanel">
+        <h3>Bước 2:</h3>
+        <div id="drop">Kéo file vào đây</div>
+        <p style="margin-top: 20px;">Hoặc là chọn file<input class="form-control file-upload" type="file" name="xlfile" id="xlf" style="display: inline;" /></p>
+    </div>
+
+    <div class="leftPanel" ng-if="jsonExcel != null">
+        <h3>Bước 3:</h3>
+        <label class="label-ctrl">Chọn sheet</label>
+        <select class="form-control" ng-model="sheet.name" ng-if="jsonExcel != null" ng-change="choiceSheet()">
+            <option value="" selected disabled>-- Hãy chọn 1 sheet --</option>
+            <option ng-repeat="(key, val) in jsonExcel track by $index" value="{{key}}">{{key}}</option>
+        </select>
+    </div>
+    <br style="clear:both;">
+</div>
+
+<div class="table-responsive">          
+    <table ng-if="ListData != null" class="table">
+        <tr>
+            <th>Tên</th>
+            <th>Di động</th>
+            <th>Lớp</th>
+            <th>Ngày thi</th>
+            <th>Điểm thi</th>
+            <th>Xếp hạng</th>
+            <th>Ghi chú</th>
+        </tr>
+        <tr ng-repeat="element in ListData">
+            <td>{{element.StudentName}}</td>
+            <td>{{element.PhoneNumber}}</td>
+            <td>{{info.class}}</td>
+            <td>{{info.date | date: 'dd/MM/yyyy'}}</td>
+            <td>{{element.Point}}</td>
+            <td>{{element.Rank}}</td>
+            <td>{{element.Note}}</td>
+        </tr>
+    </table>
+</div>
+
+<button class="btn btn-app-sm" ng-click="submitPoint()" ng-if="ListData != null">Lưu dữ liệu</button>
+<style>
+#drop{
+    border:2px dashed #bbb;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    padding:49px;
+    text-align:center;
+    font:20pt bold,"Vollkorn";color:#bbb
+}
+</style>
+
+</div>

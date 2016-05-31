@@ -180,8 +180,8 @@
                 </h4>
 
                 <div class="form-group">
-                    <div class="input-group" ng-repeat="item in homeConfig.p[0].items">
-                        <input class="form-control" ng-model="item.hotline" />
+                    <div class="input-group">
+                        <input class="form-control" ng-model="homeConfig.p[0].items[0].hotline" />
                     </div>
                 </div>
 
@@ -196,6 +196,16 @@
                         <div class="input-group-addon" style="cursor: pointer" ng-click="clickOnUpload(item, 'logo_image_uri')">
                             <span class="fa fa-cloud-upload"></span><!--UploadImage-->
                         </div>
+                    </div>
+                </div>
+
+                <h4 class="orange-text">
+                    Facebook
+                </h4>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <input class="form-control" ng-model="homeConfig.p[0].items[0].facebook" style="width: 500px" />
                     </div>
                 </div>
             </div>
