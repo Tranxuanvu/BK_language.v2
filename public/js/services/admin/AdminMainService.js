@@ -23,7 +23,7 @@ angular.module('AdminMainService', []).factory('AdminMain', ['$http', function($
 			})
 		},
 		getAllCustomer: function () {
-			return $http.post('/api/admin/customers').then(function (result) {
+			return $http.post('/api/admin/user').then(function (result) {
 				return result.data;
 			})
 		},
@@ -39,7 +39,6 @@ angular.module('AdminMainService', []).factory('AdminMain', ['$http', function($
 		},
 		checkLogIn: function (data) {
 			return $http.post('/api/admin/login', data).then(function (result) {
-				console.log(result.data);
 				return result.data;
 			})
 		}

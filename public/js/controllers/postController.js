@@ -1,10 +1,32 @@
-﻿angular.module('postController', []).controller('PostController', function ($scope, $sce, $window, $route, $routeParams, Post) {
+﻿angular.module('postController', []).controller('PostController', function ($scope, $sce, $window, $route, $routeParams, Post, $http) {
     $scope.fb = {like_count:0, comment_count: 0, view_count: 324};
     
     var categorySlug = $scope.categorySlug = $route.current.categorySlug == null ? $routeParams.categorySlug : $route.current.categorySlug;
     var subCagotorySlug = $routeParams.sub_category_slug;
     var postSlug = $routeParams.post_slug;
     
+    $scope.getfinal = function(){
+        var param = {phone: $scope.sdt1, name: $scope.name1.toLowerCase(), type: 0};
+        $http.post('/test-result/', param).success(function(res){
+            $scope.final = res;
+            if(res && res.length == 0)
+                $scope.finalmessage = "Rất tiếc, không tìm thấy tên " + $scope.name1 + " có số điện thoại " + $scope.sdt1 + " trong danh sách điểm."
+            else
+                $scope.finalmessage = null;
+        })
+    }
+
+    $scope.getTest = function(){
+        var param = {phone: $scope.sdt2, name: $scope.name2.toLowerCase(), type: 1};
+        $http.post('/test-result/', param).success(function(res){
+            $scope.test = res;
+            if(res && res.length == 0)
+                $scope.testmessage = "Rất tiếc, không tìm thấy tên " + $scope.name2 + " có số điện thoại " + $scope.sdt2 + " trong danh sách điểm."
+            else
+                $scope.testmessage = null;
+        })  
+    }
+
     Post.getSubCategoryList(categorySlug).then(function (data) {
 
         $scope.subCategories = data;

@@ -68,15 +68,14 @@ header, nav, header a, header img, header li {
 
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #000;
-  background-color: #FBED55;
+  color: #D50000;
 }
 
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:focus,
 .navbar-default .navbar-nav > .open > a:hover {
   color: #000;
-  background-color: #FBED55;
+  background-color: #D50000;
 }
 
 .navbar-header {
@@ -92,7 +91,7 @@ header, nav, header a, header img, header li {
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
   color: #000;
-  background-color: #FBED55;
+  background-color: #D50000;
 }
 
 .navbar-fixed-bottom .navbar-collapse,
@@ -104,8 +103,12 @@ header, nav, header a, header img, header li {
   display: inline-flex;
 }
 
-.active-home {
-  background-color: #FBED55;
+.navbar-default .navbar-nav > li > a .active-home {
+  color: #D50000;
+}
+
+.navbar-default .navbar-nav .active-home > a{
+  color: #D50000;
 }
 
 .uppercase-bold {
@@ -146,24 +149,24 @@ header, nav, header a, header img, header li {
 .megamenu {
   padding: 20px 0px;
   width: 100%;
-  background-color: #FBED55;
+  background-color: #D50000;
 }
 
 .item-menu {
-  background-color: #FBED55;
+  background-color: #D50000;
   width: 214px;
   transition: all 0.5s;
 }
 
 .item-menu > li > a {
-  color: #000;
+  color: #FFF;
   padding: 10px 20px;
   margin: 1px 0;
 }
 
 .item-menu > li > a:hover {
   color: #FFF;
-  background: rgba(85, 85, 85, 0.2);
+  background: rgba(255, 0, 11, 0.4);
 }
 
 .megamenu > li {
@@ -174,18 +177,18 @@ header, nav, header a, header img, header li {
 }
 
 .megamenu > li > a {
-  color: #000;
+  color: #FFF;
   text-transform: uppercase;
 }
 
 .megamenu > li > a:hover {
-  color: #000;
+  color: #FFF;
   background-color: transparent;
   /*cursor: text;*/
 }
 
 .megamenu .dropdown-header {
-  color: #000 !important;
+  color: #FFF !important;
   font-size: 15px;
 }
 
@@ -212,15 +215,15 @@ header, nav, header a, header img, header li {
   clear: both;
   font-weight: normal;
   line-height: 1.428571429;
-  color: #000;
+  color: #FFF;
   white-space: normal;
 }
 
 .megamenu > li ul > li > a:hover,
 .megamenu > li ul > li > a:focus {
   text-decoration: none;
-  color: inherit;
-  background-color: rgba(85, 85, 85, 0.2);
+  color: #FFF;
+  background-color: rgba(255, 0, 11, 0.4);
 }
 
 .megamenu.disabled > a,

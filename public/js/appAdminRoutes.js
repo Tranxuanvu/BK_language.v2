@@ -24,9 +24,9 @@ angular.module('appAdminRoutes', []).config(['$routeProvider', '$locationProvide
             controller: 'AdminPostListController',
             status_id: 4
         })
-    .when('/admin/khach-hang', {
-            templateUrl: 'views/partials/admin/list_customer.html',
-            controller: 'AdminCustomerListController',
+    .when('/admin/user', {
+            templateUrl: 'views/partials/admin/list_user.html',
+            controller: 'AdminUserListController',
             status_id: 5
         })
     .when('/admin/edits/:id', {
@@ -45,11 +45,20 @@ angular.module('appAdminRoutes', []).config(['$routeProvider', '$locationProvide
             templateUrl: 'views/partials/admin/blocks_editor.html',
             controller: 'AdminBlocksConfigController'
         })
+    .when('/admin/nhap-diem', {
+            templateUrl: 'views/partials/admin/input_point.html',
+            controller: 'AdminPointInputController'
+        })
+    .when('/admin/quan-ly-diem', {
+            templateUrl: 'views/partials/admin/point_manage.html',
+            controller: 'AdminPointManageController'
+        })
     .when('/admin/config', {
             templateUrl: 'views/partials/admin/config_edit.html',
             controller: 'AdminConfigController',
         })
     .when('/admin/login', {
+            templateUrl: 'views/partials/admin/login.html',
             controller: 'AdminLoginController'
         })
 

@@ -72,7 +72,7 @@ angular.module('admin', [
     'ngTagsInput',
 
     'adminMainController',
-    'adminCustomerListController',
+    'adminUserListController',
     'AdminMainService',
 
     'adminPostListController',
@@ -91,5 +91,7 @@ angular.module('admin', [
     'adminBlocksConfigController',
     'AdminBlocksConfigService',
 
-    'adminLoginController'
+    'adminLoginController',
+    'adminPointInputController',
+    'adminPointManageController'
 ]);

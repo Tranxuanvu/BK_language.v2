@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset='utf8'>
@@ -35,18 +36,44 @@
       </div>
     </div>
   </nav>
+
+  <style type="text/css">
+  .nav-sidebar li span{    
+    padding-left: 10px;
+    text-transform: uppercase;
+    color: white;
+  }
+  </style>
   <div class="row">
     <div class="col-md-2 col-sm-3 sidebar" id="dashboard">
-      <div class="cover">
+      <div class="cover" style="overflow-y: scroll;">
         <ul class="nav nav-sidebar">
-          <li><a href="/admin/chinh-sua-trang-chu"><i class="fa fa-home"></i> Cài đặt trang chủ</a></li>
-          <li><a href="/admin/menu"><i class="fa fa-bars"></i> Chỉnh sửa menu</a></li>
-          <li><a href="/admin"><i class="fa fa-pencil-square"></i> Bài viết mới</a></li>
-          <li><a href="/admin/cho-xet-duyet"><i class="fa fa-cloud-upload"></i> Bài chờ duyệt</a></li>
-          <li ng-if="role == 1"><a href="/admin/bai-da-dang"><i class="fa fa-check-square"></i> Bài đã đăng</a></li>
-          <li><a href="/admin/bai-da-luu"><i class="fa fa-database"></i> Bài đã lưu</a></li>
-          <li><a href="/admin/bao-da-xoa"><i class="fa fa-recycle"></i> Bài đã xóa</a></li>
-          <li><a href="/admin/chinh-sua-blocks"><i class="fa fa-cog"></i> Cài đặt khác</a></li>
+          <li> 
+            <span>Cài đặt </span>
+              <li><a href="/admin/chinh-sua-trang-chu"><i class="fa fa-home"></i> Cài đặt trang chủ</a></li>
+              <li><a href="/admin/menu"><i class="fa fa-bars"></i> Chỉnh sửa menu</a></li>
+              <li><a href="/admin/chinh-sua-blocks"><i class="fa fa-cog"></i> Cài đặt khác</a></li>
+          </li>
+          
+          <li>
+            <span>Bài viết</span>
+              <li><a href="/admin"><i class="fa fa-pencil-square"></i> Bài viết mới</a></li>
+              <li><a href="/admin/cho-xet-duyet"><i class="fa fa-cloud-upload"></i> Bài chờ duyệt</a></li>
+              <li ng-if="role == 1"><a href="/admin/bai-da-dang"><i class="fa fa-check-square"></i> Bài đã đăng</a></li>
+              <li><a href="/admin/bai-da-luu"><i class="fa fa-database"></i> Bài đã lưu</a></li>
+              <li><a href="/admin/bao-da-xoa"><i class="fa fa-recycle"></i> Bài đã xóa</a></li>
+          </li>
+          
+          <li>
+            <span>Điểm thi</span>
+            <li><a href="/admin/nhap-diem"><i class="fa fa-file-excel-o "></i> Nhập điểm</a></li>
+            <li><a href="/admin/quan-ly-diem"><i class="fa fa-table"></i> Quản lý điểm</a></li>
+          </li>
+          <li>
+            <span>Quản lý người dùng</span>
+              <li><a href="/admin/user"><i class="fa fa-user"></i>Danh sách người dùng</a></li>
+          </li>
+          
           <!-- <li><a href="/admin/config"><i class="fa fa-cog"></i> Cài đặt</a></li> -->
         </ul>
       </div>
@@ -58,6 +85,15 @@
   <script src="../libs/angular-route/angular-route.min.js"></script>
   <script src="../libs/jquery/dist/jquery.min.js"></script>
   <script src="../libs/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- SCRIPT -->
+  <script src="../libs/js-xlsx/dist/xlsx.core.min.js"></script>
+
+  <script src="../libs/js-xlsx/shim.js"></script>
+  <script src="../libs/js-xlsx/jszip.js"></script>
+  <script src="../libs/js-xlsx/xlsx.js"></script>
+  <!-- uncomment the next line here and in xlsxworker.js for ODS support -->
+  <script src="../libs/js-xlsx/dist/ods.js"></script>
+
 
   <script src="../libs/ckeditor/ckeditor.js"></script>
   <script src="../libs/angular-ckeditor/angular-ckeditor.js"></script>
@@ -80,7 +116,7 @@
   <script src="../js/app.js"></script>
 
   <script src="../js/controllers/admin/adminMainController.js"></script>
-  <script src="../js/controllers/admin/adminCustomerListController.js"></script>
+  <script src="../js/controllers/admin/adminUserListController.js"></script>
   <script src="../js/services/admin/AdminMainService.js"></script>
 
   <script src="../js/controllers/admin/adminPostListController.js"></script>
@@ -91,6 +127,9 @@
   <script src="../js/services/admin/AdminMenuService.js"></script>
 
   <script src="../js/controllers/admin/adminConfigController.js"></script>
+  <script src="../js/controllers/admin/adminPointInputController.js"></script>
+  <script src="../js/controllers/admin/adminPointManageController.js"></script>
+  
   <script src="../js/services/admin/AdminConfigService.js"></script>
 
   <script src="../js/controllers/admin/adminHomeConfigController.js"></script>
