@@ -4,137 +4,6 @@ var db = require(__base + 'config/database');
 var config = require(__base + 'config/local_config');
 
 module.exports = function (app) {
-
-    app.post('/api/admin/deleteClass', function (req, res) {
-        var pool = mysql.createPool(db);
-        if(req.body.id)
-        pool.getConnection(function (err, connection) {
-            if (err) {
-                pool.end();
-                res.json({});
-                console.log({ "code" : err.code, "status" : err.message });
-                return;
-            } else {
-                connection.query('DELETE FROM enterPoint WHERE id = ?', [req.body.id], function (err1, rows1) {
-                    connection.query('DELETE FROM detailPoint WHERE classID = ?', [req.body.id], function (err, rows) {
-                        connection.destroy();
-                        pool.end();
-                        console.log(err1)
-                        if(!err && !err1)
-                            res.send("200");                    
-                        else
-                            res.send("400");
-                    });
-                });
-                
-            }
-        });
-    });
-
-    app.post('/api/admin/students', function (req, res) {
-        var pool = mysql.createPool(db);
-        if(req.body.id)
-            pool.getConnection(function (err, connection) {
-                if (err) {
-                    pool.end();
-                    res.json({});
-                    console.log({ "code" : err.code, "status" : err.message });
-                    return;
-                } else {
-                    connection.query('SELECT * FROM detailPoint WHERE classID = ?', [req.body.id], function (err, rows) {
-                        connection.destroy();
-                        pool.end();
-
-                        var result = [];
-                        rows.forEach(function (e) {
-                            result.push({
-                                id: e.id,
-                                fullname: e.fullname,
-                                mobile: e.mobile,
-                                note: e.note,
-                                rank: e.rank,
-                                point: e.point
-                            });
-                        });
-                        res.json(result);
-                    });
-                    
-                }
-            });
-        else
-            res.send(400);
-    });
-
-    app.post('/api/admin/classes', function (req, res) {
-        var pool = mysql.createPool(db);
-        pool.getConnection(function (err, connection) {
-            if (err) {
-                pool.end();
-                res.json({});
-                console.log({ "code" : err.code, "status" : err.message });
-                return;
-            } else {
-                connection.query('SELECT * FROM enterPoint WHERE 1', function (err, rows) {
-                    connection.destroy();
-                    pool.end();
-
-                    var result = [];
-                    rows.forEach(function (e) {
-                        result.push({
-                            id: e.id,
-                            class: e.class,
-                            date: e.date,
-                            type: e.type
-                        });
-                    });
-                    // console.log(result)
-                    res.json(result);
-                });
-                
-            }
-        });
-    });
-
-    app.post('/api/admin/addpoint', function (req, res) {
-        var pool = mysql.createPool(db);
-        if(req.body.type&&req.body.class&&req.body.date)
-            pool.getConnection(function (err, connection) {
-                if (err) {
-                    pool.end();
-                    res.json({});
-                    console.log({ "code" : err.code, "status" : err.message });
-                    return;
-                } else {
-                    
-                    var data = {
-                        'class': req.body.class,
-                        'date': req.body.date,
-                        'type': req.body.type
-                    }
-                    
-                    connection.query('INSERT INTO enterPoint SET ?', data, function (err, rows) {
-                        for (var i = 0; i < req.body.points.length; i++) {
-                            var idata = {
-                                classID: rows.insertId,
-                                fullname: req.body.points[i].StudentName, 
-                                mobile: req.body.points[i].PhoneNumber,
-                                point: req.body.points[i].Point,
-                                note: req.body.points[i].Note,
-                                rank: req.body.points[i].Rank
-                            }
-
-                            connection.query('INSERT INTO detailPoint SET ?', idata);
-                        };
-                        
-                        res.send("200");
-                        pool.end();
-                    });
-                }
-            });
-        else
-            res.send(400);
-    });
-
     app.post('/api/admin/catalog', function (req, res) {
         var pool = mysql.createPool(db);
         pool.getConnection(function (err, connection) {
@@ -217,7 +86,7 @@ module.exports = function (app) {
         });
     });
     
-    app.post('/api/admin/user', function (req, res) {
+    app.post('/api/admin/customers', function (req, res) {
         var pool = mysql.createPool(db);
         pool.getConnection(function (err, connection) {
             if (err) {
@@ -226,7 +95,7 @@ module.exports = function (app) {
                 console.log({ "code" : err.code, "status" : err.message });
                 return;
             } else {
-                connection.query('SELECT user.email AS email, user.phone_number AS phone_number, user.full_name AS fullname, user.school_company AS job FROM user WHERE user.role = 0', function (err, rows) {
+                connection.query('SELECT * FROM customer', function (err, rows) {
                     connection.destroy();
                     pool.end();
                     

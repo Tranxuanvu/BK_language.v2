@@ -30,9 +30,10 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 hotline" ng-repeat="item in homeConfig.p[0].items">
-              HOTLINE: <span>{{item.hotline}}</span>
+              <span><i class="fa fa-phone fa-lg"></i></span>
+              <span>{{item.hotline}}</span>
             </div>
-           
+            
           </div>
         </div>
       </div>
@@ -145,12 +146,6 @@
               </form>
             </div>
 
-            <!-- Để nav hov giữ màu khi chọn vào tron sub menu -->
-            <style type="text/css">
-              a.active-home {
-                  color: red !important;
-              }
-            </style>
             <script type="text/ng-template" id="main_menu_item_render.html">
               <a href="{{data.uri}}">{{data.name}} 
                 <b class="caret" ng-show="data.submenus.length > 0"></b>
@@ -248,34 +243,6 @@
     </div>
     
     <div ng-view></div>
-
-    <div class="section" id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-2" ></div>
-          <div class="col-md-8">
-            <h3>Liên hệ</h3>
-            <div class="col-md-4">
-            <h4>Phòng ghi danh TTNN:</h4>
-            <p>142 Tô Hiến Thành, Q10 <br /> (cạnh cổng 3 - ĐHBK) <br /> ĐT: 08 3864 7256 (ext 5379)</p>
-          </div>
-          <div class="col-md-4">
-            <h4>Văn phòng TTNN:</h4>
-            <p>Lầu 1, Nhà C6, trường ĐHBK <br /> 268 Lý Thường Kiệt, P14, Q10 <br /> ĐT: 3864 7256 (ext 5310)</p>
-          </div>
-          <div class="col-md-4">
-            <h4>Cơ sở 2:</h4>
-            <p>Lầu 8, nhà H1, trường ĐHBK, <br /> khu ĐH Quốc Gia, Thủ Đức <br /> ĐT: 0985 933 930 (A. Dũng)</p>
-          </div>
-          </div>
-          <div class="col-md-2">
-            <ul class="icon">
-              <li id="icon-facebook"><a href="{{homeConfig.p[0].items[0].facebook}}" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <!-- <footer id="footer">
       <div class="container">

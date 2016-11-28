@@ -1,26 +1,6 @@
-@font-face {
-   font-family: Avo;
-   src: url(font/UTM Avo.ttf);
-}
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans:400,400italic&subset=latin,vietnamese);
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic&subset=latin,vietnamese);
 
-@font-face {
-   font-family: Avo;
-   src: url(font/UTM AvoBold.ttf);
-   font-weight: bold;
-}
-
-@font-face {
-   font-family: Avo;
-   src: url(font/UTM AvoBold_Italic.ttf);
-   font-weight: bold;
-   font-style: italic;
-}
-
-@font-face {
-   font-family: Avo;
-   src: url(font/UTM AvoItalic.ttf);
-   font-style: italic;
-}
 
 body {
   /*background-image: url('../images/parallax01.jpg');*/
@@ -29,14 +9,14 @@ body {
   background-attachment: fixed;
   background-position: top right;
   color: #384046;
-  font-family: 'Avo', sans-serif !important;
+  font-family: 'Arimo', sans-serif;
   font-weight: 400;
   overflow-x: hidden;
   padding-right: 0 !important;
 }
 
 header {
-  font-family: 'Avo', serif;
+  font-family: 'Noto Sans', serif;
   font-weight: 400;
 }
 
@@ -85,7 +65,7 @@ ul {
 }
 
 #navbar-top{
-  background-color: #F1F1F1;
+  background-color: #FBED55;
 }
 
 #navbar-top .hotline{
@@ -214,7 +194,7 @@ ul {
 
 #sidebar .md-content {
   background: #FFF;
-  font-family: 'Avo', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   color: #444;
 }
@@ -321,7 +301,7 @@ ul {
 
 .caption span {
   text-transform: uppercase;
-  font-family: 'Avo', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 25px;
   font-weight: bold;
   color: #E10B0B;

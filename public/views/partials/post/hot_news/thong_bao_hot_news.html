@@ -9,68 +9,29 @@
           </div>
           <div class="result">
             <div>
-              <form ng-submit="getfinal()">
+              <form action="#" method="post">
                 <div class="in-row">
                   <div class="field-wrap">
-                    <input placeholder="Họ tên có dấu" type="text" autocomplete="off" ng-model="name1" />
+                    <input placeholder="Họ tên:" type="text" autocomplete="off" />
                   </div>
 
                   <div class="field-wrap">
-                    <input placeholder="Số điện thoại" type="text" required autocomplete="off" ng-model="sdt1"/>
+                    <input placeholder="SĐT:" type="text" required autocomplete="off" />
                   </div>
                   <button type="submit" class="button button-block">Xem</button>
                 </div>
               </form>
             </div>
-            <h3 style="color:red;">{{finalmessage}}</h3>
-            <div class="result-respond" ng-repeat="result in final">
-              <hr ng-if="$index != 0">
+            <div class="result-respond">
               <div class="col-md-5" style="padding-left: 0;">
-                <h3>Lớp: {{result.class}}</h3>
-                <h3>Số điểm đạt được: {{result.point}}</h3>
+                <h3>Lớp: Toiec Total</h3>
+                <h3>Số điểm đạt được: 800</h3>
               </div>
               <div class="col-md-7">
-                <h3>Khai giảng: {{result.date | date: 'dd/MM/yyyy'}}</h3>
-                <h3>Xếp hạng: {{result.rank}}</h3>
+                <h3>Khải giảng: 04/03/16</h3>
+                <h3>Xếp hạng: 01</h3>
               </div>
-              <h3>{{result.note}}</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="exam-result">
-        <div class="wrapper">
-          <div class="title">
-            Kết quả <br /> thi thử
-          </div>
-          <div class="result">
-            <div>
-              <form ng-submit="getTest()">
-                <div class="in-row">
-                  <div class="field-wrap">
-                    <input placeholder="Họ tên có dấu" type="text" autocomplete="off" ng-model="name2" />
-                  </div>
-
-                  <div class="field-wrap">
-                    <input placeholder="Số điện thoại" type="text" required autocomplete="off" ng-model="sdt2"/>
-                  </div>
-                  <button type="submit" class="button button-block">Xem</button>
-                </div>
-              </form>
-            </div>
-            <h3 style="color:red;">{{testmessage}}</h3>
-            <div class="result-respond" ng-repeat="result in test">
-              <hr ng-if="$index != 0">
-              <div class="col-md-5" style="padding-left: 0;">
-                <h3>Lớp: {{result.class}}</h3>
-                <h3>Số điểm đạt được: {{result.point}}</h3>
-              </div>
-              <div class="col-md-7">
-                <h3>Ngày thi thử: {{result.date | date: 'dd/MM/yyyy'}}</h3>
-                <h3>Xếp hạng: {{result.rank}}</h3>
-              </div>
-              <h3>{{result.note}}</h3>
+              <h3>Xin chúc mừng và mời bạn đến Lầu 1, C6 để nhận quà từ trung tâm</h3>
             </div>
           </div>
         </div>
